@@ -1,0 +1,81 @@
+{
+  "name": "@deziro/ui-react",
+  "version": "0.1.0",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "NOTICE",
+    "scripts/copy-styles.mjs",
+    "tsconfig.build.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./themes": {
+      "types": "./dist/themes.d.ts",
+      "import": "./dist/themes.js",
+      "default": "./dist/themes.js"
+    },
+    "./styles/base.css": "./dist/base.css",
+    "./styles/*": "./dist/styles/*",
+    "./fuzzy": {
+      "types": "./dist/fuzzy.d.ts",
+      "import": "./dist/fuzzy.js",
+      "default": "./dist/fuzzy.js"
+    },
+    "./components/*": {
+      "types": "./dist/components/*.d.ts",
+      "import": "./dist/components/*.js",
+      "default": "./dist/components/*.js"
+    },
+    "./native-appearance": {
+      "types": "./dist/native-appearance.d.ts",
+      "import": "./dist/native-appearance.js",
+      "default": "./dist/native-appearance.js"
+    },
+    "./preview-image-geometry": {
+      "types": "./dist/preview-image-geometry.d.ts",
+      "import": "./dist/preview-image-geometry.js",
+      "default": "./dist/preview-image-geometry.js"
+    },
+    "./attachment-layout": {
+      "types": "./dist/attachment-layout.d.ts",
+      "import": "./dist/attachment-layout.js",
+      "default": "./dist/attachment-layout.js"
+    },
+    "./scroll-coalesce": {
+      "types": "./dist/scroll-coalesce.d.ts",
+      "import": "./dist/scroll-coalesce.js",
+      "default": "./dist/scroll-coalesce.js"
+    }
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.562.0",
+    "fuse.js": "^7.4.2",
+    "react-select": "^5.10.2",
+    "framer-motion": "^12.25.0",
+    "react-virtuoso": "^4.18.1"
+  },
+  "description": "React WebView components and themes extracted from DezirClip",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiyuanhuakai/deziro-ui.git",
+    "directory": "packages/ui-react"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/copy-styles.mjs"
+  }
+}

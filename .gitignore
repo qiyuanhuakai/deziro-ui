@@ -1,0 +1,5 @@
+node_modules/
+dist/
+*.tgz
+/dzc-ui-gallery
+/dzc-ui-gallery.exe

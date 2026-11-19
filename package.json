@@ -1,0 +1,20 @@
+{
+  "name": "deziro-ui",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.0.9",
+  "scripts": {
+    "build:react": "pnpm -C packages/ui-react build",
+    "dev": "vite --host 127.0.0.1 --open /packages/ui-react/showcase/"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3",
+    "lucide-react": "0.562.0",
+    "playwright": "1.60.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "typescript": "~5.8.3",
+    "vite": "7.3.3"
+  }
+}

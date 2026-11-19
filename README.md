@@ -14,7 +14,7 @@
 ### React WebView
 
 ```sh
-pnpm add https://github.com/qiyuanhuakai/deziro-ui/releases/download/v0.1.0/deziro-ui-react-0.1.0.tgz
+pnpm add https://github.com/qiyuanhuakai/deziro-ui/releases/download/v0.1.1/deziro-ui-react-0.1.1.tgz
 ```
 
 ```tsx
@@ -33,7 +33,7 @@ document.body.classList.add("theme-macos", "light-mode");
 ### MyGo Native
 
 ```sh
-go get github.com/qiyuanhuakai/deziro-ui/packages/ui-native/uikit@v0.1.0
+go get github.com/qiyuanhuakai/deziro-ui/packages/ui-native/uikit@v0.1.1
 ```
 
 ```go
@@ -46,7 +46,7 @@ kit.Apply(c)
 使用自己的主题时，向 `uikit.NewKit` 传入语义颜色和控件样式。应用需要下方完整的 Web 对照主题时，可以额外导入 GPL 预设模块，并通过 `presets.Select("macos", "light").Kit()` 应用。
 
 ```sh
-go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.0
+go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 ```
 
 ## 主题
@@ -57,7 +57,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.0
 
 每张图左侧是 React WebView，右侧是 MyGo Native，均采用 macOS 浅色主题。滚轮区域和缩放手柄的图显示了触发后的结果。
 
-首版验证覆盖六套主题、两种色彩模式和 49 个组件状态，共 588 个对照样本。
+这组图片对应六套主题、两种色彩模式和 49 个组件状态的验证，共 588 个对照样本。
 
 | 组件 | 两套库的实测画面 |
 | --- | --- |

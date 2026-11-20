@@ -1,32 +1,54 @@
 const samples = [
-  ["character-search", "default", {
-    characterInput: [".emoji-search .search-input"],
-    characterInputPlaceholder: [".emoji-search .search-input", null, "::placeholder"],
-    characterInputIcon: [".emoji-search .search-icon"],
+  ["settings-section-card", "default", {
+    settingsGroup: [".settings-group"], settingsGroupHeader: [".group-header", ".group-header h3"],
+    settingsGroupChevron: [".group-header svg"],
   }],
-  ["emoji-tabs", "default", {
-    emojiTab: [".emoji-tab:not(.active)"], emojiTabActive: [".emoji-tab.active"], emojiTabs: [".emoji-tabs"],
+  ["settings-section-card", "expanded", {
+    settingsGroupOpen: [".settings-group"], settingsGroupHeaderOpen: [".group-header", ".group-header h3"],
+    settingsGroupContent: [".group-content"],
   }],
-  ["emoji-grid", "default", {
-    emojiContent: [".emoji-content"], emojiGroup: [".emoji-group"], emojiGroupTitle: [".emoji-group-title"],
-    emojiTile: [".emoji-btn"], emojiGrid: [".emoji-grid"],
+  ["settings-choices", "default", {
+    settingsChoiceCards: [".settings-choice-cards"], settingsChoiceCard: [".settings-choice-card:not(.active)"],
+    settingsChoiceCardActive: [".settings-choice-card.active"], settingsSegments: [".segmented-control"],
+    settingsSegment: [".segment-btn:not(.active)"], settingsSegmentActive: [".segment-btn.active"],
   }],
-  ["scroll-to-top", "default", { scrollToTop: [".scroll-top-button"] }],
-  ["scroll-to-top", "hover", { scrollToTopHover: [".scroll-top-button"] }],
-  ["hotkey-binding", "default", {
-    hotkeyRow: [".hotkey-recorder"], hotkeyGroup: [".key-group"], hotkeyCap: [".key-cap"],
+  ["settings-choices", "hover-card", { settingsChoiceCardHover: [".settings-choice-card:not(.active)"] }],
+  ["settings-choices", "hover-segment", { settingsSegmentHover: [".segment-btn:not(.active)"] }],
+  ["emoji-favorites", "default", {
+    emojiAddTile: [".emoji-fav-add-btn"], emojiFavoriteTile: [".emoji-fav-card:not(.emoji-fav-add) .emoji-fav-preview"],
+    emojiFavoriteRemove: [".emoji-fav-remove"],
   }],
-  ["hotkey-binding", "recording", { hotkeyCapRecording: [".key-cap"] }],
-  ["settings-slider", "keyboard", { settingsRangeFocus: [".settings-view input[type=range]"] }],
-  ["settings-slider", "default", {
-    settingsRangeTrack: ["[data-slider-sample=track]"], settingsRangeThumb: ["[data-slider-sample=thumb]"],
-    settingsRangeFill: ["[data-slider-sample=fill]"], settingsLabel: [".setting-item .item-label"],
+  ["emoji-favorites", "hover", { emojiAddTileHover: [".emoji-fav-add-btn"] }],
+  ["settings-data", "default", {
+    settingsDataPath: [".data-panel"], settingsDataAction: [".data-actions-row .btn-icon"],
+    settingsDataLabel: [".data-path-label"], settingsDataHeader: [".data-path-header"],
+    settingsDataBlock: [".showcase-fields .setting-item"], settingsDataActions: [".data-actions-row"],
+  }],
+  ["hotkey-list", "multiple", { hotkeyRemove: [".hotkey-list .btn-icon"] }],
+  ["settings-remove", "default", {
+    settingsRemove: [".settings-remove:not(.settings-remove-icon)"],
+    settingsRemoveIcon: [".settings-remove-icon"],
+  }],
+  ["tag-toolbar", "default", {
+    tagToolbar: [".tag-manager-toolbar"], tagToolbarButton: [".tag-manager-toolbar .btn-icon:not(.active)"],
+    tagToolbarButtonActive: [".tag-manager-toolbar .btn-icon.active"],
+  }],
+  ["text-fields", "default", {
+    textField: ["input.deziro-text-field:not(.numeric-input)"], numberField: [".numeric-input"],
+  }],
+  ["text-fields", "focus-text", { textFieldFocus: ["input.deziro-text-field:not(.numeric-input)"] }],
+  ["text-fields", "focus-number", { numberFieldFocus: [".numeric-input"] }],
+  ["context-menu", "privacy", {
+    contextMenu: [".item-context-menu"], contextSubmenu: [".item-context-menu__submenu"],
+    contextMenuItem: [".item-context-menu__item:not(.item-context-menu__item--active)"],
+    contextMenuItemActive: [".item-context-menu__item--active"],
+    contextSubmenuItem: [".item-context-menu__submenu-item:not(.item-context-menu__submenu-item--active)"],
+    contextSubmenuItemActive: [".item-context-menu__submenu-item--active"],
   }],
   ["attachment-preview", "media", {
     attachmentName: [".attachment-tile figcaption"], attachmentIcon: [".attachment-tile figcaption svg"],
     attachmentImage: [".attachment-tile > .image-preview"],
   }],
-  ["attachment-preview", "compact", { historyCardCompact: [".history-item.compact"] }],
   ["preview-toolbar", "default", {
     previewToolbar: [".preview-toolbar"], previewToolbarTitle: [".preview-toolbar-drag span"],
     previewToolbarButton: [".preview-toolbar-actions .preview-toolbar-button"],
@@ -40,12 +62,55 @@ const samples = [
     settingsFooterCard: [".settings-footer-card", ".settings-footer-card-label"],
     settingsFooterVersion: [".settings-footer-version"], settingsFooterLink: [".settings-footer-link"],
   }],
+  ["scroll-to-top", "default", { scrollToTop: [".scroll-top-button"] }],
+  ["scroll-to-top", "hover", { scrollToTopHover: [".scroll-top-button"] }],
+  ["settings-toggle", "default", {
+    settingsLabel: [".setting-item .item-label"], settingsToggleRow: [".setting-item"],
+    settingsSwitch: [".switch"], settingsSwitchTrack: [".toggle"], settingsSwitchThumb: [".toggle", null, "::before"],
+    settingsSwitchLeft: [".toggle > .left"], settingsSwitchRight: [".toggle > .right"],
+  }],
+  ["settings-toggle", "enabled", {
+    settingsSwitchTrackOn: [".toggle"], settingsSwitchThumbOn: [".toggle", null, "::before"],
+    settingsSwitchLeftOn: [".toggle > .left"], settingsSwitchRightOn: [".toggle > .right"],
+  }],
+  ["settings-slider", "keyboard", { settingsRangeFocus: [".settings-view input[type=range]"] }],
+  ["settings-slider", "default", {
+    settingsRangeTrack: ["[data-slider-sample=track]"], settingsRangeThumb: ["[data-slider-sample=thumb]"],
+    settingsRangeFill: ["[data-slider-sample=fill]"],
+  }],
+  ["hotkey-binding", "default", {
+    hotkeyRow: [".hotkey-recorder"], hotkeyGroup: [".key-group"], hotkeyCap: [".key-cap"],
+  }],
+  ["hotkey-binding", "recording", { hotkeyCapRecording: [".key-cap"] }],
+  ["character-search", "default", {
+    characterInput: [".emoji-search .search-input"],
+    characterInputPlaceholder: [".emoji-search .search-input", null, "::placeholder"],
+    characterInputIcon: [".emoji-search .search-icon"],
+  }],
+  ["emoji-tabs", "default", {
+    emojiTab: [".emoji-tab:not(.active)"], emojiTabActive: [".emoji-tab.active"], emojiTabs: [".emoji-tabs"],
+  }],
+  ["emoji-grid", "default", {
+    emojiContent: [".emoji-content"], emojiGroup: [".emoji-group"], emojiGroupTitle: [".emoji-group-title"],
+    emojiTile: [".emoji-btn"], emojiGrid: [".emoji-grid"],
+  }],
   ["history-card", "default", {
     historyCard: [".history-item"], historyMeta: [".item-meta"], historySource: [".item-meta-left .app-info"],
     historyTime: [".item-meta .app-info:last-child span"], historyContent: [".history-item .content-preview"],
     historyActions: [".item-actions"], historyAction: [".item-actions .btn-icon"],
+    historyActionIcon: [".item-actions .btn-icon svg"],
   }],
   ["history-card", "selected", { historyCardSelected: [".history-item.selected"] }],
+  ["history-card", "hover", { historyCardHover: [".history-item"] }],
+  ["history-card", "compact", {
+    historyCardCompact: [".history-item.compact"], historyContentCompact: [".content-preview"],
+    historyActionsCompactAnchor: [".history-card-meta-right"], historyActionsCompact: [".item-actions"],
+    historyActionCompact: [".item-actions .btn-icon"], historyActionCompactIcon: [".item-actions .btn-icon svg"],
+  }],
+  ["history-card", "compact-hover", { historyCardCompactHover: [".history-item.compact"] }],
+  ["history-card", "compact-action-hover", { historyActionCompactHover: [".item-actions .btn-icon"] }],
+  ["history-card", "compact-active", { historyActionCompactActive: [".item-actions .btn-icon.active"] }],
+  ["history-card", "compact-active-hover", { historyActionCompactActiveHover: [".item-actions .btn-icon.active"] }],
   ["app-header", "default", {
     header: ["header"], headerTop: [".header-top"], headerTitle: [".header-title"],
     headerButton: [".header-top .btn-icon"],
@@ -162,7 +227,8 @@ function prepareSliderSamples() {
   }
 }
 
-function readStyles(selectors) {
+function readStyles(sample) {
+  const selectors = sample.selectors ?? sample;
   const drawing = document.createElement("canvas").getContext("2d", { willReadFrequently: true });
   const color = (...values) => {
     drawing.clearRect(0, 0, 1, 1);
@@ -174,7 +240,7 @@ function readStyles(selectors) {
     return [...drawing.getImageData(0, 0, 1, 1).data];
   };
   const number = value => Math.round((Number.parseFloat(value) || 0) * 100) / 100;
-  return Object.fromEntries(Object.entries(selectors).map(([id, [selector, label, pseudo]]) => {
+  const styles = Object.fromEntries(Object.entries(selectors).map(([id, [selector, label, pseudo]]) => {
     const element = document.querySelector(selector);
     if (!element) throw Error("Missing fixture element " + selector);
     const style = getComputedStyle(element, pseudo);
@@ -200,8 +266,18 @@ function readStyles(selectors) {
     const columnGap = number(style.columnGap);
     const rowGap = number(style.rowGap);
     const top = number(style.top);
+    const left = number(style.left);
+    const right = number(style.right);
+    const transform = style.transform !== "none" ? new DOMMatrixReadOnly(style.transform) : null;
+    const translateX = number(transform?.m41);
+    const translateY = number(transform?.m42);
+    const headingShift = id.startsWith("settingsGroupHeader")
+      ? (number(text.paddingTop) - number(text.paddingBottom)) / 2 : 0;
     const marginBottom = number(style.marginBottom);
     const bounds = element.getBoundingClientRect();
+    const switchFace = /^settingsSwitch(Left|Right)/.test(id);
+    const switchBounds = switchFace ? element.parentElement.getBoundingClientRect() : null;
+    const content = switchFace ? getComputedStyle(element, "::before").content : "";
     return [id, {
       fill: color(style.backgroundColor, id === "settingsRangeTrack" ? "" : tint), text: color(text.color), border: color(style["border" + borderSide + "Color"]),
       borderWidth: borderWidths[0],
@@ -218,12 +294,20 @@ function readStyles(selectors) {
       ...(lineHeight ? { lineHeight: Math.round(lineHeight * 1000) / 1000 } : {}),
       ...(columnGap ? { columnGap } : {}),
       ...(rowGap ? { rowGap } : {}),
-      ...(top ? { top } : {}),
-      ...(id.endsWith("InputIcon") ? { left: number(style.left) } : {}),
+      ...(switchFace ? { top: number(bounds.top - switchBounds.top), left: number(bounds.left - switchBounds.left) } : top ? { top } : {}),
+      ...(id === "historyActionsCompactAnchor" ? { right } : {}),
+      ...(/^historyActionCompact/.test(id) && translateX ? { translateX } : {}),
+      ...(/^historyActions?Compact/.test(id) && translateY ? { translateY } : {}),
+      ...(headingShift ? { translateY: headingShift } : {}),
+      ...(id.startsWith("settingsSwitchThumb") ? { left: number(left + translateX) } : {}),
+      ...(id.endsWith("InputIcon") ? { left } : {}),
+      ...(content.startsWith('"') ? { caption: JSON.parse(content) } : {}),
       ...(marginBottom ? { marginBottom } : {}),
-      ...(id.startsWith("historyCard") || id.startsWith("hotkey")
+      ...(id.startsWith("historyCard") || id.startsWith("hotkey") || id === "settingsDataActions"
         ? { margin: sides.map(side => number(style["margin" + side])) } : {}),
-      width: element.offsetWidth ?? bounds.width, height: element.offsetHeight ?? bounds.height, marginTop: number(style.marginTop),
+      width: switchFace ? number(bounds.width) : pseudo && pseudo !== "::backdrop" ? number(style.width) : element.offsetWidth ?? bounds.width,
+      height: switchFace ? number(bounds.height) : pseudo && pseudo !== "::backdrop" ? number(style.height) : element.offsetHeight ?? bounds.height,
+      marginTop: number(style.marginTop),
       padding: [style.paddingTop, style.paddingRight, style.paddingBottom, style.paddingLeft].map(number),
       font: text.fontFamily.split(",").map(family => family.trim().replace(/^['"]|['"]$/g, "")).join(", "),
       size: fontSize, weight: number(text.fontWeight), uppercase: text.textTransform === "uppercase",
@@ -231,16 +315,63 @@ function readStyles(selectors) {
       ...(shadows.length ? { shadows } : {}),
     }];
   }));
+  if (!sample.materialOpacity) return styles;
+  const root = document.documentElement.style;
+  const originalOpacity = root.getPropertyValue("--surface-opacity");
+  const colorsAt = opacity => {
+    root.setProperty("--surface-opacity", opacity);
+    return Object.entries(selectors).map(([id, [selector, , pseudo]]) => {
+      const css = getComputedStyle(document.querySelector(selector), pseudo);
+      const border = ["Top", "Right", "Bottom", "Left"].find(side => number(css["border" + side + "Width"]) > 0) ?? "Top";
+      const tint = css.backgroundImage.match(/^linear-gradient\((rgba?\([^)]*\)), \1\)(?:, none)*$/)?.[1];
+      return [id, color(css.backgroundColor, id === "settingsRangeTrack" ? "" : tint), color(css["border" + border + "Color"])];
+    });
+  };
+  try {
+    const clear = colorsAt("0");
+    const full = colorsAt("1");
+    clear.forEach(([id, fill, border], index) => {
+      if (!fill.every((channel, position) => channel === full[index][1][position])) {
+        styles[id].fillRange = { clear: fill, full: full[index][1] };
+      }
+      if (!border.every((channel, position) => channel === full[index][2][position])) {
+        styles[id].borderRange = { clear: border, full: full[index][2] };
+      }
+    });
+  } finally {
+    if (originalOpacity) root.setProperty("--surface-opacity", originalOpacity);
+    else root.removeProperty("--surface-opacity");
+  }
+  return styles;
 }
 
 export async function readNativeWidgetStyles(page, url, theme, mode) {
   const styles = {};
+  const materialOpacity = ["mica", "acrylic", "liquid-glass"].includes(theme);
   for (const [fixture, state, selectors] of samples) {
     url.search = new URLSearchParams({ theme, mode, fixture, state }).toString();
     await page.goto(url.href);
     await page.locator("main[data-fixture]").waitFor();
     await page.evaluate(() => document.fonts.ready);
     await page.mouse.move(450, 390);
+    if (fixture === "settings-choices" && state.startsWith("hover-")) {
+      await page.getByRole("button", { name: state === "hover-card" ? "System" : "Stable", exact: true }).hover();
+    }
+    if (fixture === "emoji-favorites" && state === "hover") {
+      await page.getByRole("button", { name: "Add emoji" }).hover();
+    }
+    if (fixture === "text-fields" && state.startsWith("focus")) {
+      await page.getByRole("textbox", { name: state === "focus-text" ? "Entry name" : "Idle timeout" }).focus();
+    }
+    if (fixture === "context-menu") {
+      await page.getByRole("menuitem", { name: "Privacy" }).hover();
+    }
+    if (fixture === "history-card" && state.endsWith("hover")) {
+      await page.locator(".history-item").hover();
+      if (state.includes("action") || state.includes("active")) {
+        await page.getByRole("button", { name: "Pin", exact: true }).hover();
+      }
+    }
     if (fixture === "scroll-to-top" && state === "hover") {
       await page.getByRole("button", { name: "Scroll to top" }).hover();
     }
@@ -273,7 +404,7 @@ export async function readNativeWidgetStyles(page, url, theme, mode) {
       if (state === "keyboard") await page.getByRole("slider", { name: "Opacity" }).focus();
       else await page.evaluate(prepareSliderSamples);
     }
-    Object.assign(styles, await page.evaluate(readStyles, selectors));
+    Object.assign(styles, await page.evaluate(readStyles, { selectors, materialOpacity }));
   }
   const viewport = page.viewportSize();
   const bounds = await page.locator(".showcase").boundingBox();

@@ -18,6 +18,11 @@ type Gradient struct {
 	To    [4]uint8
 }
 
+type ColorRange struct {
+	Clear [4]uint8
+	Full  [4]uint8
+}
+
 type WidgetStyle struct {
 	Left          float32 `json:"left,omitempty"`
 	BorderWidths  *[4]float32
@@ -28,10 +33,16 @@ type WidgetStyle struct {
 	ColumnGap     float32
 	RowGap        float32
 	Top           float32
+	Right         float32
+	TranslateX    float32
+	TranslateY    float32
+	Caption       string
 	Margin        [4]float32
 	Fill          [4]uint8
 	Text          [4]uint8
 	Border        [4]uint8
+	FillRange     *ColorRange
+	BorderRange   *ColorRange
 	BorderWidth   float32
 	Radius        float32
 	Width         float32

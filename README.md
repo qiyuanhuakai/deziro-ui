@@ -55,7 +55,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 
 ## 组件对照
 
-每张图左侧是 React WebView，右侧是 MyGo Native。四套主题与色彩模式组合各有 30 张图。滚轮区域和缩放手柄展示交互后的状态。
+每张图左侧是 React WebView，右侧是 MyGo Native。四套主题与色彩模式组合各有 41 张图。输入框使用带内容的示例，简洁卡片和右键菜单展示悬浮后的状态。
 
 剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。新增组件的源码与导出位于 `main` 分支。
 
@@ -69,6 +69,17 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/macos-dark/history-list.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/macos-dark/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-meta.png) |
+| 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-compact-actions.png) |
+| 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/macos-dark/context-menu.png) |
+| 隐私侧边子菜单 | ![隐私侧边子菜单 WebView 与 Native](docs/comparisons/macos-dark/context-menu-privacy.png) |
+| 文本、数字和多行输入框 | ![文本、数字和多行输入框 WebView 与 Native](docs/comparisons/macos-dark/text-fields.png) |
+| 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/macos-dark/settings-section-card.png) |
+| 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/macos-dark/settings-choices.png) |
+| 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/macos-dark/hotkey-list.png) |
+| 设置内删除按钮 | ![设置内删除按钮 WebView 与 Native](docs/comparisons/macos-dark/settings-remove.png) |
+| 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/macos-dark/emoji-favorites.png) |
+| 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/macos-dark/settings-data.png) |
+| 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/macos-dark/tag-toolbar.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/macos-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/macos-dark/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/macos-dark/highlight.png) |
@@ -107,6 +118,17 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/history-list.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/history-card-meta.png) |
+| 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/history-card-compact-actions.png) |
+| 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/context-menu.png) |
+| 隐私侧边子菜单 | ![隐私侧边子菜单 WebView 与 Native](docs/comparisons/context-menu-privacy.png) |
+| 文本、数字和多行输入框 | ![文本、数字和多行输入框 WebView 与 Native](docs/comparisons/text-fields.png) |
+| 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/settings-section-card.png) |
+| 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/settings-choices.png) |
+| 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/hotkey-list.png) |
+| 设置内删除按钮 | ![设置内删除按钮 WebView 与 Native](docs/comparisons/settings-remove.png) |
+| 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/emoji-favorites.png) |
+| 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/settings-data.png) |
+| 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/tag-toolbar.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/highlight.png) |
@@ -145,6 +167,17 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/liquid-glass-light/history-list.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-meta.png) |
+| 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-compact-actions.png) |
+| 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-light/context-menu.png) |
+| 隐私侧边子菜单 | ![隐私侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-light/context-menu-privacy.png) |
+| 文本、数字和多行输入框 | ![文本、数字和多行输入框 WebView 与 Native](docs/comparisons/liquid-glass-light/text-fields.png) |
+| 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-section-card.png) |
+| 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-choices.png) |
+| 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/liquid-glass-light/hotkey-list.png) |
+| 设置内删除按钮 | ![设置内删除按钮 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-remove.png) |
+| 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-favorites.png) |
+| 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-data.png) |
+| 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/liquid-glass-light/tag-toolbar.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-light/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-light/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/liquid-glass-light/highlight.png) |
@@ -183,6 +216,17 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-list.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-meta.png) |
+| 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-compact-actions.png) |
+| 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-dark/context-menu.png) |
+| 隐私侧边子菜单 | ![隐私侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-dark/context-menu-privacy.png) |
+| 文本、数字和多行输入框 | ![文本、数字和多行输入框 WebView 与 Native](docs/comparisons/liquid-glass-dark/text-fields.png) |
+| 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-section-card.png) |
+| 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-choices.png) |
+| 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/liquid-glass-dark/hotkey-list.png) |
+| 设置内删除按钮 | ![设置内删除按钮 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-remove.png) |
+| 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-favorites.png) |
+| 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-data.png) |
+| 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/tag-toolbar.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-dark/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/liquid-glass-dark/highlight.png) |

@@ -67,6 +67,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 应用顶栏 | ![应用顶栏 WebView 与 Native](docs/comparisons/macos-dark/app-header.png) |
 | 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/macos-dark/clipboard-search.png) |
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/macos-dark/history-list.png) |
+| 文本卡片与字号 | ![小字号、长文本和隐私遮挡卡片](docs/comparisons/macos-dark/history-typography.png) |
+| 紧凑卡片与大字号 | ![十八像素字号下的紧凑卡片](docs/comparisons/macos-dark/history-typography-compact.png) |
+| 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/macos-dark/history-typography-custom.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/macos-dark/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-compact-actions.png) |
@@ -128,6 +131,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 应用顶栏 | ![应用顶栏 WebView 与 Native](docs/comparisons/app-header.png) |
 | 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/clipboard-search.png) |
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/history-list.png) |
+| 文本卡片与字号 | ![小字号、长文本和隐私遮挡卡片](docs/comparisons/history-typography.png) |
+| 紧凑卡片与大字号 | ![十八像素字号下的紧凑卡片](docs/comparisons/history-typography-compact.png) |
+| 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/history-typography-custom.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/history-card-compact-actions.png) |
@@ -189,6 +195,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 应用顶栏 | ![应用顶栏 WebView 与 Native](docs/comparisons/liquid-glass-light/app-header.png) |
 | 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/liquid-glass-light/clipboard-search.png) |
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/liquid-glass-light/history-list.png) |
+| 文本卡片与字号 | ![小字号、长文本和隐私遮挡卡片](docs/comparisons/liquid-glass-light/history-typography.png) |
+| 紧凑卡片与大字号 | ![十八像素字号下的紧凑卡片](docs/comparisons/liquid-glass-light/history-typography-compact.png) |
+| 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/liquid-glass-light/history-typography-custom.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-compact-actions.png) |
@@ -250,6 +259,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 应用顶栏 | ![应用顶栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/app-header.png) |
 | 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/liquid-glass-dark/clipboard-search.png) |
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-list.png) |
+| 文本卡片与字号 | ![小字号、长文本和隐私遮挡卡片](docs/comparisons/liquid-glass-dark/history-typography.png) |
+| 紧凑卡片与大字号 | ![十八像素字号下的紧凑卡片](docs/comparisons/liquid-glass-dark/history-typography-compact.png) |
+| 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/liquid-glass-dark/history-typography-custom.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-compact-actions.png) |

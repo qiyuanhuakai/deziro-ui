@@ -13,6 +13,8 @@ type Kit struct {
 	Mode           string
 	tokens         *theme.Tokens
 	widgets        map[string]theme.WidgetStyle
+	interfaceFont  string
+	monospaceFont  string
 	hotkeyPlatform string
 }
 
@@ -23,6 +25,18 @@ func NewKit(mode string, tokens theme.Tokens, widgets map[string]theme.WidgetSty
 	return Kit{Mode: mode, tokens: &tokens, widgets: widgets}
 }
 
+// WithInterfaceFont overrides the UI font without changing the catalog or its monospace styles.
+func (k Kit) WithInterfaceFont(font string) Kit {
+	k.interfaceFont = strings.TrimSpace(font)
+	return k
+}
+
+// WithMonospaceFont overrides the font of text that uses the theme's monospace family.
+func (k Kit) WithMonospaceFont(font string) Kit {
+	k.monospaceFont = strings.TrimSpace(font)
+	return k
+}
+
 // WithHotkeyPlatform sets the target OS for shortcut labels. The default is the running OS.
 func (k Kit) WithHotkeyPlatform(platform string) Kit {
 	k.hotkeyPlatform = platform
@@ -30,10 +44,16 @@ func (k Kit) WithHotkeyPlatform(platform string) Kit {
 }
 
 func (k Kit) palette() theme.Tokens {
+	var tokens theme.Tokens
 	if k.tokens != nil {
-		return *k.tokens
+		tokens = *k.tokens
+	} else {
+		tokens = theme.Select(k.Mode)
 	}
-	return theme.Select(k.Mode)
+	if k.interfaceFont != "" {
+		tokens.FontFamilies = []string{k.interfaceFont}
+	}
+	return tokens
 }
 
 func (k Kit) Apply(c *ui.Context) {
@@ -41,14 +61,22 @@ func (k Kit) Apply(c *ui.Context) {
 }
 
 func (k Kit) style(widget string) theme.WidgetStyle {
-	if style, ok := k.widgets[widget]; ok {
-		if k.surfaceOpacity != nil && *k.surfaceOpacity != 65 {
-			style.Fill = materialColor(style.Fill, style.FillRange, *k.surfaceOpacity)
-			style.Border = materialColor(style.Border, style.BorderRange, *k.surfaceOpacity)
-		}
-		return style
+	style, catalog := k.widgets[widget]
+	if !catalog {
+		style = standardWidgetStyle(widget, k.palette())
 	}
-	return standardWidgetStyle(widget, k.palette())
+	if k.surfaceOpacity != nil && *k.surfaceOpacity != 65 {
+		style.Fill = materialColor(style.Fill, style.FillRange, *k.surfaceOpacity)
+		style.Border = materialColor(style.Border, style.BorderRange, *k.surfaceOpacity)
+	}
+	if style.UsesMonoFont {
+		if k.monospaceFont != "" {
+			style.Font = k.monospaceFont
+		}
+	} else if catalog && k.interfaceFont != "" && style.Font != "monospace" && !strings.HasSuffix(style.Font, ", monospace") {
+		style.Font = k.interfaceFont
+	}
+	return style
 }
 
 // WithSurfaceOpacity adapts CSS-derived materials to the current window opacity.

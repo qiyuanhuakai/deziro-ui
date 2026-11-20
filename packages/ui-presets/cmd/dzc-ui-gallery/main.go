@@ -430,7 +430,22 @@ func run() error {
 		}
 		tester.Advance(settle)
 		if *inspect {
-			if err := json.NewEncoder(os.Stdout).Encode(tester.Texts()); err != nil {
+			var result any = tester.Texts()
+			if g.fixture == "history-typography" {
+				cards := make(map[string]ui.Rect, len(historyTypographySamples))
+				for _, sample := range historyTypographySamples {
+					bounds, ok := tester.Find(sample.name)
+					if !ok {
+						return fmt.Errorf("no history card named %s", sample.name)
+					}
+					cards[sample.name] = bounds
+				}
+				result = struct {
+					Texts []string
+					Cards map[string]ui.Rect
+				}{tester.Texts(), cards}
+			}
+			if err := json.NewEncoder(os.Stdout).Encode(result); err != nil {
 				return err
 			}
 		}

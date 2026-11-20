@@ -41,7 +41,8 @@ const additional = [
   ["settings-slider", "default", 95],
   ["hotkey-binding", "default", 85],
   ["scroll-to-top", "default", 165],
-  ["emoji-tabs", "favorites", 82],
+  ["character-search", "default", 82],
+  ["emoji-tabs", "symbols", 82],
   ["emoji-grid", "default", 105],
 ];
 const components = [...figures, ...additional];

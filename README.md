@@ -55,7 +55,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 
 ## 组件对照
 
-每张图左侧是 React WebView，右侧是 MyGo Native。四套主题与色彩模式组合各有 29 张图。滚轮区域和缩放手柄展示交互后的状态。
+每张图左侧是 React WebView，右侧是 MyGo Native。四套主题与色彩模式组合各有 30 张图。滚轮区域和缩放手柄展示交互后的状态。
 
 剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。新增组件的源码与导出位于 `main` 分支。
 
@@ -90,6 +90,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/macos-dark/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/macos-dark/hotkey-binding.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/macos-dark/scroll-to-top.png) |
+| 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/macos-dark/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/macos-dark/emoji-tabs.png) |
 | 表情网格 | ![表情网格 WebView 与 Native](docs/comparisons/macos-dark/emoji-grid.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/macos-dark/search-bar.png) |
@@ -127,6 +128,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/hotkey-binding.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/scroll-to-top.png) |
+| 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/emoji-tabs.png) |
 | 表情网格 | ![表情网格 WebView 与 Native](docs/comparisons/emoji-grid.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/search-bar.png) |
@@ -164,6 +166,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/liquid-glass-light/hotkey-binding.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/liquid-glass-light/scroll-to-top.png) |
+| 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/liquid-glass-light/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-tabs.png) |
 | 表情网格 | ![表情网格 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-grid.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/liquid-glass-light/search-bar.png) |
@@ -201,6 +204,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/liquid-glass-dark/hotkey-binding.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/liquid-glass-dark/scroll-to-top.png) |
+| 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/liquid-glass-dark/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-tabs.png) |
 | 表情网格 | ![表情网格 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-grid.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-bar.png) |

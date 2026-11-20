@@ -1,4 +1,16 @@
 const samples = [
+  ["character-search", "default", {
+    characterInput: [".emoji-search .search-input"],
+    characterInputPlaceholder: [".emoji-search .search-input", null, "::placeholder"],
+    characterInputIcon: [".emoji-search .search-icon"],
+  }],
+  ["emoji-tabs", "default", {
+    emojiTab: [".emoji-tab:not(.active)"], emojiTabActive: [".emoji-tab.active"], emojiTabs: [".emoji-tabs"],
+  }],
+  ["emoji-grid", "default", {
+    emojiContent: [".emoji-content"], emojiGroup: [".emoji-group"], emojiGroupTitle: [".emoji-group-title"],
+    emojiTile: [".emoji-btn"], emojiGrid: [".emoji-grid"],
+  }],
   ["scroll-to-top", "default", { scrollToTop: [".scroll-top-button"] }],
   ["scroll-to-top", "hover", { scrollToTopHover: [".scroll-top-button"] }],
   ["hotkey-binding", "default", {
@@ -207,7 +219,7 @@ function readStyles(selectors) {
       ...(columnGap ? { columnGap } : {}),
       ...(rowGap ? { rowGap } : {}),
       ...(top ? { top } : {}),
-      ...(id === "headerInputIcon" ? { left: number(style.left) } : {}),
+      ...(id.endsWith("InputIcon") ? { left: number(style.left) } : {}),
       ...(marginBottom ? { marginBottom } : {}),
       ...(id.startsWith("historyCard") || id.startsWith("hotkey")
         ? { margin: sides.map(side => number(style["margin" + side])) } : {}),

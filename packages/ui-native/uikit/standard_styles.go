@@ -52,6 +52,18 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 	case "emojiContent":
 		style.Padding = [4]float32{4, 4, 4, 4}
 		style.RowGap = 12
+	case "emojiTab", "emojiTabActive":
+		surface()
+		style.Height, style.Size, style.Weight, style.LetterSpacing, style.Uppercase = 30, 11, 800, .8, true
+		if widget == "emojiTabActive" {
+			style.Fill, style.Border, style.Text = accent, accent, [4]uint8{255, 255, 255, 255}
+		}
+	case "emojiGroupTitle":
+		style.Size, style.Weight, style.LetterSpacing, style.Uppercase = 10, 800, 1, true
+		style.Border, style.BorderWidths = border, &[4]float32{0, 0, 2, 0}
+		style.Padding[2] = 4
+	case "emojiTile":
+		style.Height, style.Size, style.Radius = 32, 18, float32(palette.Radius)
 	case "select", "selectHover", "selectFocus", "selectDisabled":
 		surface()
 		style.Width, style.Height = 224, 36
@@ -104,12 +116,12 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		style.ColumnGap, style.Padding = 6, [4]float32{8, 0, 4, 0}
 	case "headerTitle", "confirmTitle", "tagTitle":
 		style.Size, style.Weight = 18, palette.EmphasisWeight
-	case "headerInput", "searchInput":
+	case "headerInput", "characterInput", "searchInput":
 		surface()
 		style.Height, style.Padding = 38, [4]float32{0, 32, 0, 32}
-	case "headerInputPlaceholder":
+	case "headerInputPlaceholder", "characterInputPlaceholder":
 		style.Text = muted
-	case "headerInputIcon":
+	case "headerInputIcon", "characterInputIcon":
 		style.Width, style.Height, style.Left = 14, 14, 12
 	case "searchModes":
 		surface()

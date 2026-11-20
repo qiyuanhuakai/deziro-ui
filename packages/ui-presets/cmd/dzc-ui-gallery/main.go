@@ -19,7 +19,8 @@ type gallery struct {
 	theme, mode, fixture, state       string
 	choice, query, searchMode, filter string
 	settingsSelection                 string
-	emojiFavorites, settingEnabled    bool
+	emojiTab                          string
+	settingEnabled                    bool
 	historyList                       uikit.HistoryListState
 	historySelected                   int
 	previewImage                      uikit.PreviewImage
@@ -96,10 +97,29 @@ func (g *gallery) renderFixture(c *ui.Context, kit uikit.Kit, name string) {
 			ui.Text(c, "Clipboard history").FontSize(16)
 			kit.ScrollToTopButton(c, "Scroll to top").Absolute().Right(16).Bottom(16)
 		})
+	case "character-search":
+		kit.CharacterSearch(c, &g.query, "Search symbols", nil)
 	case "emoji-tabs":
-		kit.EmojiTabs(c, "Emoji", "Favorites", g.emojiFavorites, false, func(favorites bool) { g.emojiFavorites = favorites })
+		kit.CharacterTabs(c, []uikit.CharacterTab{
+			{ID: "emoji", Label: "Emoji"}, {ID: "symbols", Label: "Symbols"}, {ID: "favorites", Label: "Favorites"},
+		}, g.emojiTab, false, func(tab string) { g.emojiTab = tab })
 	case "emoji-grid":
-		kit.EmojiGrid(c, "Frequently used", []string{"😀", "😄", "😂", "🤣", "😊", "😍", "😘", "😎", "🤔", "🔥", "✨", "👌"}, false, nil)
+		width, _ := c.Size()
+		padding := presets.Select(g.theme, g.mode).ShowcasePadding()
+		kit.CharacterContent(c, width-padding[1]-padding[3], func(contentWidth float32) {
+			kit.CharacterGrid(c, "Frequently used", []uikit.CharacterChoice{
+				{Value: "😀"}, {Value: "😄"}, {Value: "😂"}, {Value: "🤣"}, {Value: "😊"}, {Value: "😍"},
+				{Value: "😘"}, {Value: "😎"}, {Value: "🤔"}, {Value: "🔥"}, {Value: "✨"}, {Value: "👌"},
+			}, contentWidth, false, nil)
+		})
+	case "clipboard-search":
+		kit.ClipboardSearch(c, uikit.HeaderOptions{
+			Query: &g.query, Placeholder: "搜索剪切板...", Filter: &g.filter,
+			Filters: []uikit.HeaderFilter{
+				{ID: "text", Label: "文本"}, {ID: "image", Label: "图片"}, {ID: "file", Label: "文件"}, {ID: "url", Label: "URL"},
+				{ID: "code", Label: "代码"}, {ID: "video", Label: "视频"}, {ID: "rich_text", Label: "富文本"},
+			},
+		})
 	case "app-header":
 		pinned := g.state == "pinned"
 		pin := uikit.HeaderAction{Icon: "pin", Label: "Pin", Active: pinned, Run: func() {
@@ -127,14 +147,6 @@ func (g *gallery) renderFixture(c *ui.Context, kit uikit.Kit, name string) {
 		}
 		options.Actions = append(options.Actions, uikit.HeaderAction{Icon: "hide", Label: "Hide"})
 		kit.Header(c, options)
-	case "clipboard-search":
-		kit.ClipboardSearch(c, uikit.HeaderOptions{
-			Query: &g.query, Placeholder: "搜索剪切板...", Filter: &g.filter,
-			Filters: []uikit.HeaderFilter{
-				{ID: "text", Label: "文本"}, {ID: "image", Label: "图片"}, {ID: "file", Label: "文件"},
-				{ID: "url", Label: "URL"}, {ID: "code", Label: "代码"}, {ID: "video", Label: "视频"}, {ID: "rich_text", Label: "富文本"},
-			},
-		})
 	case "history-card":
 		kit.HistoryCard(c, uikit.HistoryCardOptions{Source: "Editor", Time: "12:30",
 			Summary: "Copied from the active editor", Selected: g.state == "selected", Pinned: g.state == "pinned",
@@ -261,7 +273,10 @@ func run() error {
 	inspect := flag.Bool("inspect", false, "write rendered text labels as JSON")
 	flag.Parse()
 	g.settingEnabled = g.state == "enabled"
-	g.emojiFavorites = g.state == "favorites"
+	g.emojiTab = "emoji"
+	if g.state == "favorites" || g.state == "symbols" {
+		g.emojiTab = g.state
+	}
 	g.historySelected = -1
 	if g.fixture == "history-list" && g.state == "selected" {
 		g.historySelected = 1

@@ -41,12 +41,13 @@ const cases = {
   "tag-dialog": { states: ["default", "busy"], text: "Create tag" },
 };
 const additionalExamples = {
+  "character-search": { states: ["default", "filled"], text: "Search symbols" },
   "clipboard-search": { states: ["default", "selected"], text: "富文本" },
   "settings-toggle": { states: ["enabled", "default"], text: "Keep clipboard history" },
   "settings-slider": { states: ["default", "keyboard"], text: "Opacity 72%" },
   "hotkey-binding": { states: ["default", "recording"], text: "Quick Paste" },
   "scroll-to-top": { states: ["default", "hover"], text: "Clipboard history" },
-  "emoji-tabs": { states: ["default", "favorites"], text: "Favorites" },
+  "emoji-tabs": { states: ["default", "symbols", "favorites"], text: "Favorites" },
   "emoji-grid": { states: ["default"], text: "Frequently used" },
 };
 const available = { ...cases, ...additionalExamples };
@@ -196,7 +197,12 @@ try {
             const { stdout } = await execute(resolve(native), nativeArgs, { timeout: 10000 });
             const nativeImage = await readFile(target);
             const nativeText = JSON.parse(stdout).join(" ");
-            const webText = await page.locator("body").innerText();
+            let webText = await page.locator("body").innerText();
+            if (fixture === "character-search") {
+              const field = page.getByRole("searchbox", { name: "Search symbols" });
+              if (await field.inputValue() !== (state === "filled" ? "Clipboard" : "")) throw Error("Wrong character search query");
+              webText += await field.getAttribute("aria-label");
+            }
             const comparable = (value, expected) => value.toLowerCase().includes(expected.toLowerCase());
             const marker = fixture === "app-header" && state === "settings" ? "Settings"
               : fixture === "settings-slider" && state === "keyboard" ? "Opacity 73%"

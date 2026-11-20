@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Pin, Tag, X } from "lucide-react";
 import { createRoot } from "react-dom/client";
-import { AppHeader, ClipboardSearch, ConfirmDialog, EmojiGrid, EmojiTabs, FilterChips, HistoryCard, HistoryCardMeta, HotkeyBinding, MatchHighlight,
+import { AppHeader, CharacterSearch, ClipboardSearch, ConfirmDialog, EmojiGrid, EmojiTabs, FilterChips, HistoryCard, HistoryCardMeta, HotkeyBinding, MatchHighlight,
   ProgressToast, ScrollToTopButton, SearchBar, SearchHistory, SettingHelp, SettingsDisclosure, SettingsFooter, SettingsRail,
   SettingsSlider, SettingsToggle, TagDialog, ThemedSelect, ToastContainer, VirtualClipboardList, type EmojiTab, type SearchMode } from "../src";
 import { isBuiltinTheme, loadBuiltinTheme } from "../src/themes";
@@ -114,7 +114,7 @@ function Showcase() {
   const [toastVisible, setToastVisible] = useState(true);
   const [enabled, setEnabled] = useState(state === "enabled");
   const [opacity, setOpacity] = useState(72);
-  const [tab, setTab] = useState<EmojiTab>(state === "favorites" ? "favorites" : "emoji");
+  const [tab, setTab] = useState<EmojiTab>(state === "favorites" || state === "symbols" ? state : "emoji");
 
   const examples = {
     "attachment-preview": <AttachmentFixture state={state} />,
@@ -139,7 +139,8 @@ function Showcase() {
       recording={state === "recording"} busy={false} disabled={false} onClick={undefined} onKeyDown={undefined}
       onMouseDown={undefined} onBlur={undefined} />,
     "scroll-to-top": <div className="showcase-scroll-top">Clipboard history<ScrollToTopButton label="Scroll to top" onClick={() => undefined} /></div>,
-    "emoji-tabs": <EmojiTabs active={tab} labels={{ emoji: "Emoji", favorites: "Favorites" }} onChange={setTab} />,
+    "character-search": <CharacterSearch label="Search symbols" value={query} onChange={setQuery} />,
+    "emoji-tabs": <EmojiTabs active={tab} labels={{ emoji: "Emoji", symbols: "Symbols", favorites: "Favorites" }} onChange={setTab} />,
     "emoji-grid": <EmojiGrid groups={[{ name: "Frequently used", emojis: ["😀", "😄", "😂", "🤣", "😊", "😍", "😘", "😎", "🤔", "🔥", "✨", "👌"] }]}
       empty="No emoji" onSelect={() => undefined} />,
     "app-header": <HeaderFixture />,

@@ -44,6 +44,7 @@ const additional = [
   ["settings-section-card", "wide", 195, 0, "settings-section-grid"],
   ["settings-choices", "default", 185],
   ["hotkey-list", "multiple", 120],
+  ["hotkey-list", "win-v", 120, 0, "hotkey-list-win-v"],
   ["emoji-favorites", "default", 125],
   ["settings-data", "default", 185],
   ["settings-remove", "default", 115],

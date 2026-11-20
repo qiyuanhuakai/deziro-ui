@@ -13,6 +13,7 @@ type Kit struct {
 	Mode           string
 	tokens         *theme.Tokens
 	widgets        map[string]theme.WidgetStyle
+	hotkeyPlatform string
 }
 
 // NewKit sets a palette and a catalog of widget styles supplied by the caller.
@@ -20,6 +21,12 @@ type Kit struct {
 // The palette and catalog should remain immutable while the Kit is in use.
 func NewKit(mode string, tokens theme.Tokens, widgets map[string]theme.WidgetStyle) Kit {
 	return Kit{Mode: mode, tokens: &tokens, widgets: widgets}
+}
+
+// WithHotkeyPlatform sets the target OS for shortcut labels. The default is the running OS.
+func (k Kit) WithHotkeyPlatform(platform string) Kit {
+	k.hotkeyPlatform = platform
+	return k
 }
 
 func (k Kit) palette() theme.Tokens {

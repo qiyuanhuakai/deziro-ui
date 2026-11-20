@@ -49,6 +49,7 @@ const additional = [
   ["emoji-favorites", "default", 125],
   ["settings-data", "default", 185],
   ["settings-remove", "default", 115],
+  ["privacy-rules", "default", 390],
   ["tag-toolbar", "default", 85],
   ["tag-search", "default", 180],
   ["clipboard-search", "default", 140],

@@ -18,3 +18,8 @@ export { AttachmentPreview } from "./components/AttachmentPreview.js";
 export { PreviewImage, type PreviewImageProps } from "./components/PreviewImage.js";
 export { VirtualClipboardList, type VirtualClipboardListHandle, type VirtualClipboardListProps } from "./components/VirtualClipboardList.js";
 export { HistoryCard, HistoryCardMeta, type HistoryCardProps, type HistoryCardMetaProps } from "./components/HistoryCard.js";
+export { EmojiGrid, EmojiTabs, type EmojiTab } from "./components/EmojiPicker.js";
+export { HotkeyBinding, type HotkeyBindingProps } from "./components/HotkeyBinding.js";
+export { ScrollToTopButton } from "./components/ScrollToTopButton.js";
+export { SettingsSlider, type SettingsSliderProps } from "./components/SettingsSlider.js";
+export { SettingsToggle, type SettingsToggleProps } from "./components/SettingsToggle.js";

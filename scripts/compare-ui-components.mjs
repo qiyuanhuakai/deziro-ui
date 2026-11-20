@@ -39,10 +39,23 @@ const cases = {
   confirm: { states: ["default"], text: "Clear history" },
   "tag-dialog": { states: ["default", "busy"], text: "Create tag" },
 };
+const additionalExamples = {
+  "clipboard-search": { states: ["default"], text: "文本" },
+  "settings-toggle": { states: ["enabled", "default"], text: "Keep clipboard history" },
+  "settings-slider": { states: ["default"], text: "Opacity 72%" },
+  "hotkey-binding": { states: ["default"], text: "Quick Paste" },
+  "scroll-to-top": { states: ["default"], text: "Clipboard history" },
+  "emoji-tabs": { states: ["default", "favorites"], text: "Favorites" },
+  "emoji-grid": { states: ["default"], text: "Frequently used" },
+};
+const available = { ...cases, ...additionalExamples };
 if (selectedTheme && !(selectedTheme in presets)) throw Error("Unknown theme " + selectedTheme);
 for (const fixture of selectedFixtures ?? []) {
-  if (!(fixture in cases)) throw Error("Unknown component " + fixture);
+  if (!(fixture in available)) throw Error("Unknown component " + fixture);
 }
+const fixtures = selectedFixtures
+  ? selectedFixtures.map(name => [name, available[name]])
+  : Object.entries(flags.get("examples") === "all" ? available : cases);
 const server = await createServer({ root, configFile: false, server: { host: "127.0.0.1", port: 0, hmr: false, watch: null } });
 const output = await mkdtemp(join(tmpdir(), "deziro-ui-parity-"));
 const size = { width: 560, height: 420 };
@@ -109,7 +122,7 @@ try {
   const results = [];
   for (const theme of Object.keys(presets).filter(name => !selectedTheme || name === selectedTheme)) {
     for (const mode of ["light", "dark"]) {
-      for (const [fixture, { states, text }] of Object.entries(cases).filter(([name]) => !selectedFixtures || selectedFixtures.includes(name))) {
+      for (const [fixture, { states, text }] of fixtures) {
         for (const state of states) {
           const id = [theme, mode, fixture, state].join("_");
           try {
@@ -120,6 +133,19 @@ try {
             errors.length = 0;
             await page.goto(url.href);
             await page.locator("main[data-fixture]").waitFor();
+            if (fixture === "clipboard-search") {
+              const search = page.locator(".search-container");
+              if (await search.getByRole("combobox").count() !== 1 ||
+                  await search.getByRole("button").count() !== 7 ||
+                  await page.locator(".search-bar__mode").count() !== 0) {
+                throw Error("Clipboard search must show one field and the seven content filters");
+              }
+            }
+            if (theme === "macos" && (fixture === "clipboard-search" || fixture === "search-history")) {
+              const control = page.locator(fixture === "clipboard-search" ? ".search-container .search-input" : ".search-history");
+              const radius = await control.evaluate(element => getComputedStyle(element).borderTopLeftRadius);
+              if (radius !== "10px") throw Error("Unexpected macOS search radius: " + radius);
+            }
             await page.mouse.move(450, 390);
             const combo = page.getByRole("combobox", { name: "Color mode" });
             if (state === "hover") await combo.hover();
@@ -127,6 +153,7 @@ try {
             if (state === "popup") await combo.click();
             if (fixture === "disclosure" && state === "expanded") await page.getByRole("button", { name: "Software updates" }).click();
             if (fixture === "help" && state === "expanded") await page.getByRole("button", { name: "Setting help: Software updates" }).click();
+            if (state === "expanded") await page.mouse.move(450, 390);
             if (fixture === "preview-image") {
               await page.locator(".preview-image-viewport[data-ready=true]").waitFor();
             }

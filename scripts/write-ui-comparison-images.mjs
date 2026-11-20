@@ -35,19 +35,35 @@ const figures = [
   ["preview-resize-handles", "southeast", 185],
   ["wheel-hot-zone", "scrolled", 185],
 ];
+const additional = [
+  ["clipboard-search", "default", 140],
+  ["settings-toggle", "enabled", 80],
+  ["settings-slider", "default", 95],
+  ["hotkey-binding", "default", 85],
+  ["scroll-to-top", "default", 165],
+  ["emoji-tabs", "favorites", 82],
+  ["emoji-grid", "default", 105],
+];
+const gallery = [...figures, ...additional];
+const additionalNames = new Set(additional.map(([name]) => name));
 const results = JSON.parse(await readFile(join(artifacts, "results.json"), "utf8"));
-const passing = new Set(results.filter(row => row.passed).map(row => row.id));
+const reports = new Map(results.map(row => [row.id, row]));
 const capture = async (id, side) => "data:image/png;base64," + (await readFile(join(artifacts, id + "_" + side + ".png"))).toString("base64");
-for (const [component, state] of figures) {
+for (const [component, state] of gallery) {
   const id = [theme, mode, component, state].join("_");
-  if (!passing.has(id)) throw Error("Missing a passing result for " + id);
+  const report = reports.get(id);
+  if (report?.passed) continue;
+  // The supplemental figures also show any measured differences between the two renderers.
+  if (additionalNames.has(component) && report?.sameText && report.expectedState && report.errors.length === 0 &&
+      report.inkWeb > 0 && report.inkNative > 0) continue;
+  throw Error("Missing a verified render for " + id);
 }
 
 await mkdir(destination, { recursive: true });
 const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage({ viewport: { width: 1156, height: 485 }, deviceScaleFactor: 1 });
-  for (const [component, state, height, offset = 0] of figures) {
+  for (const [component, state, height, offset = 0] of gallery) {
     const id = [theme, mode, component, state].join("_");
     const [web, native] = await Promise.all([capture(id, "web"), capture(id, "native")]);
     await page.setContent(`<!doctype html><html lang="en"><meta charset="utf-8"><style>
@@ -67,4 +83,4 @@ try {
 } finally {
   await browser.close();
 }
-console.log(`Wrote ${figures.length} comparisons to ${destination}`);
+console.log(`Wrote ${gallery.length} comparisons to ${destination}`);

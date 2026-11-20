@@ -45,6 +45,7 @@ const additional = [
   ["settings-choices", "default", 185],
   ["hotkey-list", "multiple", 120],
   ["hotkey-list", "win-v", 120, 0, "hotkey-list-win-v"],
+  ["hotkey-list", "extended", 120, 0, "hotkey-list-extended"],
   ["emoji-favorites", "default", 125],
   ["settings-data", "default", 185],
   ["settings-remove", "default", 115],

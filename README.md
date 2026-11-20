@@ -77,6 +77,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 隐私侧边子菜单 | ![隐私侧边子菜单 WebView 与 Native](docs/comparisons/macos-dark/context-menu-privacy.png) |
 | 文本、数字和多行输入框 | ![文本、数字和多行输入框 WebView 与 Native](docs/comparisons/macos-dark/text-fields.png) |
 | 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/macos-dark/settings-section-card.png) |
+| 设置项、说明和数字输入 | ![字体说明和数字输入框](docs/comparisons/macos-dark/settings-field.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/macos-dark/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/macos-dark/settings-choices.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/macos-dark/search-select.png) |
@@ -146,6 +147,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 隐私侧边子菜单 | ![隐私侧边子菜单 WebView 与 Native](docs/comparisons/context-menu-privacy.png) |
 | 文本、数字和多行输入框 | ![文本、数字和多行输入框 WebView 与 Native](docs/comparisons/text-fields.png) |
 | 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/settings-section-card.png) |
+| 设置项、说明和数字输入 | ![字体说明和数字输入框](docs/comparisons/settings-field.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/settings-choices.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/search-select.png) |
@@ -215,6 +217,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 隐私侧边子菜单 | ![隐私侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-light/context-menu-privacy.png) |
 | 文本、数字和多行输入框 | ![文本、数字和多行输入框 WebView 与 Native](docs/comparisons/liquid-glass-light/text-fields.png) |
 | 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-section-card.png) |
+| 设置项、说明和数字输入 | ![字体说明和数字输入框](docs/comparisons/liquid-glass-light/settings-field.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-choices.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-light/search-select.png) |
@@ -286,6 +289,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 隐私侧边子菜单 | ![隐私侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-dark/context-menu-privacy.png) |
 | 文本、数字和多行输入框 | ![文本、数字和多行输入框 WebView 与 Native](docs/comparisons/liquid-glass-dark/text-fields.png) |
 | 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-section-card.png) |
+| 设置项、说明和数字输入 | ![字体说明和数字输入框](docs/comparisons/liquid-glass-dark/settings-field.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-choices.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-dark/search-select.png) |

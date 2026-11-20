@@ -50,6 +50,7 @@ const additional = [
   ["settings-data", "default", 185],
   ["settings-remove", "default", 115],
   ["tag-toolbar", "default", 85],
+  ["tag-search", "default", 180],
   ["clipboard-search", "default", 140],
   ["settings-toggle", "enabled", 80],
   ["settings-slider", "default", 95],

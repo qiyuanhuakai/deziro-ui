@@ -1,3 +1,4 @@
+import { once } from "node:events";
 import { execFile } from "node:child_process";
 import { mkdtemp, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -43,8 +44,8 @@ const additionalExamples = {
   "clipboard-search": { states: ["default", "selected"], text: "富文本" },
   "settings-toggle": { states: ["enabled", "default"], text: "Keep clipboard history" },
   "settings-slider": { states: ["default", "keyboard"], text: "Opacity 72%" },
-  "hotkey-binding": { states: ["default"], text: "Quick Paste" },
-  "scroll-to-top": { states: ["default"], text: "Clipboard history" },
+  "hotkey-binding": { states: ["default", "recording"], text: "Quick Paste" },
+  "scroll-to-top": { states: ["default", "hover"], text: "Clipboard history" },
   "emoji-tabs": { states: ["default", "favorites"], text: "Favorites" },
   "emoji-grid": { states: ["default"], text: "Frequently used" },
 };
@@ -56,7 +57,7 @@ for (const fixture of selectedFixtures ?? []) {
 const fixtures = selectedFixtures
   ? selectedFixtures.map(name => [name, available[name]])
   : Object.entries(flags.get("examples") === "all" ? available : cases);
-const server = await createServer({ root, configFile: false, server: { host: "127.0.0.1", port: 0, hmr: false, watch: null } });
+const server = await createServer({ root, configFile: false, server: { host: "127.0.0.1", hmr: false, watch: null } });
 const output = await mkdtemp(join(tmpdir(), "deziro-ui-parity-"));
 const size = { width: 560, height: 420 };
 const reportPath = join(output, "results.json");
@@ -113,7 +114,9 @@ function comparePixels({ web, native }) {
 
 let browser;
 try {
-  await server.listen();
+  const listening = once(server.httpServer, "listening");
+  server.httpServer.listen(0, "127.0.0.1");
+  await listening;
   const base = "http://127.0.0.1:" + server.httpServer.address().port;
   browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: size, locale: "en-US" });
@@ -162,7 +165,10 @@ try {
               if (await range.inputValue() !== "73") throw Error("Slider keyboard step did not change opacity to 73");
             }
             const combo = page.getByRole("combobox", { name: "Color mode" });
-            if (state === "hover") await combo.hover();
+            if (state === "hover") {
+              if (fixture === "scroll-to-top") await page.getByRole("button", { name: "Scroll to top" }).hover();
+              else await combo.hover();
+            }
             if (state === "focus") await combo.focus();
             if (state === "popup") await combo.click();
             if (fixture === "disclosure" && state === "expanded") await page.getByRole("button", { name: "Software updates" }).click();

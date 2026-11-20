@@ -37,6 +37,21 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 	case "settingsRangeThumb":
 		style.Width, style.Height, style.Radius = 16, 16, 8
 		style.Fill, style.Border, style.BorderWidth = accent, border, 1
+	case "hotkeyRow":
+		style.Padding = [4]float32{6, 0, 6, 0}
+		style.Margin[3] = 18
+	case "hotkeyCap", "hotkeyCapRecording":
+		surface()
+		style.Height, style.Radius, style.Size, style.Weight = 22, 4, 11, 600
+		style.Padding, style.Uppercase = [4]float32{0, 6, 0, 6}, true
+		if widget == "hotkeyCapRecording" {
+			style.Border = accent
+		}
+	case "hotkeyGroup", "emojiTabs", "emojiGrid", "emojiGroup":
+		style.ColumnGap, style.RowGap = 6, 6
+	case "emojiContent":
+		style.Padding = [4]float32{4, 4, 4, 4}
+		style.RowGap = 12
 	case "select", "selectHover", "selectFocus", "selectDisabled":
 		surface()
 		style.Width, style.Height = 224, 36
@@ -77,6 +92,12 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		style.RowGap = 8
 	case "headerTop":
 		style.Height = 36
+	case "scrollToTop", "scrollToTopHover":
+		surface()
+		style.Width, style.Height, style.Radius = 32, 32, 16
+		if widget == "scrollToTopHover" {
+			style.Fill, style.Border = selected, accent
+		}
 	case "headerSearch":
 		style.MarginTop = 4
 	case "headerFilters":

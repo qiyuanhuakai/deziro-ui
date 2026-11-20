@@ -1,4 +1,10 @@
 const samples = [
+  ["scroll-to-top", "default", { scrollToTop: [".scroll-top-button"] }],
+  ["scroll-to-top", "hover", { scrollToTopHover: [".scroll-top-button"] }],
+  ["hotkey-binding", "default", {
+    hotkeyRow: [".hotkey-recorder"], hotkeyGroup: [".key-group"], hotkeyCap: [".key-cap"],
+  }],
+  ["hotkey-binding", "recording", { hotkeyCapRecording: [".key-cap"] }],
   ["settings-slider", "keyboard", { settingsRangeFocus: [".settings-view input[type=range]"] }],
   ["settings-slider", "default", {
     settingsRangeTrack: ["[data-slider-sample=track]"], settingsRangeThumb: ["[data-slider-sample=thumb]"],
@@ -203,7 +209,7 @@ function readStyles(selectors) {
       ...(top ? { top } : {}),
       ...(id === "headerInputIcon" ? { left: number(style.left) } : {}),
       ...(marginBottom ? { marginBottom } : {}),
-      ...(id.startsWith("historyCard")
+      ...(id.startsWith("historyCard") || id.startsWith("hotkey")
         ? { margin: sides.map(side => number(style["margin" + side])) } : {}),
       width: element.offsetWidth ?? bounds.width, height: element.offsetHeight ?? bounds.height, marginTop: number(style.marginTop),
       padding: [style.paddingTop, style.paddingRight, style.paddingBottom, style.paddingLeft].map(number),
@@ -223,6 +229,9 @@ export async function readNativeWidgetStyles(page, url, theme, mode) {
     await page.locator("main[data-fixture]").waitFor();
     await page.evaluate(() => document.fonts.ready);
     await page.mouse.move(450, 390);
+    if (fixture === "scroll-to-top" && state === "hover") {
+      await page.getByRole("button", { name: "Scroll to top" }).hover();
+    }
     if (fixture === "toast") {
       await page.waitForFunction(() => getComputedStyle(document.querySelector(".toast-item")).opacity === "1");
     }

@@ -33,28 +33,35 @@ func (k Kit) SettingsToggle(c *ui.Context, on *bool, label string) ui.Element {
 	return row
 }
 
+func (k Kit) HotkeyRow(c *ui.Context, label string, controls func()) {
+	style := k.style("hotkeyRow")
+	ui.Column(c).FillWidth().Padding(style.Margin[:]...).Children(func() {
+		row := ui.Row(c).FillWidth().Wrap().Gap(max(6, style.ColumnGap)).AlignItems(ui.Center)
+		paint(row, style).Children(func() {
+			k.SettingsLabel(c, label).Grow(1).MinWidth(100).Wrap()
+			controls()
+		})
+	})
+}
+
 func (k Kit) HotkeyBinding(c *ui.Context, label, value, placeholder string, recording, disabled bool) ui.Element {
-	style := k.style("select")
+	group := k.style("hotkeyGroup")
+	cap := k.style("hotkeyCap")
 	if recording {
-		style = k.style("selectFocus")
+		cap = k.style("hotkeyCapRecording")
+		value = ""
 	}
-	field := ui.ButtonBase(c).Label(label).Height(style.Height).Gap(6).AlignItems(ui.Center).FocusRing(true).Disabled(disabled)
-	if !recording {
-		style.Fill, style.Border, style.Outline, style.Shadows = [4]uint8{}, [4]uint8{}, nil, nil
-		style.BorderWidth, style.BorderWidths, style.Padding = 0, nil, [4]float32{}
-	}
-	paint(field, k.interactive(c, field, style, recording))
-	field.Children(func() {
-		if value == "" {
-			text(c, placeholder, style).PassThrough()
-			return
-		}
-		cap := k.style("select")
-		cap.Padding = [4]float32{0, 6, 0, 6}
-		cap.Radius, cap.Size, cap.Weight = 4, 11, 600
-		for _, key := range strings.Split(value, "+") {
-			paint(ui.Box(c).Height(22).MinWidth(22).Center().PassThrough(), cap).
-				Children(func() { text(c, strings.ToUpper(key), cap).SingleLine().PassThrough() })
+	field := ui.ButtonBase(c).Label(label).Gap(group.ColumnGap).AlignItems(ui.Center).
+		FocusRing(true).Disabled(disabled)
+	paint(field, group).Margin(group.Margin[:]...).Children(func() {
+		for _, chord := range strings.Split(value, "+") {
+			width := cap.Size * 2.2
+			if chord == "" {
+				chord, width = placeholder, cap.Size*8
+			}
+			keycap := ui.Box(c).Height(cap.Height).MinWidth(width).Center().PassThrough()
+			paint(keycap, k.animatePaint(keycap, cap)).Margin(cap.Margin[:]...).
+				Children(func() { text(c, chord, cap).SingleLine().PassThrough() })
 		}
 	})
 	return field

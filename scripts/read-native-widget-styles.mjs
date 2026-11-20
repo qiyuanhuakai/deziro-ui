@@ -25,10 +25,16 @@ const samples = [
   ["history-card", "selected", { historyCardSelected: [".history-item.selected"] }],
   ["app-header", "default", {
     header: ["header"], headerTop: [".header-top"], headerTitle: [".header-title"],
-    headerButton: [".header-top .btn-icon"], headerInput: [".search-input"],
-    headerSearch: [".search-container"], headerFilters: [".search-container .hide-scrollbar"],
-    headerFilter: [".search-container .hide-scrollbar .btn-icon"],
+    headerButton: [".header-top .btn-icon"],
   }],
+  ["clipboard-search", "default", {
+    headerInput: [".search-container .search-input"],
+    headerInputPlaceholder: [".search-container .search-input", null, "::placeholder"],
+    headerInputIcon: [".search-container .search-icon"],
+    headerSearch: [".search-container"], headerFilters: [".clipboard-search-types"],
+    headerFilter: [".clipboard-search-types .btn-icon"],
+  }],
+  ["clipboard-search", "selected", { headerFilterSelected: [".clipboard-search-types .btn-icon.active"] }],
   ["app-header", "pinned", { headerButtonActive: [".header-top .btn-icon.active"] }],
   ["select", "default", {
     select: [".dezirclip-select__control", ".dezirclip-select__single-value"],
@@ -144,6 +150,7 @@ function readStyles(selectors) {
       ...(columnGap ? { columnGap } : {}),
       ...(rowGap ? { rowGap } : {}),
       ...(top ? { top } : {}),
+      ...(id === "headerInputIcon" ? { left: number(style.left) } : {}),
       ...(marginBottom ? { marginBottom } : {}),
       ...(id.startsWith("historyCard")
         ? { margin: sides.map(side => number(style["margin" + side])) } : {}),
@@ -169,6 +176,10 @@ export async function readNativeWidgetStyles(page, url, theme, mode) {
       await page.waitForFunction(() => getComputedStyle(document.querySelector(".toast-item")).opacity === "1");
     }
     await page.addStyleTag({ content: "*, *::before, *::after { transition: none !important; animation: none !important; }" });
+    if (fixture === "clipboard-search" && state === "selected") {
+      await page.getByRole("button", { name: "图片" }).click();
+      await page.mouse.move(450, 390);
+    }
     if (fixture === "select" && state !== "default" && state !== "disabled") {
       const input = page.getByRole("combobox", { name: "Color mode" });
       if (state === "hover") await input.hover();

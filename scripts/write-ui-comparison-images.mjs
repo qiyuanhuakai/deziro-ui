@@ -44,7 +44,10 @@ const additional = [
   ["emoji-tabs", "favorites", 82],
   ["emoji-grid", "default", 105],
 ];
-const gallery = [...figures, ...additional];
+const components = [...figures, ...additional];
+const fixture = flags.get("fixture");
+const gallery = fixture ? components.filter(([name]) => name === fixture) : components;
+if (gallery.length === 0) throw Error("Unknown comparison component: " + fixture);
 const additionalNames = new Set(additional.map(([name]) => name));
 const results = JSON.parse(await readFile(join(artifacts, "results.json"), "utf8"));
 const reports = new Map(results.map(row => [row.id, row]));

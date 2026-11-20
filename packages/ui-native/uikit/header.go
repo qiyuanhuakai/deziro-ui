@@ -30,6 +30,11 @@ type HeaderOptions struct {
 	Placeholder string
 	Filters     []HeaderFilter
 	Filter      *string
+	FocusQuery  *bool
+	OnQueryEdit func(composing bool)
+	OnQueryKey  func(ui.TextKey) bool
+	QueryFocus  func(bool)
+	QueryPopup  func(ui.Element)
 }
 
 func (k Kit) Header(c *ui.Context, options HeaderOptions) {
@@ -129,16 +134,51 @@ func (k Kit) ClipboardSearch(c *ui.Context, options HeaderOptions) {
 	paint(ui.Column(c), style).Margin(style.MarginTop, 0, 0, 0).Children(func() {
 		field := k.style("headerInput")
 		ui.Box(c).Height(field.Height).Children(func() {
-			input := ui.TextInputBase(c, options.Query).Fill().Label(options.Placeholder).Placeholder(options.Placeholder)
+			input := ui.TextInputBase(c, options.Query).Fill().Label(options.Placeholder)
 			styledText(paint(input, field), field)
-			ui.Icon(c, headerIcons["search"]).Absolute().Left(10).Top((field.Height-14)/2).Size(14, 14).
-				TextColor(c.Theme().TextMuted).PassThrough()
+			if options.OnQueryKey != nil {
+				input.OnTextKey(options.OnQueryKey)
+			}
+			if options.QueryFocus != nil {
+				options.QueryFocus(input.Focused())
+			}
+			if options.FocusQuery != nil && *options.FocusQuery {
+				input.Focus()
+				*options.FocusQuery = false
+			}
+			if options.OnQueryEdit != nil {
+				options.OnQueryEdit(input.Composing())
+			}
+			if *options.Query == "" && !input.Composing() {
+				placeholder := k.style("headerInputPlaceholder")
+				field.Text = placeholder.Text
+				ui.Row(c).Absolute().Left(field.Padding[3] + field.BorderWidth).
+					Right(field.Padding[1] + field.BorderWidth).Height(field.Height).AlignItems(ui.Center).PassThrough().
+					Children(func() { text(c, options.Placeholder, field).SingleLine().PassThrough() })
+			}
+			icon := k.style("headerInputIcon")
+			ui.Icon(c, headerIcons["search"]).Absolute().Left(icon.Left).Top((field.Height-icon.Height)/2).
+				Size(icon.Width, icon.Height).TextColor(styleColor(icon.Text)).PassThrough()
+			if options.QueryPopup != nil {
+				options.QueryPopup(input)
+			}
 		})
+		if len(options.Filters) == 0 || options.Filter == nil {
+			return
+		}
 		filters := k.style("headerFilters")
-		paint(ui.Row(c).Gap(filters.ColumnGap).AlignItems(ui.Center), filters).Children(func() {
+		paint(ui.ScrollHorizontal(c).FillWidth().Gap(filters.ColumnGap).AlignItems(ui.Center), filters).Children(func() {
 			for _, filter := range options.Filters {
-				if k.button(c, filter.Label, "headerFilter").Clicked() && options.Filter != nil {
-					if *options.Filter == filter.ID {
+				selected := *options.Filter == filter.ID
+				style := k.style("headerFilter")
+				if selected {
+					style = k.style("headerFilterSelected")
+				}
+				button := ui.ButtonBase(c).Label(filter.Label).Height(style.Height).Selected(selected)
+				style = k.interactive(c, button, style, selected)
+				paint(button, style).Children(func() { text(c, filter.Label, style) })
+				if button.Clicked() {
+					if selected {
 						*options.Filter = ""
 					} else {
 						*options.Filter = filter.ID

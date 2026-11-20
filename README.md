@@ -57,7 +57,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 
 每张图左侧是 React WebView，右侧是 MyGo Native。四套主题与色彩模式组合各有 29 张图。滚轮区域和缩放手柄展示交互后的状态。
 
-剪贴板搜索与类型筛选图使用 DezirClip 主界面组件。高级搜索栏和搜索历史是可独立使用的库组件。新增组件的源码与导出位于 `main` 分支。
+剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。新增组件的源码与导出位于 `main` 分支。
 
 <details open>
 <summary>macOS 深色</summary>
@@ -65,10 +65,10 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 组件 | 两套库的实测画面 |
 | --- | --- |
 | 应用顶栏 | ![应用顶栏 WebView 与 Native](docs/comparisons/macos-dark/app-header.png) |
+| 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/macos-dark/clipboard-search.png) |
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/macos-dark/history-list.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/macos-dark/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-meta.png) |
-| 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/macos-dark/clipboard-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/macos-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/macos-dark/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/macos-dark/highlight.png) |
@@ -102,10 +102,10 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 组件 | 两套库的实测画面 |
 | --- | --- |
 | 应用顶栏 | ![应用顶栏 WebView 与 Native](docs/comparisons/app-header.png) |
+| 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/clipboard-search.png) |
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/history-list.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/history-card-meta.png) |
-| 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/clipboard-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/highlight.png) |
@@ -139,10 +139,10 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 组件 | 两套库的实测画面 |
 | --- | --- |
 | 应用顶栏 | ![应用顶栏 WebView 与 Native](docs/comparisons/liquid-glass-light/app-header.png) |
+| 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/liquid-glass-light/clipboard-search.png) |
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/liquid-glass-light/history-list.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-meta.png) |
-| 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/liquid-glass-light/clipboard-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-light/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-light/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/liquid-glass-light/highlight.png) |
@@ -176,10 +176,10 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 组件 | 两套库的实测画面 |
 | --- | --- |
 | 应用顶栏 | ![应用顶栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/app-header.png) |
+| 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/liquid-glass-dark/clipboard-search.png) |
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-list.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-meta.png) |
-| 剪贴板搜索与类型筛选 | ![剪贴板搜索与类型筛选 WebView 与 Native](docs/comparisons/liquid-glass-dark/clipboard-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-dark/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/liquid-glass-dark/highlight.png) |

@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Pin, Tag, X } from "lucide-react";
 import { createRoot } from "react-dom/client";
-import { AppHeader, ConfirmDialog, EmojiGrid, EmojiTabs, FilterChips, HistoryCard, HistoryCardMeta, HotkeyBinding, MatchHighlight,
+import { AppHeader, ClipboardSearch, ConfirmDialog, EmojiGrid, EmojiTabs, FilterChips, HistoryCard, HistoryCardMeta, HotkeyBinding, MatchHighlight,
   ProgressToast, ScrollToTopButton, SearchBar, SearchHistory, SettingHelp, SettingsDisclosure, SettingsFooter, SettingsRail,
   SettingsSlider, SettingsToggle, TagDialog, ThemedSelect, ToastContainer, VirtualClipboardList, type EmojiTab, type SearchMode } from "../src";
 import { isBuiltinTheme, loadBuiltinTheme } from "../src/themes";
@@ -32,7 +32,20 @@ const clipboardTypes = [
   { id: "url", label: "URL" }, { id: "code", label: "代码" }, { id: "video", label: "视频" }, { id: "rich_text", label: "富文本" },
 ];
 
-function HeaderFixture({ searchOnly = false }: { searchOnly?: boolean }) {
+function ClipboardSearchFixture() {
+  const [search, setSearch] = useState("");
+  const [isComposing, setIsComposing] = useState(false);
+  const [showTagFilter, setShowTagFilter] = useState(false);
+  const [searchIsFocused, setSearchIsFocused] = useState(false);
+  const [typeFilter, setTypeFilter] = useState<string | null>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  return <ClipboardSearch t={() => "搜索剪切板..."} search={search} setSearch={setSearch} contentTypes={clipboardTypes}
+    isComposing={isComposing} setIsComposing={setIsComposing} showTagFilter={showTagFilter} setShowTagFilter={setShowTagFilter}
+    searchIsFocused={searchIsFocused} setSearchIsFocused={setSearchIsFocused} searchInputRef={searchInputRef}
+    setEditingTagsId={() => undefined} typeFilter={typeFilter} setTypeFilter={setTypeFilter} />;
+}
+
+function HeaderFixture() {
   const [settings, setSettings] = useState(state === "settings");
   const [tags, setTags] = useState(false);
   const [emoji, setEmoji] = useState(false);
@@ -44,7 +57,7 @@ function HeaderFixture({ searchOnly = false }: { searchOnly?: boolean }) {
   const [typeFilter, setTypeFilter] = useState<string | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const language: Record<string, string> = {
-    app_name: "DezirClip", settings: "Settings", search_placeholder: searchOnly ? "搜索剪切板..." : "Search clipboard...",
+    app_name: "DezirClip", settings: "Settings", search_placeholder: "Search clipboard...",
     common_close: "Back", hide: "Hide", pin: "Pin", tag_manager: "Tag Manager", emoji_panel: "Emoji",
     clear_history: "Clear History", tags: "Tags", common_loading: "Loading",
   };
@@ -55,7 +68,7 @@ function HeaderFixture({ searchOnly = false }: { searchOnly?: boolean }) {
     showSearchBox search={search} setSearch={setSearch} isComposing={isComposing} setIsComposing={setIsComposing}
     searchInputRef={searchInputRef} showTagFilter={tagFilter} setShowTagFilter={setTagFilter}
     searchIsFocused={focused} setSearchIsFocused={setFocused} setEditingTagsId={() => undefined}
-    typeFilter={typeFilter} setTypeFilter={setTypeFilter} contentTypes={searchOnly ? clipboardTypes : labels} />;
+    typeFilter={typeFilter} setTypeFilter={setTypeFilter} contentTypes={labels} />;
 }
 
 const settingsGroups = [
@@ -130,7 +143,7 @@ function Showcase() {
     "emoji-grid": <EmojiGrid groups={[{ name: "Frequently used", emojis: ["😀", "😄", "😂", "🤣", "😊", "😍", "😘", "😎", "🤔", "🔥", "✨", "👌"] }]}
       empty="No emoji" onSelect={() => undefined} />,
     "app-header": <HeaderFixture />,
-    "clipboard-search": <div className="showcase-clipboard-search"><HeaderFixture searchOnly /></div>,
+    "clipboard-search": <ClipboardSearchFixture />,
     "history-card": <HistoryCard selected={state === "selected"} pinned={state === "pinned"} disableLayout>
       <HistoryCardMeta source="Editor" time="12:30"
         sourceIcon={state === "pinned" ? <Pin size={10} /> : undefined}

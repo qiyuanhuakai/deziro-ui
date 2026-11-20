@@ -18,6 +18,7 @@ type Gradient struct {
 }
 
 type WidgetStyle struct {
+	Left          float32 `json:"left,omitempty"`
 	BorderWidths  *[4]float32
 	Outline       *Outline
 	Gradient      *Gradient

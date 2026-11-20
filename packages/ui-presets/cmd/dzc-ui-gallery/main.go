@@ -199,6 +199,15 @@ func (g *gallery) renderFixture(c *ui.Context, kit uikit.Kit, name string) {
 }
 
 func (g *gallery) prepare(tester *ui.Tester) error {
+	if g.fixture == "clipboard-search" && g.state == "selected" {
+		if err := tester.Click("图片"); err != nil {
+			return err
+		}
+		if g.filter != "image" {
+			return fmt.Errorf("image filter did not become selected")
+		}
+		return nil
+	}
 	switch g.state {
 	case "southeast", "scrolled":
 		bounds, ok := tester.Find("Input target")

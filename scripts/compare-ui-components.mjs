@@ -40,7 +40,7 @@ const cases = {
   "tag-dialog": { states: ["default", "busy"], text: "Create tag" },
 };
 const additionalExamples = {
-  "clipboard-search": { states: ["default"], text: "文本" },
+  "clipboard-search": { states: ["default", "selected"], text: "富文本" },
   "settings-toggle": { states: ["enabled", "default"], text: "Keep clipboard history" },
   "settings-slider": { states: ["default"], text: "Opacity 72%" },
   "hotkey-binding": { states: ["default"], text: "Quick Paste" },
@@ -134,15 +134,24 @@ try {
             await page.goto(url.href);
             await page.locator("main[data-fixture]").waitFor();
             if (fixture === "clipboard-search") {
-              const search = page.locator(".search-container");
-              if (await search.getByRole("combobox").count() !== 1 ||
-                  await search.getByRole("button").count() !== 7 ||
-                  await page.locator(".search-bar__mode").count() !== 0) {
-                throw Error("Clipboard search must show one field and the seven content filters");
+              const search = page.locator("[data-clipboard-search]");
+              const field = search.getByRole("textbox", { name: "搜索剪切板..." });
+              const filters = await search.getByRole("button").allTextContents();
+              if (await field.count() !== 1 || filters.join(",") !== "文本,图片,文件,URL,代码,视频,富文本" ||
+                  await page.getByRole("radiogroup").count() !== 0) {
+                throw Error("Clipboard search must show one field and seven ordered content filters");
+              }
+              if (theme === "macos" && await field.evaluate(element => getComputedStyle(element).borderTopLeftRadius) !== "10px") {
+                throw Error("The macOS clipboard search must retain its rounded corners");
+              }
+              if (state === "selected") {
+                const image = search.getByRole("button", { name: "图片" });
+                await image.click();
+                if (await image.getAttribute("aria-pressed") !== "true") throw Error("Image filter did not become selected");
               }
             }
-            if (theme === "macos" && (fixture === "clipboard-search" || fixture === "search-history")) {
-              const control = page.locator(fixture === "clipboard-search" ? ".search-container .search-input" : ".search-history");
+            if (theme === "macos" && fixture === "search-history") {
+              const control = page.locator(".search-history");
               const radius = await control.evaluate(element => getComputedStyle(element).borderTopLeftRadius);
               if (radius !== "10px") throw Error("Unexpected macOS search radius: " + radius);
             }

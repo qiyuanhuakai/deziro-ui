@@ -76,6 +76,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/macos-dark/settings-section-card.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/macos-dark/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/macos-dark/settings-choices.png) |
+| 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/macos-dark/search-select.png) |
+| 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/macos-dark/search-select-empty.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/macos-dark/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/macos-dark/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/macos-dark/hotkey-list-extended.png) |
@@ -130,6 +132,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/settings-section-card.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/settings-choices.png) |
+| 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/search-select.png) |
+| 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/search-select-empty.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/hotkey-list-extended.png) |
@@ -184,6 +188,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-section-card.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-choices.png) |
+| 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-light/search-select.png) |
+| 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/liquid-glass-light/search-select-empty.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/liquid-glass-light/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/liquid-glass-light/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/liquid-glass-light/hotkey-list-extended.png) |
@@ -238,6 +244,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置分组卡片 | ![设置分组卡片 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-section-card.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-choices.png) |
+| 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-dark/search-select.png) |
+| 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/liquid-glass-dark/search-select-empty.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/liquid-glass-dark/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/liquid-glass-dark/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/liquid-glass-dark/hotkey-list-extended.png) |

@@ -219,6 +219,8 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		case "selectDisabled":
 			style.Text = muted
 		}
+	case "selectSearchQuery":
+		style.Size = 12
 	case "selectIndicator", "disclosureChevron":
 		style.Width, style.Height, style.Text = 26, 26, muted
 	case "selectMenu", "history", "confirm", "tag", "toast", "progress", "progressDone", "progressError":
@@ -234,10 +236,10 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		}
 	case "selectMenuList":
 		style.Padding = [4]float32{4, 4, 4, 4}
-	case "selectOption", "selectSelected", "selectOptionDisabled", "historyItem", "historyEmpty":
+	case "selectOption", "selectSelected", "selectOptionFocused", "selectOptionDisabled", "historyItem", "historyEmpty":
 		style.Height, style.Padding = 32, [4]float32{0, 8, 0, 8}
 		style.ColumnGap = 8
-		if widget == "selectSelected" {
+		if widget == "selectSelected" || widget == "selectOptionFocused" {
 			style.Fill = selected
 		}
 		if widget == "selectOptionDisabled" || widget == "historyEmpty" {

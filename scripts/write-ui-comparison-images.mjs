@@ -52,6 +52,8 @@ const additional = [
   ["privacy-rules", "default", 390],
   ["tag-toolbar", "default", 85],
   ["tag-search", "default", 180],
+  ["search-select", "apps-filtered", 218],
+  ["search-select", "empty", 218, 0, "search-select-empty"],
   ["clipboard-search", "default", 140],
   ["settings-toggle", "enabled", 80],
   ["settings-slider", "default", 95],

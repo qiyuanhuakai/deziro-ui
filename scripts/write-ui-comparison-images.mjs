@@ -41,6 +41,7 @@ const figures = [
 ];
 const additional = [
   ["settings-section-card", "expanded", 125],
+  ["settings-section-card", "wide", 195, 0, "settings-section-grid"],
   ["settings-choices", "default", 185],
   ["hotkey-list", "multiple", 120],
   ["emoji-favorites", "default", 125],

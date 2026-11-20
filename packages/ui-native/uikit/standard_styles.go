@@ -29,6 +29,14 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		style.BorderWidth, style.Radius = 1, float32(palette.Radius)
 	}
 	switch widget {
+	case "settingsRangeTrack":
+		surface()
+		style.Height, style.Radius = 8, 4
+	case "settingsRangeFill":
+		style.Fill = accent
+	case "settingsRangeThumb":
+		style.Width, style.Height, style.Radius = 16, 16, 8
+		style.Fill, style.Border, style.BorderWidth = accent, border, 1
 	case "select", "selectHover", "selectFocus", "selectDisabled":
 		surface()
 		style.Width, style.Height = 224, 36

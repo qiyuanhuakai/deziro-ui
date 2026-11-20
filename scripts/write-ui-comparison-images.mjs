@@ -76,7 +76,11 @@ const additional = [
   ["emoji-tabs", "symbols", 82],
   ["emoji-grid", "default", 105],
 ];
-const components = [...figures, ...additional];
+const opacityFigures = [
+  ["surface-opacity", "20", 312, 0, "surface-opacity-20"],
+  ["surface-opacity", "85", 312, 0, "surface-opacity-85"],
+];
+const components = theme === "liquid-glass" ? [...figures, ...additional, ...opacityFigures] : [...figures, ...additional];
 const fixture = flags.get("fixture");
 const requested = fixture?.split(",");
 const gallery = requested ? components.filter(([name, , , , basename]) => requested.includes(basename ?? name)) : components;

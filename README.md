@@ -108,6 +108,11 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 短提示 | ![短提示 WebView 与 Native](docs/comparisons/macos-dark/toast.png) |
 | 进度提示 | ![进度提示 WebView 与 Native](docs/comparisons/macos-dark/progress.png) |
 | 附件预览 | ![附件预览 WebView 与 Native](docs/comparisons/macos-dark/attachment-preview.png) |
+| 紧凑附件卡片 | ![紧凑模式的附件缩略图和文件名](docs/comparisons/macos-dark/attachment-preview-compact.png) |
+| 窄窗附件卡片 | ![窄窗下的附件列数和省略提示](docs/comparisons/macos-dark/attachment-preview-narrow.png) |
+| 图片卡片 | ![不同原始尺寸的图片卡片](docs/comparisons/macos-dark/history-image.png) |
+| 紧凑图片卡片 | ![紧凑模式的缩略图尺寸](docs/comparisons/macos-dark/history-image-compact.png) |
+| 图片预览不可用 | ![图片不可用时的卡片状态](docs/comparisons/macos-dark/history-image-unavailable.png) |
 | 预览工具栏 | ![预览工具栏 WebView 与 Native](docs/comparisons/macos-dark/preview-toolbar.png) |
 | 图片预览 | ![图片预览 WebView 与 Native](docs/comparisons/macos-dark/preview-image.png) |
 | 预览窗口缩放手柄 | ![缩放手柄 WebView 与 Native](docs/comparisons/macos-dark/preview-resize-handles.png) |
@@ -172,6 +177,11 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 短提示 | ![短提示 WebView 与 Native](docs/comparisons/toast.png) |
 | 进度提示 | ![进度提示 WebView 与 Native](docs/comparisons/progress.png) |
 | 附件预览 | ![附件预览 WebView 与 Native](docs/comparisons/attachment-preview.png) |
+| 紧凑附件卡片 | ![紧凑模式的附件缩略图和文件名](docs/comparisons/attachment-preview-compact.png) |
+| 窄窗附件卡片 | ![窄窗下的附件列数和省略提示](docs/comparisons/attachment-preview-narrow.png) |
+| 图片卡片 | ![不同原始尺寸的图片卡片](docs/comparisons/history-image.png) |
+| 紧凑图片卡片 | ![紧凑模式的缩略图尺寸](docs/comparisons/history-image-compact.png) |
+| 图片预览不可用 | ![图片不可用时的卡片状态](docs/comparisons/history-image-unavailable.png) |
 | 预览工具栏 | ![预览工具栏 WebView 与 Native](docs/comparisons/preview-toolbar.png) |
 | 图片预览 | ![图片预览 WebView 与 Native](docs/comparisons/preview-image.png) |
 | 预览窗口缩放手柄 | ![缩放手柄 WebView 与 Native](docs/comparisons/preview-resize-handles.png) |
@@ -236,6 +246,11 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 短提示 | ![短提示 WebView 与 Native](docs/comparisons/liquid-glass-light/toast.png) |
 | 进度提示 | ![进度提示 WebView 与 Native](docs/comparisons/liquid-glass-light/progress.png) |
 | 附件预览 | ![附件预览 WebView 与 Native](docs/comparisons/liquid-glass-light/attachment-preview.png) |
+| 紧凑附件卡片 | ![紧凑模式的附件缩略图和文件名](docs/comparisons/liquid-glass-light/attachment-preview-compact.png) |
+| 窄窗附件卡片 | ![窄窗下的附件列数和省略提示](docs/comparisons/liquid-glass-light/attachment-preview-narrow.png) |
+| 图片卡片 | ![不同原始尺寸的图片卡片](docs/comparisons/liquid-glass-light/history-image.png) |
+| 紧凑图片卡片 | ![紧凑模式的缩略图尺寸](docs/comparisons/liquid-glass-light/history-image-compact.png) |
+| 图片预览不可用 | ![图片不可用时的卡片状态](docs/comparisons/liquid-glass-light/history-image-unavailable.png) |
 | 预览工具栏 | ![预览工具栏 WebView 与 Native](docs/comparisons/liquid-glass-light/preview-toolbar.png) |
 | 图片预览 | ![图片预览 WebView 与 Native](docs/comparisons/liquid-glass-light/preview-image.png) |
 | 预览窗口缩放手柄 | ![缩放手柄 WebView 与 Native](docs/comparisons/liquid-glass-light/preview-resize-handles.png) |
@@ -300,6 +315,11 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 短提示 | ![短提示 WebView 与 Native](docs/comparisons/liquid-glass-dark/toast.png) |
 | 进度提示 | ![进度提示 WebView 与 Native](docs/comparisons/liquid-glass-dark/progress.png) |
 | 附件预览 | ![附件预览 WebView 与 Native](docs/comparisons/liquid-glass-dark/attachment-preview.png) |
+| 紧凑附件卡片 | ![紧凑模式的附件缩略图和文件名](docs/comparisons/liquid-glass-dark/attachment-preview-compact.png) |
+| 窄窗附件卡片 | ![窄窗下的附件列数和省略提示](docs/comparisons/liquid-glass-dark/attachment-preview-narrow.png) |
+| 图片卡片 | ![不同原始尺寸的图片卡片](docs/comparisons/liquid-glass-dark/history-image.png) |
+| 紧凑图片卡片 | ![紧凑模式的缩略图尺寸](docs/comparisons/liquid-glass-dark/history-image-compact.png) |
+| 图片预览不可用 | ![图片不可用时的卡片状态](docs/comparisons/liquid-glass-dark/history-image-unavailable.png) |
 | 预览工具栏 | ![预览工具栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/preview-toolbar.png) |
 | 图片预览 | ![图片预览 WebView 与 Native](docs/comparisons/liquid-glass-dark/preview-image.png) |
 | 预览窗口缩放手柄 | ![缩放手柄 WebView 与 Native](docs/comparisons/liquid-glass-dark/preview-resize-handles.png) |

@@ -104,7 +104,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/macos-dark/scroll-to-top.png) |
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/macos-dark/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/macos-dark/emoji-tabs.png) |
-| 表情网格 | ![表情网格 WebView 与 Native](docs/comparisons/macos-dark/emoji-grid.png) |
+| 表情网格与连续滚动 | ![表情网格 WebView 与 Native](docs/comparisons/macos-dark/emoji-grid.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/macos-dark/search-bar.png) |
 
 </details>
@@ -154,7 +154,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/scroll-to-top.png) |
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/emoji-tabs.png) |
-| 表情网格 | ![表情网格 WebView 与 Native](docs/comparisons/emoji-grid.png) |
+| 表情网格与连续滚动 | ![表情网格 WebView 与 Native](docs/comparisons/emoji-grid.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/search-bar.png) |
 
 </details>
@@ -204,7 +204,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/liquid-glass-light/scroll-to-top.png) |
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/liquid-glass-light/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-tabs.png) |
-| 表情网格 | ![表情网格 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-grid.png) |
+| 表情网格与连续滚动 | ![表情网格 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-grid.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/liquid-glass-light/search-bar.png) |
 
 </details>
@@ -254,7 +254,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/liquid-glass-dark/scroll-to-top.png) |
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/liquid-glass-dark/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-tabs.png) |
-| 表情网格 | ![表情网格 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-grid.png) |
+| 表情网格与连续滚动 | ![表情网格 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-grid.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-bar.png) |
 
 </details>

@@ -112,6 +112,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 截图操作 | ![区域截图和全屏截图](docs/comparisons/macos-dark/capture-actions.png) |
 | OCR 引擎状态 | ![OCR 可用状态与重试按钮](docs/comparisons/macos-dark/capture-engine.png) |
 | 快速粘贴界面设置 | ![固定的 MyGo Native 界面](docs/comparisons/macos-dark/fixed-capture-renderer.png) |
+| CLI 设置 | ![已安装 CLI、PATH 副本冲突与随包指南](docs/comparisons/macos-dark/cli-settings.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/macos-dark/tag-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/macos-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/macos-dark/filters.png) |
@@ -204,6 +205,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 截图操作 | ![区域截图和全屏截图](docs/comparisons/capture-actions.png) |
 | OCR 引擎状态 | ![OCR 可用状态与重试按钮](docs/comparisons/capture-engine.png) |
 | 快速粘贴界面设置 | ![固定的 MyGo Native 界面](docs/comparisons/fixed-capture-renderer.png) |
+| CLI 设置 | ![已安装 CLI、PATH 副本冲突与随包指南](docs/comparisons/cli-settings.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/tag-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/filters.png) |
@@ -298,6 +300,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 截图操作 | ![区域截图和全屏截图](docs/comparisons/liquid-glass-light/capture-actions.png) |
 | OCR 引擎状态 | ![OCR 可用状态与重试按钮](docs/comparisons/liquid-glass-light/capture-engine.png) |
 | 快速粘贴界面设置 | ![固定的 MyGo Native 界面](docs/comparisons/liquid-glass-light/fixed-capture-renderer.png) |
+| CLI 设置 | ![已安装 CLI、PATH 副本冲突与随包指南](docs/comparisons/liquid-glass-light/cli-settings.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/liquid-glass-light/tag-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-light/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-light/filters.png) |
@@ -392,6 +395,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 截图操作 | ![区域截图和全屏截图](docs/comparisons/liquid-glass-dark/capture-actions.png) |
 | OCR 引擎状态 | ![OCR 可用状态与重试按钮](docs/comparisons/liquid-glass-dark/capture-engine.png) |
 | 快速粘贴界面设置 | ![固定的 MyGo Native 界面](docs/comparisons/liquid-glass-dark/fixed-capture-renderer.png) |
+| CLI 设置 | ![已安装 CLI、PATH 副本冲突与随包指南](docs/comparisons/liquid-glass-dark/cli-settings.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/liquid-glass-dark/tag-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-dark/filters.png) |

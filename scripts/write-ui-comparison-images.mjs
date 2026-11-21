@@ -86,6 +86,7 @@ const additional = [
   ["capture-actions", "default", 142],
   ["capture-engine", "available", 100],
   ["fixed-capture-renderer", "default", 90],
+  ["cli-settings", "conflict", 400],
   ["tag-search", "default", 180],
   ["search-select", "apps-filtered", 218],
   ["search-select", "empty", 218, 0, "search-select-empty"],

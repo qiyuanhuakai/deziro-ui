@@ -55,7 +55,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 
 ## 组件对照
 
-每张图左侧是 React WebView，右侧是 MyGo Native。四套主题与色彩模式组合各有 41 张图。输入框使用带内容的示例，简洁卡片和右键菜单展示悬浮后的状态。
+每张图左侧是 React WebView，右侧是 MyGo Native。macOS 与 Liquid Glass 的浅色和深色共 256 张对照图。输入框使用带内容的示例，简洁卡片和右键菜单展示悬浮后的状态。
 
 剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。新增组件的源码与导出位于 `main` 分支。
 
@@ -125,6 +125,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/macos-dark/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/macos-dark/emoji-tabs.png) |
 | 表情网格与连续滚动 | ![表情网格 WebView 与 Native](docs/comparisons/macos-dark/emoji-grid.png) |
+| 滚动时自动显示后续符号 | ![滚动到底部后的符号面板](docs/comparisons/macos-dark/character-panel-scroll.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/macos-dark/search-bar.png) |
 
 </details>
@@ -195,6 +196,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/emoji-tabs.png) |
 | 表情网格与连续滚动 | ![表情网格 WebView 与 Native](docs/comparisons/emoji-grid.png) |
+| 滚动时自动显示后续符号 | ![滚动到底部后的符号面板](docs/comparisons/character-panel-scroll.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/search-bar.png) |
 
 </details>
@@ -267,6 +269,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/liquid-glass-light/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-tabs.png) |
 | 表情网格与连续滚动 | ![表情网格 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-grid.png) |
+| 滚动时自动显示后续符号 | ![滚动到底部后的符号面板](docs/comparisons/liquid-glass-light/character-panel-scroll.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/liquid-glass-light/search-bar.png) |
 
 </details>
@@ -339,6 +342,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/liquid-glass-dark/character-search.png) |
 | 表情标签页 | ![表情标签页 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-tabs.png) |
 | 表情网格与连续滚动 | ![表情网格 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-grid.png) |
+| 滚动时自动显示后续符号 | ![滚动到底部后的符号面板](docs/comparisons/liquid-glass-dark/character-panel-scroll.png) |
 | 独立高级搜索栏 | ![独立高级搜索栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-bar.png) |
 
 </details>

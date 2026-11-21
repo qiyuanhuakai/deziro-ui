@@ -29,7 +29,7 @@ export { SettingsDataPath, SettingsDataAction } from "./components/SettingsData.
 export { BackupDialog, BackupChoices, BackupField, BackupPreview, BackupReplaceConfirmation, BackupActions } from "./components/BackupDialog.js";
 export { UpdateProgress, UpdateVersionRow } from "./components/SettingsUpdate.js";
 export { TagPickerTrigger, TagSearchField, TagToolbar } from "./components/TagToolbar.js";
-export { CharacterSearch, EmojiGrid, EmojiTabs, type EmojiTab } from "./components/EmojiPicker.js";
+export { CharacterPanel, CharacterSearch, EmojiGrid, EmojiTabs, type EmojiTab } from "./components/EmojiPicker.js";
 export { SettingsToggle, type SettingsToggleProps } from "./components/SettingsToggle.js";
 export { SettingsSlider, type SettingsSliderProps } from "./components/SettingsSlider.js";
 export { ScrollToTopButton } from "./components/ScrollToTopButton.js";

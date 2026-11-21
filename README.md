@@ -86,6 +86,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置项、说明和数字输入 | ![字体说明和数字输入框](docs/comparisons/macos-dark/settings-field.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/macos-dark/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/macos-dark/settings-choices.png) |
+| 窄栏选项卡片 | ![长标签换行与更新通道分段按钮](docs/comparisons/macos-dark/settings-choices-narrow.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/macos-dark/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/macos-dark/search-select-empty.png) |
 | 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/macos-dark/search-select-typo.png) |
@@ -118,6 +119,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 简洁标签卡片批量选择 | ![简洁卡片的选中状态](docs/comparisons/macos-dark/tag-history-selection-compact.png) |
 | 快速粘贴面板 | ![65% 透明度设置下的面板、搜索框与选中结果](docs/comparisons/macos-dark/quick-paste-panel.png) |
 | 主题管理 | ![内置主题、已导入主题及导出和移除操作](docs/comparisons/macos-dark/theme-manager.png) |
+| 窄栏主题管理 | ![单列主题卡片与较长的导入主题名称](docs/comparisons/macos-dark/theme-manager-narrow.png) |
 | 自定义背景 | ![更换和清除背景、文件名与透明度](docs/comparisons/macos-dark/background-settings.png) |
 | 截图操作 | ![区域截图和全屏截图](docs/comparisons/macos-dark/capture-actions.png) |
 | OCR 引擎状态 | ![OCR 可用状态与重试按钮](docs/comparisons/macos-dark/capture-engine.png) |
@@ -198,6 +200,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置项、说明和数字输入 | ![字体说明和数字输入框](docs/comparisons/settings-field.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/settings-choices.png) |
+| 窄栏选项卡片 | ![长标签换行与更新通道分段按钮](docs/comparisons/settings-choices-narrow.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/search-select-empty.png) |
 | 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/search-select-typo.png) |
@@ -230,6 +233,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 简洁标签卡片批量选择 | ![简洁卡片的选中状态](docs/comparisons/tag-history-selection-compact.png) |
 | 快速粘贴面板 | ![65% 透明度设置下的面板、搜索框与选中结果](docs/comparisons/quick-paste-panel.png) |
 | 主题管理 | ![内置主题、已导入主题及导出和移除操作](docs/comparisons/theme-manager.png) |
+| 窄栏主题管理 | ![单列主题卡片与较长的导入主题名称](docs/comparisons/theme-manager-narrow.png) |
 | 自定义背景 | ![更换和清除背景、文件名与透明度](docs/comparisons/background-settings.png) |
 | 截图操作 | ![区域截图和全屏截图](docs/comparisons/capture-actions.png) |
 | OCR 引擎状态 | ![OCR 可用状态与重试按钮](docs/comparisons/capture-engine.png) |
@@ -310,6 +314,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置项、说明和数字输入 | ![字体说明和数字输入框](docs/comparisons/liquid-glass-light/settings-field.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-choices.png) |
+| 窄栏选项卡片 | ![长标签换行与更新通道分段按钮](docs/comparisons/liquid-glass-light/settings-choices-narrow.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-light/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/liquid-glass-light/search-select-empty.png) |
 | 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/liquid-glass-light/search-select-typo.png) |
@@ -345,6 +350,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 简洁标签卡片批量选择 | ![简洁卡片的选中状态](docs/comparisons/liquid-glass-light/tag-history-selection-compact.png) |
 | 快速粘贴面板 | ![65% 透明度设置下的面板、搜索框与选中结果](docs/comparisons/liquid-glass-light/quick-paste-panel.png) |
 | 主题管理 | ![内置主题、已导入主题及导出和移除操作](docs/comparisons/liquid-glass-light/theme-manager.png) |
+| 窄栏主题管理 | ![单列主题卡片与较长的导入主题名称](docs/comparisons/liquid-glass-light/theme-manager-narrow.png) |
 | 自定义背景 | ![更换和清除背景、文件名与透明度](docs/comparisons/liquid-glass-light/background-settings.png) |
 | 截图操作 | ![区域截图和全屏截图](docs/comparisons/liquid-glass-light/capture-actions.png) |
 | OCR 引擎状态 | ![OCR 可用状态与重试按钮](docs/comparisons/liquid-glass-light/capture-engine.png) |
@@ -425,6 +431,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置项、说明和数字输入 | ![字体说明和数字输入框](docs/comparisons/liquid-glass-dark/settings-field.png) |
 | 横屏设置分栏与通栏输入框 | ![横屏设置分栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-section-grid.png) |
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-choices.png) |
+| 窄栏选项卡片 | ![长标签换行与更新通道分段按钮](docs/comparisons/liquid-glass-dark/settings-choices-narrow.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-dark/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/liquid-glass-dark/search-select-empty.png) |
 | 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/liquid-glass-dark/search-select-typo.png) |
@@ -460,6 +467,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 简洁标签卡片批量选择 | ![简洁卡片的选中状态](docs/comparisons/liquid-glass-dark/tag-history-selection-compact.png) |
 | 快速粘贴面板 | ![65% 透明度设置下的面板、搜索框与选中结果](docs/comparisons/liquid-glass-dark/quick-paste-panel.png) |
 | 主题管理 | ![内置主题、已导入主题及导出和移除操作](docs/comparisons/liquid-glass-dark/theme-manager.png) |
+| 窄栏主题管理 | ![单列主题卡片与较长的导入主题名称](docs/comparisons/liquid-glass-dark/theme-manager-narrow.png) |
 | 自定义背景 | ![更换和清除背景、文件名与透明度](docs/comparisons/liquid-glass-dark/background-settings.png) |
 | 截图操作 | ![区域截图和全屏截图](docs/comparisons/liquid-glass-dark/capture-actions.png) |
 | OCR 引擎状态 | ![OCR 可用状态与重试按钮](docs/comparisons/liquid-glass-dark/capture-engine.png) |

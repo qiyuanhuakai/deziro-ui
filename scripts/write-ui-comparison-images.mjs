@@ -76,6 +76,7 @@ const additional = [
   ["backup-dialog", "default", 420, 0, "backup-dialog"],
   ["backup-dialog", "encrypted", 420, 0, "backup-dialog-encrypted"],
   ["backup-dialog", "import", 420, 0, "backup-dialog-import"],
+  ["backup-dialog", "import-encrypted", 420, 0, "backup-dialog-import-encrypted"],
   ["backup-dialog", "replace-confirmed", 420, 0, "backup-dialog-replace"],
   ["settings-update", "default", 155, 0, "settings-update"],
   ["settings-update", "installing", 175, 0, "settings-update-installing"],

@@ -106,6 +106,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/macos-dark/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/macos-dark/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/macos-dark/backup-dialog-import.png) |
+| 加密备份导入 | ![识别加密备份后显示密码输入框](docs/comparisons/macos-dark/backup-dialog-import-encrypted.png) |
 | 确认覆盖导入 | ![勾选后启用覆盖导入](docs/comparisons/macos-dark/backup-dialog-replace.png) |
 | 更新下载进度 | ![当前版本、通道版本和下载百分比](docs/comparisons/macos-dark/settings-update.png) |
 | 更新签名与安装状态 | ![验证通过后的安装和重启状态](docs/comparisons/macos-dark/settings-update-installing.png) |
@@ -217,6 +218,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/backup-dialog-import.png) |
+| 加密备份导入 | ![识别加密备份后显示密码输入框](docs/comparisons/backup-dialog-import-encrypted.png) |
 | 确认覆盖导入 | ![勾选后启用覆盖导入](docs/comparisons/backup-dialog-replace.png) |
 | 更新下载进度 | ![当前版本、通道版本和下载百分比](docs/comparisons/settings-update.png) |
 | 更新签名与安装状态 | ![验证通过后的安装和重启状态](docs/comparisons/settings-update-installing.png) |
@@ -328,6 +330,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/liquid-glass-light/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/liquid-glass-light/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/liquid-glass-light/backup-dialog-import.png) |
+| 加密备份导入 | ![识别加密备份后显示密码输入框](docs/comparisons/liquid-glass-light/backup-dialog-import-encrypted.png) |
 | 确认覆盖导入 | ![勾选后启用覆盖导入](docs/comparisons/liquid-glass-light/backup-dialog-replace.png) |
 | 玻璃弹窗背景 | ![浅色玻璃下仍可辨认的设置页内容](docs/comparisons/liquid-glass-light/backup-dialog-glass.png) |
 | 更新下载进度 | ![当前版本、通道版本和下载百分比](docs/comparisons/liquid-glass-light/settings-update.png) |
@@ -442,6 +445,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/liquid-glass-dark/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/liquid-glass-dark/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/liquid-glass-dark/backup-dialog-import.png) |
+| 加密备份导入 | ![识别加密备份后显示密码输入框](docs/comparisons/liquid-glass-dark/backup-dialog-import-encrypted.png) |
 | 确认覆盖导入 | ![勾选后启用覆盖导入](docs/comparisons/liquid-glass-dark/backup-dialog-replace.png) |
 | 玻璃弹窗背景 | ![深色玻璃下仍可辨认的设置页内容](docs/comparisons/liquid-glass-dark/backup-dialog-glass.png) |
 | 更新下载进度 | ![当前版本、通道版本和下载百分比](docs/comparisons/liquid-glass-dark/settings-update.png) |

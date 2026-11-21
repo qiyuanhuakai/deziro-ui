@@ -92,7 +92,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/macos-dark/hotkey-list-extended.png) |
 | 设置内删除按钮 | ![设置内删除按钮 WebView 与 Native](docs/comparisons/macos-dark/settings-remove.png) |
 | 隐私规则卡片与应用排除输入框 | ![隐私规则行内确认和多行应用排除输入框](docs/comparisons/macos-dark/privacy-rules.png) |
-| 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与多行规则输入](docs/comparisons/macos-dark/privacy-detection.png) |
+| 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与拖动调高后的规则输入框](docs/comparisons/macos-dark/privacy-detection.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/macos-dark/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/macos-dark/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/macos-dark/settings-data-hover.png) |
@@ -174,7 +174,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/hotkey-list-extended.png) |
 | 设置内删除按钮 | ![设置内删除按钮 WebView 与 Native](docs/comparisons/settings-remove.png) |
 | 隐私规则卡片与应用排除输入框 | ![隐私规则行内确认和多行应用排除输入框](docs/comparisons/privacy-rules.png) |
-| 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与多行规则输入](docs/comparisons/privacy-detection.png) |
+| 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与拖动调高后的规则输入框](docs/comparisons/privacy-detection.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/settings-data-hover.png) |
@@ -256,7 +256,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/liquid-glass-light/hotkey-list-extended.png) |
 | 设置内删除按钮 | ![设置内删除按钮 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-remove.png) |
 | 隐私规则卡片与应用排除输入框 | ![隐私规则行内确认和多行应用排除输入框](docs/comparisons/liquid-glass-light/privacy-rules.png) |
-| 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与多行规则输入](docs/comparisons/liquid-glass-light/privacy-detection.png) |
+| 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与拖动调高后的规则输入框](docs/comparisons/liquid-glass-light/privacy-detection.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/liquid-glass-light/settings-data-hover.png) |
@@ -340,7 +340,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/liquid-glass-dark/hotkey-list-extended.png) |
 | 设置内删除按钮 | ![设置内删除按钮 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-remove.png) |
 | 隐私规则卡片与应用排除输入框 | ![隐私规则行内确认和多行应用排除输入框](docs/comparisons/liquid-glass-dark/privacy-rules.png) |
-| 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与多行规则输入](docs/comparisons/liquid-glass-dark/privacy-detection.png) |
+| 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与拖动调高后的规则输入框](docs/comparisons/liquid-glass-dark/privacy-detection.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/liquid-glass-dark/settings-data-hover.png) |

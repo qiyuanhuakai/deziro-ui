@@ -19,6 +19,7 @@ export { AttachmentPreview } from "./components/AttachmentPreview.js";
 export { PreviewImage, type PreviewImageProps } from "./components/PreviewImage.js";
 export { VirtualClipboardList, type VirtualClipboardListHandle, type VirtualClipboardListProps } from "./components/VirtualClipboardList.js";
 export { HistoryCard, HistoryCardContent, HistoryImagePreview, HistoryRichTextPreview, HistoryCardMeta, HistoryCardActions, HistoryCardAction, type HistoryCardProps, type HistoryCardMetaProps, type HistoryCardActionProps } from "./components/HistoryCard.js";
+export { HistoryOCRBadge, HistoryOCRResult, type HistoryOCRStatus, type HistoryOCRResultProps } from "./components/HistoryOCR.js";
 export { ContextMenuSurface, ContextMenuItem, type ContextMenuSurfaceProps, type ContextMenuItemProps } from "./components/ContextMenu.js";
 export { TextField, NumberField, TextArea } from "./components/TextField.js";
 export { SettingsChoices, type SettingsChoice } from "./components/SettingsChoices.js";

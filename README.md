@@ -55,7 +55,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 
 ## 组件对照
 
-每张图左侧是 React WebView，右侧是 MyGo Native。macOS 与 Liquid Glass 的浅色和深色共 268 张对照图。输入框使用带内容的示例，简洁卡片和右键菜单展示悬浮后的状态。
+每张图左侧是 React WebView，右侧是 MyGo Native。macOS 与 Liquid Glass 的浅色和深色共 276 张对照图。输入框使用带内容的示例，简洁卡片操作栏和右键菜单展示悬浮后的状态。
 
 剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。新增组件的源码与导出位于 `main` 分支。
 
@@ -73,6 +73,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/macos-dark/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/macos-dark/history-rich-text-compact.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/macos-dark/history-card.png) |
+| 图片卡片的 OCR 状态和识别结果 | ![普通卡片展开 OCR 结果](docs/comparisons/macos-dark/history-ocr.png) |
+| 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/macos-dark/history-ocr-compact.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-compact-actions.png) |
 | 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/macos-dark/context-menu.png) |
@@ -149,6 +151,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/history-rich-text-compact.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/history-card.png) |
+| 图片卡片的 OCR 状态和识别结果 | ![普通卡片展开 OCR 结果](docs/comparisons/history-ocr.png) |
+| 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/history-ocr-compact.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/history-card-compact-actions.png) |
 | 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/context-menu.png) |
@@ -225,6 +229,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/liquid-glass-light/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/liquid-glass-light/history-rich-text-compact.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card.png) |
+| 图片卡片的 OCR 状态和识别结果 | ![普通卡片展开 OCR 结果](docs/comparisons/liquid-glass-light/history-ocr.png) |
+| 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/liquid-glass-light/history-ocr-compact.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-compact-actions.png) |
 | 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-light/context-menu.png) |
@@ -303,6 +309,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/liquid-glass-dark/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/liquid-glass-dark/history-rich-text-compact.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card.png) |
+| 图片卡片的 OCR 状态和识别结果 | ![普通卡片展开 OCR 结果](docs/comparisons/liquid-glass-dark/history-ocr.png) |
+| 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/liquid-glass-dark/history-ocr-compact.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-compact-actions.png) |
 | 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-dark/context-menu.png) |

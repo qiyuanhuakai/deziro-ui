@@ -16,6 +16,8 @@ const figures = [
   ["settings-keyboard-preview", "default", 155],
   ["character-panel", "after-scroll", 310, 0, "character-panel-scroll"],
   ["settings-field", "expanded", 200],
+  ["history-tags", "default", 120, 0, "history-tags"],
+  ["history-tags", "compact", 82, 0, "history-tags-compact"],
   ["history-card", "compact-hover", 90, 0, "history-card-compact-actions"],
   ["context-menu", "text", 215],
   ["context-menu", "privacy", 235, 0, "context-menu-privacy"],

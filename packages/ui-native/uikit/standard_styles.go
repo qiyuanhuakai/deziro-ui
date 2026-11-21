@@ -162,11 +162,16 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 	case "tagToolbar":
 		style.Height, style.ColumnGap = 30, 2
 		style.Padding = [4]float32{0, 7, 0, 3}
+	case "tagToolbarTitle":
+		style.Size, style.Weight = 12, 600
+	case "tagToolbarTitleIcon":
+		style.Width, style.Height = 14, 14
 	case "tagPickerTrigger":
 		style = standardWidgetStyle("headerButton", palette)
 		style.Size, style.Padding = 12, [4]float32{3, 6, 3, 6}
 	case "tagToolbarButton", "tagToolbarButtonActive":
 		style = standardWidgetStyle("headerButton", palette)
+		style.Width, style.Height = 27, 27
 		style.Padding = [4]float32{}
 		if widget == "tagToolbarButtonActive" {
 			style.Fill, style.Border = selected, accent
@@ -200,6 +205,7 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		style.Text = muted
 	case "settingsSegments":
 		surface()
+		style.Radius = 9
 		style.Padding, style.ColumnGap = [4]float32{2, 2, 2, 2}, 2
 	case "settingsChoiceCards":
 		style.ColumnGap = 8
@@ -209,6 +215,7 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		style.Padding = [4]float32{0, 12, 0, 12}
 		if strings.HasPrefix(widget, "settingsSegment") {
 			style.Height, style.BorderWidth, style.Fill = 30, 0, [4]uint8{}
+			style.Radius = 6
 		}
 		if strings.HasSuffix(widget, "Active") || strings.HasSuffix(widget, "Hover") {
 			style.Fill = selected

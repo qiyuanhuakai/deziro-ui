@@ -14,6 +14,7 @@ export { TagSuggestion, TagSuggestions, TagSuggestionRetry, TagSuggestionStatus 
 export { ClipboardSearch, type ClipboardSearchProps } from "./components/ClipboardSearch.js";
 export { QuickPastePanel, QuickPasteSearch, QuickPasteRow } from "./components/QuickPastePanel.js";
 export { WheelHotZone } from "./components/WheelHotZone.js";
+export { PreviewText } from "./components/PreviewText.js";
 export { PreviewResizeHandles, PreviewToolbar, type PreviewResizeDirection, type PreviewToolbarProps, type PreviewZoom } from "./components/PreviewToolbar.js";
 export { default as SettingsRail, type SettingsRailProps } from "./components/SettingsRail.js";
 export { default as SettingsFooter, type SettingsFooterProps } from "./components/SettingsFooter.js";

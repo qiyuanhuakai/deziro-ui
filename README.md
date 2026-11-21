@@ -122,6 +122,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 搜索框标签建议 | ![标签建议、键盘选中态和主题色](docs/comparisons/macos-dark/tag-suggestions.png) |
 | 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/macos-dark/tag-suggestions-empty.png) |
 | 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/macos-dark/settings-rail-long-label.png) |
+| 字体选择 | ![下拉选项使用各自的字体](docs/comparisons/macos-dark/font-select.png) |
+| 文本预览字号 | ![十八像素字号下的双行文本预览](docs/comparisons/macos-dark/preview-text.png) |
 | 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/macos-dark/search-select-long-options.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/macos-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/macos-dark/filters.png) |
@@ -224,6 +226,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 搜索框标签建议 | ![标签建议、键盘选中态和主题色](docs/comparisons/tag-suggestions.png) |
 | 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/tag-suggestions-empty.png) |
 | 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/settings-rail-long-label.png) |
+| 字体选择 | ![下拉选项使用各自的字体](docs/comparisons/font-select.png) |
+| 文本预览字号 | ![十八像素字号下的双行文本预览](docs/comparisons/preview-text.png) |
 | 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/search-select-long-options.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/filters.png) |
@@ -329,6 +333,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 搜索框标签建议 | ![标签建议、键盘选中态和主题色](docs/comparisons/liquid-glass-light/tag-suggestions.png) |
 | 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/liquid-glass-light/tag-suggestions-empty.png) |
 | 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/liquid-glass-light/settings-rail-long-label.png) |
+| 字体选择 | ![下拉选项使用各自的字体](docs/comparisons/liquid-glass-light/font-select.png) |
+| 文本预览字号 | ![十八像素字号下的双行文本预览](docs/comparisons/liquid-glass-light/preview-text.png) |
 | 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/liquid-glass-light/search-select-long-options.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-light/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-light/filters.png) |
@@ -434,6 +440,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 搜索框标签建议 | ![标签建议、键盘选中态和主题色](docs/comparisons/liquid-glass-dark/tag-suggestions.png) |
 | 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/liquid-glass-dark/tag-suggestions-empty.png) |
 | 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/liquid-glass-dark/settings-rail-long-label.png) |
+| 字体选择 | ![下拉选项使用各自的字体](docs/comparisons/liquid-glass-dark/font-select.png) |
+| 文本预览字号 | ![十八像素字号下的双行文本预览](docs/comparisons/liquid-glass-dark/preview-text.png) |
 | 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/liquid-glass-dark/search-select-long-options.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-dark/filters.png) |

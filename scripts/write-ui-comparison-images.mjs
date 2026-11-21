@@ -78,6 +78,7 @@ const additional = [
   ["tag-search", "default", 180],
   ["search-select", "apps-filtered", 218],
   ["search-select", "empty", 218, 0, "search-select-empty"],
+  ["search-select", "typo", 218, 0, "search-select-typo"],
   ["clipboard-search", "default", 140],
   ["settings-toggle", "enabled", 80],
   ["settings-slider", "default", 95],

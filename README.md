@@ -55,7 +55,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 
 ## 组件对照
 
-每张图左侧是 React WebView，右侧是 MyGo Native。macOS 与 Liquid Glass 的浅色和深色共 284 张对照图。输入框使用带内容的示例，简洁卡片操作栏和右键菜单展示悬浮后的状态。
+每张图左侧是 React WebView，右侧是 MyGo Native。macOS 与 Liquid Glass 的浅色和深色共 288 张对照图。输入框使用带内容的示例，简洁卡片操作栏和右键菜单展示悬浮后的状态。
 
 剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。新增组件的源码与导出位于 `main` 分支。
 
@@ -86,6 +86,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/macos-dark/settings-choices.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/macos-dark/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/macos-dark/search-select-empty.png) |
+| 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/macos-dark/search-select-typo.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/macos-dark/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/macos-dark/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/macos-dark/hotkey-list-extended.png) |
@@ -166,6 +167,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/settings-choices.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/search-select-empty.png) |
+| 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/search-select-typo.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/hotkey-list-extended.png) |
@@ -246,6 +248,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-choices.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-light/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/liquid-glass-light/search-select-empty.png) |
+| 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/liquid-glass-light/search-select-typo.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/liquid-glass-light/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/liquid-glass-light/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/liquid-glass-light/hotkey-list-extended.png) |
@@ -328,6 +331,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置选项卡片和更新通道 | ![设置选项卡片和更新通道 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-choices.png) |
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-dark/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/liquid-glass-dark/search-select-empty.png) |
+| 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/liquid-glass-dark/search-select-typo.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/liquid-glass-dark/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/liquid-glass-dark/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/liquid-glass-dark/hotkey-list-extended.png) |

@@ -11,6 +11,7 @@ export { TagDialog, type TagDialogProps } from "./components/TagDialog.js";
 export { default as ToastContainer, type ToastItem } from "./components/ToastContainer.js";
 export { default as AppHeader, type AppHeaderProps, type HeaderTagFilter } from "./components/AppHeader.js";
 export { ClipboardSearch, type ClipboardSearchProps } from "./components/ClipboardSearch.js";
+export { QuickPastePanel, QuickPasteSearch, QuickPasteRow } from "./components/QuickPastePanel.js";
 export { WheelHotZone } from "./components/WheelHotZone.js";
 export { PreviewResizeHandles, PreviewToolbar, type PreviewResizeDirection, type PreviewToolbarProps, type PreviewZoom } from "./components/PreviewToolbar.js";
 export { default as SettingsRail, type SettingsRailProps } from "./components/SettingsRail.js";

@@ -81,6 +81,8 @@ const additional = [
   ["tag-toolbar", "default", 85],
   ["tag-batch-toolbar", "selected", 85],
   ["quick-paste-panel", "65", 242],
+  ["theme-manager", "imported", 310],
+  ["background-settings", "saved", 165],
   ["tag-search", "default", 180],
   ["search-select", "apps-filtered", 218],
   ["search-select", "empty", 218, 0, "search-select-empty"],

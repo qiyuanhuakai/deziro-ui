@@ -82,6 +82,8 @@ const additional = [
   ["privacy-rules", "default", 390],
   ["privacy-detection", "resized", 340],
   ["tag-toolbar", "default", 85],
+  ["tag-history-entry", "default", 178, 0, "tag-history-selection"],
+  ["tag-history-entry", "compact", 100, 0, "tag-history-selection-compact"],
   ["tag-batch-toolbar", "selected", 85],
   ["quick-paste-panel", "65", 242],
   ["theme-manager", "imported", 310],

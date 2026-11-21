@@ -34,7 +34,7 @@ export { EmojiAddTile, EmojiFavoriteTile } from "./components/EmojiFavoriteTiles
 export { SettingsDataPath, SettingsDataAction } from "./components/SettingsData.js";
 export { BackupDialog, BackupChoices, BackupField, BackupPreview, BackupReplaceConfirmation, BackupActions } from "./components/BackupDialog.js";
 export { UpdateAction, UpdateActions, UpdateProgress, UpdateVersionRow } from "./components/SettingsUpdate.js";
-export { TagBatchToolbar, TagPickerTrigger, TagSearchField, TagToolbar, TagToolbarTitle } from "./components/TagToolbar.js";
+export { TagBatchToolbar, TagHistoryEntry, TagPickerTrigger, TagSearchField, TagToolbar, TagToolbarTitle } from "./components/TagToolbar.js";
 export { CharacterPanel, CharacterSearch, EmojiGrid, EmojiTabs, type EmojiTab } from "./components/EmojiPicker.js";
 export { SettingsToggle, SettingsToggleField, type SettingsToggleProps } from "./components/SettingsToggle.js";
 export { SettingsSlider, type SettingsSliderProps } from "./components/SettingsSlider.js";

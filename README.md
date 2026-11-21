@@ -55,7 +55,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 
 ## 组件对照
 
-每张图左侧是 React WebView，右侧是 MyGo Native。macOS 与 Liquid Glass 的浅色和深色共 276 张对照图。输入框使用带内容的示例，简洁卡片操作栏和右键菜单展示悬浮后的状态。
+每张图左侧是 React WebView，右侧是 MyGo Native。macOS 与 Liquid Glass 的浅色和深色共 284 张对照图。输入框使用带内容的示例，简洁卡片操作栏和右键菜单展示悬浮后的状态。
 
 剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。新增组件的源码与导出位于 `main` 分支。
 
@@ -93,9 +93,11 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 隐私规则卡片与应用排除输入框 | ![隐私规则行内确认和多行应用排除输入框](docs/comparisons/macos-dark/privacy-rules.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/macos-dark/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/macos-dark/settings-data.png) |
+| 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/macos-dark/settings-data-hover.png) |
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/macos-dark/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/macos-dark/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/macos-dark/backup-dialog-import.png) |
+| 确认覆盖导入 | ![勾选后启用覆盖导入](docs/comparisons/macos-dark/backup-dialog-replace.png) |
 | 更新下载进度 | ![当前版本、通道版本和下载百分比](docs/comparisons/macos-dark/settings-update.png) |
 | 更新签名与安装状态 | ![验证通过后的安装和重启状态](docs/comparisons/macos-dark/settings-update-installing.png) |
 | 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/macos-dark/tag-toolbar.png) |
@@ -171,9 +173,11 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 隐私规则卡片与应用排除输入框 | ![隐私规则行内确认和多行应用排除输入框](docs/comparisons/privacy-rules.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/settings-data.png) |
+| 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/settings-data-hover.png) |
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/backup-dialog-import.png) |
+| 确认覆盖导入 | ![勾选后启用覆盖导入](docs/comparisons/backup-dialog-replace.png) |
 | 更新下载进度 | ![当前版本、通道版本和下载百分比](docs/comparisons/settings-update.png) |
 | 更新签名与安装状态 | ![验证通过后的安装和重启状态](docs/comparisons/settings-update-installing.png) |
 | 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/tag-toolbar.png) |
@@ -249,9 +253,11 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 隐私规则卡片与应用排除输入框 | ![隐私规则行内确认和多行应用排除输入框](docs/comparisons/liquid-glass-light/privacy-rules.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-data.png) |
+| 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/liquid-glass-light/settings-data-hover.png) |
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/liquid-glass-light/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/liquid-glass-light/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/liquid-glass-light/backup-dialog-import.png) |
+| 确认覆盖导入 | ![勾选后启用覆盖导入](docs/comparisons/liquid-glass-light/backup-dialog-replace.png) |
 | 更新下载进度 | ![当前版本、通道版本和下载百分比](docs/comparisons/liquid-glass-light/settings-update.png) |
 | 更新签名与安装状态 | ![验证通过后的安装和重启状态](docs/comparisons/liquid-glass-light/settings-update-installing.png) |
 | 透明度 20% | ![透明度 20% 下的设置卡片、下拉菜单和历史卡片](docs/comparisons/liquid-glass-light/surface-opacity-20.png) |
@@ -329,9 +335,11 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 隐私规则卡片与应用排除输入框 | ![隐私规则行内确认和多行应用排除输入框](docs/comparisons/liquid-glass-dark/privacy-rules.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-data.png) |
+| 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/liquid-glass-dark/settings-data-hover.png) |
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/liquid-glass-dark/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/liquid-glass-dark/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/liquid-glass-dark/backup-dialog-import.png) |
+| 确认覆盖导入 | ![勾选后启用覆盖导入](docs/comparisons/liquid-glass-dark/backup-dialog-replace.png) |
 | 更新下载进度 | ![当前版本、通道版本和下载百分比](docs/comparisons/liquid-glass-dark/settings-update.png) |
 | 更新签名与安装状态 | ![验证通过后的安装和重启状态](docs/comparisons/liquid-glass-dark/settings-update-installing.png) |
 | 透明度 20% | ![透明度 20% 下的设置卡片、下拉菜单和历史卡片](docs/comparisons/liquid-glass-dark/surface-opacity-20.png) |

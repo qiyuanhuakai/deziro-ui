@@ -30,7 +30,7 @@ const cases = {
   "settings-choices": { states: ["default"], text: "Update channel" },
   "hotkey-list": { states: ["default", "multiple", "win-v", "extended"], text: "Global hotkey" },
   "emoji-favorites": { states: ["default"], text: "Add emoji" },
-  "settings-data": { states: ["default", "hover-path"], text: "Data storage path" },
+  "settings-data": { states: ["default", "hover-path", "hover-action"], text: "Data storage path" },
   "backup-dialog": { states: ["default", "encrypted", "error", "import", "replace", "replace-confirmed"], text: "File path" },
   "settings-update": { states: ["default", "unknown-size", "installing"], text: "Installed version" },
   "settings-update-actions": { states: ["default", "busy", "hover"], text: "Check now" },
@@ -40,7 +40,8 @@ const cases = {
   "tag-toolbar": { states: ["default"], text: "Work" },
   "tag-batch-toolbar": { states: ["default", "selected", "narrow"], text: "selected" },
   "tag-search": { states: ["default"], text: "Work" },
-  "search-select": { states: ["default", "apps-filtered", "empty", "typo"], text: "Interface font" },
+  "search-select": { states: ["default", "apps-filtered", "empty", "typo", "long-options"], text: "Interface font" },
+  "tag-suggestions": { states: ["active", "empty"], text: "Tags" },
   "text-fields": { states: ["default"], text: "Idle timeout" },
   "context-menu": { states: ["default", "text", "privacy"], text: "Clipboard entry" },
   "attachment-preview": { states: ["default", "compact", "media", "expanded", "narrow", "narrow-media", "compact-media"], text: "" },
@@ -54,7 +55,7 @@ const cases = {
   "history-list": { states: ["default", "selected"], text: "Release checklist and verification notes" },
   "history-typography": { states: ["default", "small", "large", "compact", "compact-large", "custom"], text: "Font sample: Wm12" },
   "history-rich-text": { states: ["default", "compact"], text: "Release checklist" },
-  "settings-rail": { states: ["default", "selected"], text: "Appearance" },
+  "settings-rail": { states: ["default", "selected", "long-label"], text: "Appearance" },
   "settings-footer": { states: ["default", "compact"], text: "Reset defaults" },
   "history-card": { states: ["default", "selected", "pinned", "compact", "compact-hover", "compact-action-hover", "compact-active-hover"], text: "Copied from the active editor" },
   "app-header": { states: ["default", "pinned", "settings"], text: "DezirClip" },
@@ -225,7 +226,6 @@ try {
               await page.getByRole("button", { name: "Setting help: Interface font" }).click();
               await page.getByText("Use the theme font by default.", { exact: true }).waitFor();
             }
-            if (fixture === "settings-data" && state === "hover-path") await page.locator(".data-panel").hover();
             if (fixture === "backup-dialog" && ["macos", "liquid-glass"].includes(theme)) {
               const styled = await page.locator(".data-modal-content").evaluate(dialog => {
                 const panel = getComputedStyle(dialog);
@@ -260,6 +260,17 @@ try {
             if (fixture === "surface-opacity") {
               await page.getByRole("combobox", { name: "Color mode" }).click();
               await page.getByRole("option", { name: "Light", exact: true }).waitFor();
+            }
+            if (fixture === "tag-suggestions") {
+              const field = await page.getByRole("combobox", { name: "Search clipboard" }).boundingBox();
+              const popup = await page.locator(".dc-tag-filter-picker").boundingBox();
+              if (!field || !popup || Math.abs(field.x - popup.x) > 1 || Math.abs(field.width - popup.width) > 1) {
+                throw Error("Tag suggestions are not aligned with the clipboard search field");
+              }
+              if (state === "active") {
+                const selection = page.getByRole("option", { name: "Documents" });
+                if (await selection.getAttribute("aria-selected") !== "true") throw Error("Missing keyboard selection style");
+              }
             }
             if (fixture === "clipboard-search") {
               const search = page.locator("[data-clipboard-search]");
@@ -386,8 +397,15 @@ try {
             if (fixture === "search-select" && state !== "default") {
               const input = page.getByRole("combobox", { name: "Images" });
               await input.click();
-              await input.fill(({ empty: "zzzz0000", typo: "Photo Veiwer" })[state] ?? "viewer");
-              if (state === "empty") {
+              if (state !== "long-options") await input.fill(({ empty: "zzzz0000", typo: "Photo Veiwer" })[state] ?? "viewer");
+              if (state === "long-options") {
+                const field = await page.locator(".dezirclip-select__control").last().boundingBox();
+                const menu = await page.locator(".dezirclip-select__menu").boundingBox();
+                const row = await page.getByRole("option", { name: /^Example Windows application/ }).boundingBox();
+                if (!field || !menu || !row || Math.abs(menu.x - field.x) > 1 || Math.abs(menu.width - field.width) > 1 || row.height <= field.height) {
+                  throw Error("The long application name does not wrap within its settings field");
+                }
+              } else if (state === "empty") {
                 await page.getByText("No matching applications", { exact: true }).waitFor();
               } else {
                 await page.getByRole("option", { name: "Photo Viewer", exact: true }).waitFor();
@@ -396,6 +414,8 @@ try {
                 }
               }
             }
+            if (fixture === "settings-data" && state === "hover-path") await page.locator(".data-panel").hover();
+            if (fixture === "settings-data" && state === "hover-action") await page.locator(".data-actions-row .btn-icon").first().hover();
             const webImage = await page.screenshot({ path: join(output, id + "_web.png"), animations: "disabled" });
             const { stdout } = await execute(resolve(native), nativeArgs, { timeout: 10000 });
             const nativeImage = await readFile(target);
@@ -464,6 +484,8 @@ try {
               : fixture === "settings-field" && state === "expanded" ? "Use the theme font by default."
               : state === "expanded" && fixture === "disclosure" ? "Preview channel"
               : fixture === "context-menu" && state !== "default" ? state === "text" ? "Uppercase" : "Ignore this source"
+              : fixture === "tag-suggestions" ? state === "active" ? "Documents" : "No matching tags"
+              : fixture === "settings-rail" && state === "long-label" ? "Default Applications and File Associations"
               : fixture === "settings-update" ? {
                 default: "42%", "unknown-size": "2.5 MiB", installing: "Official update signature verified",
               }[state]

@@ -96,6 +96,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/macos-dark/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/macos-dark/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/macos-dark/settings-data-hover.png) |
+| 备份入口悬浮 | ![导出按钮的主题悬浮样式](docs/comparisons/macos-dark/settings-data-action-hover.png) |
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/macos-dark/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/macos-dark/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/macos-dark/backup-dialog-import.png) |
@@ -114,6 +115,10 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 快速粘贴界面设置 | ![固定的 MyGo Native 界面](docs/comparisons/macos-dark/fixed-capture-renderer.png) |
 | CLI 设置 | ![已安装 CLI、PATH 副本冲突与随包指南](docs/comparisons/macos-dark/cli-settings.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/macos-dark/tag-search.png) |
+| 搜索框标签建议 | ![标签建议、键盘选中态和主题色](docs/comparisons/macos-dark/tag-suggestions.png) |
+| 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/macos-dark/tag-suggestions-empty.png) |
+| 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/macos-dark/settings-rail-long-label.png) |
+| 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/macos-dark/search-select-long-options.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/macos-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/macos-dark/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/macos-dark/highlight.png) |
@@ -189,6 +194,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/settings-data-hover.png) |
+| 备份入口悬浮 | ![导出按钮的主题悬浮样式](docs/comparisons/settings-data-action-hover.png) |
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/backup-dialog-import.png) |
@@ -207,6 +213,10 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 快速粘贴界面设置 | ![固定的 MyGo Native 界面](docs/comparisons/fixed-capture-renderer.png) |
 | CLI 设置 | ![已安装 CLI、PATH 副本冲突与随包指南](docs/comparisons/cli-settings.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/tag-search.png) |
+| 搜索框标签建议 | ![标签建议、键盘选中态和主题色](docs/comparisons/tag-suggestions.png) |
+| 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/tag-suggestions-empty.png) |
+| 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/settings-rail-long-label.png) |
+| 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/search-select-long-options.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/highlight.png) |
@@ -282,6 +292,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/liquid-glass-light/settings-data-hover.png) |
+| 备份入口悬浮 | ![导出按钮的主题悬浮样式](docs/comparisons/liquid-glass-light/settings-data-action-hover.png) |
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/liquid-glass-light/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/liquid-glass-light/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/liquid-glass-light/backup-dialog-import.png) |
@@ -302,6 +313,10 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 快速粘贴界面设置 | ![固定的 MyGo Native 界面](docs/comparisons/liquid-glass-light/fixed-capture-renderer.png) |
 | CLI 设置 | ![已安装 CLI、PATH 副本冲突与随包指南](docs/comparisons/liquid-glass-light/cli-settings.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/liquid-glass-light/tag-search.png) |
+| 搜索框标签建议 | ![标签建议、键盘选中态和主题色](docs/comparisons/liquid-glass-light/tag-suggestions.png) |
+| 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/liquid-glass-light/tag-suggestions-empty.png) |
+| 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/liquid-glass-light/settings-rail-long-label.png) |
+| 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/liquid-glass-light/search-select-long-options.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-light/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-light/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/liquid-glass-light/highlight.png) |
@@ -377,6 +392,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-favorites.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/liquid-glass-dark/settings-data-hover.png) |
+| 备份入口悬浮 | ![导出按钮的主题悬浮样式](docs/comparisons/liquid-glass-dark/settings-data-action-hover.png) |
 | 备份导出 | ![导出格式、文件路径和操作按钮](docs/comparisons/liquid-glass-dark/backup-dialog.png) |
 | 加密备份导出 | ![加密备份的密码和确认输入框](docs/comparisons/liquid-glass-dark/backup-dialog-encrypted.png) |
 | 备份导入 | ![导入方式、文件路径和内容预览](docs/comparisons/liquid-glass-dark/backup-dialog-import.png) |
@@ -397,6 +413,10 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 快速粘贴界面设置 | ![固定的 MyGo Native 界面](docs/comparisons/liquid-glass-dark/fixed-capture-renderer.png) |
 | CLI 设置 | ![已安装 CLI、PATH 副本冲突与随包指南](docs/comparisons/liquid-glass-dark/cli-settings.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/liquid-glass-dark/tag-search.png) |
+| 搜索框标签建议 | ![标签建议、键盘选中态和主题色](docs/comparisons/liquid-glass-dark/tag-suggestions.png) |
+| 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/liquid-glass-dark/tag-suggestions-empty.png) |
+| 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/liquid-glass-dark/settings-rail-long-label.png) |
+| 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/liquid-glass-dark/search-select-long-options.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-dark/filters.png) |
 | 匹配高亮 | ![匹配高亮 WebView 与 Native](docs/comparisons/liquid-glass-dark/highlight.png) |

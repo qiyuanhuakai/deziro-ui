@@ -31,6 +31,7 @@ type ColorStop struct {
 }
 
 type WidgetStyle struct {
+	BackdropBlur  float32
 	Left          float32 `json:"left,omitempty"`
 	BorderWidths  *[4]float32
 	Outline       *Outline

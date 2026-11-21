@@ -16,8 +16,13 @@ import (
 	"github.com/qiyuanhuakai/deziro-ui/packages/ui-presets"
 )
 
+const longApplicationLabel = "Example Windows application with a very long display name for editing and browsing images"
+
 type gallery struct {
 	characterList                       ui.ListState
+	tagSuggestionList                   ui.ListState
+	tagSuggestionOpen                   bool
+	tagSuggestionActive                 int
 	theme, mode, fixture, state         string
 	choice, query, searchMode, filter   string
 	settingsSelection                   string
@@ -121,6 +126,22 @@ func (g *gallery) renderFixture(c *ui.Context, kit uikit.Kit, name string) {
 		})
 	case "history-list":
 		g.renderHistoryList(c, kit)
+	case "tag-suggestions":
+		ui.Column(c).Width(346).Children(func() {
+			names := []string{"Design", "Documents", "Work"}
+			colors := map[string]ui.Color{"Design": ui.Hex("#ed7841"), "Documents": ui.Hex("#687ee2"), "Work": ui.Hex("#25a58b")}
+			options := uikit.TagSuggestionsOptions{
+				Label: "Tags", Names: names, List: &g.tagSuggestionList, Active: &g.tagSuggestionActive,
+				Color:    func(tag string) ui.Color { return colors[tag] },
+				OnSelect: func(tag string) { g.query = "tag:" + tag },
+			}
+			if g.state == "empty" {
+				options.Names = nil
+				options.Status, options.Retry = "No matching tags", "Retry loading tags"
+			}
+			kit.ClipboardSearch(c, uikit.HeaderOptions{Query: &g.query, Placeholder: "Search clipboard",
+				QueryPopup: func(anchor ui.Element) { kit.TagSuggestions(c, anchor, &g.tagSuggestionOpen, options) }})
+		})
 	case "settings-rail":
 		if g.settingsSelection == "" {
 			g.settingsSelection = "appearance"
@@ -128,9 +149,13 @@ func (g *gallery) renderFixture(c *ui.Context, kit uikit.Kit, name string) {
 				g.settingsSelection = "updates"
 			}
 		}
-		kit.SettingsRail(c, "Settings", g.settingsSelection, []uikit.SettingsSection{
+		sections := []uikit.SettingsSection{
 			{ID: "appearance", Label: "Appearance"}, {ID: "general", Label: "General"}, {ID: "updates", Label: "Software updates"},
-		}, func(section string) { g.settingsSelection = section })
+		}
+		if g.state == "long-label" {
+			sections = append(sections, uikit.SettingsSection{ID: "applications", Label: "Default Applications and File Associations"})
+		}
+		kit.SettingsRail(c, "Settings", g.settingsSelection, sections, func(section string) { g.settingsSelection = section })
 	case "settings-footer":
 		kit.SettingsFooter(c, uikit.SettingsFooterOptions{
 			ProductName: "DezirClip 0.2", Feedback: "Feedback", Reset: "Reset defaults", Website: "Official website",
@@ -363,10 +388,14 @@ func (g *gallery) prepare(tester *ui.Tester) error {
 		tester.Move(4, 4)
 		return nil
 	}
-	if g.fixture == "settings-data" && g.state == "hover-path" {
-		bounds, ok := tester.Find("C:/Example/Documents/Clipboard/profile.db")
+	if g.fixture == "settings-data" && (g.state == "hover-path" || g.state == "hover-action") {
+		label := "C:/Example/Documents/Clipboard/profile.db"
+		if g.state == "hover-action" {
+			label = "Export data"
+		}
+		bounds, ok := tester.Find(label)
 		if !ok {
-			return fmt.Errorf("missing data path")
+			return fmt.Errorf("missing data settings hover target %q", label)
 		}
 		tester.Move(bounds.X+bounds.W/2, bounds.Y+bounds.H/2)
 		return nil
@@ -424,8 +453,16 @@ func (g *gallery) prepare(tester *ui.Tester) error {
 		return nil
 	}
 	if g.fixture == "search-select" && g.state != "default" {
+		field, _ := tester.Find("Images")
 		if err := tester.Click("Images"); err != nil {
 			return err
+		}
+		if g.state == "long-options" {
+			row, ok := tester.Find(longApplicationLabel)
+			if !ok || row.H <= field.H || row.X < field.X || row.X+row.W > field.X+field.W+1 {
+				return fmt.Errorf("long option does not wrap within its field: row=%+v field=%+v", row, field)
+			}
+			return nil
 		}
 		if g.state == "empty" {
 			tester.Type("zzzz0000")
@@ -515,6 +552,11 @@ func run() error {
 	output := flag.String("output", "", "write a software-rendered PNG to this file")
 	inspect := flag.Bool("inspect", false, "write rendered text labels as JSON")
 	flag.Parse()
+	g.tagSuggestionOpen, g.tagSuggestionActive = true, -1
+	if g.fixture == "tag-suggestions" && g.state == "active" {
+		g.tagSuggestionActive = 1
+		g.query = "tag:Documents"
+	}
 	if g.fixture == "search-select" {
 		g.choice = ""
 	}

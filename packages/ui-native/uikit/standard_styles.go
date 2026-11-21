@@ -246,6 +246,19 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 	case "settingsRangeThumb":
 		style.Width, style.Height, style.Radius = 16, 16, 8
 		style.Fill, style.Border, style.BorderWidth = accent, border, 1
+	case "settingsSwitch":
+		style.Width, style.Height = 44, 22
+	case "settingsSwitchTrack", "settingsSwitchTrackOn":
+		style.Radius, style.Fill = 11, rgba(ui.Hex(palette.Muted).Alpha(.34))
+		if widget == "settingsSwitchTrackOn" {
+			style.Fill = accent
+		}
+	case "settingsSwitchThumb", "settingsSwitchThumbOn":
+		style.Width, style.Height, style.Radius = 16, 16, 8
+		style.Top, style.Left, style.Fill = 3, 3, [4]uint8{255, 255, 255, 255}
+		if widget == "settingsSwitchThumbOn" {
+			style.Left = 25
+		}
 	case "hotkeyRow":
 		style.Padding = [4]float32{6, 0, 6, 0}
 		style.Margin[3] = 18

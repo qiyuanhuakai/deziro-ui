@@ -30,7 +30,7 @@ export { BackupDialog, BackupChoices, BackupField, BackupPreview, BackupReplaceC
 export { UpdateProgress, UpdateVersionRow } from "./components/SettingsUpdate.js";
 export { TagPickerTrigger, TagSearchField, TagToolbar } from "./components/TagToolbar.js";
 export { CharacterPanel, CharacterSearch, EmojiGrid, EmojiTabs, type EmojiTab } from "./components/EmojiPicker.js";
-export { SettingsToggle, type SettingsToggleProps } from "./components/SettingsToggle.js";
+export { SettingsToggle, SettingsToggleField, type SettingsToggleProps } from "./components/SettingsToggle.js";
 export { SettingsSlider, type SettingsSliderProps } from "./components/SettingsSlider.js";
 export { ScrollToTopButton } from "./components/ScrollToTopButton.js";
 export { HotkeyBinding, HotkeyList, HotkeyListLayout, type HotkeyBindingProps, type HotkeyListProps } from "./components/HotkeyBinding.js";

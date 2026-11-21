@@ -106,6 +106,7 @@ const additional = [
   ["emoji-grid", "default", 105],
 ];
 const opacityFigures = [
+  ["backup-dialog", "glass", 420, 0, "backup-dialog-glass"],
   ["surface-opacity", "20", 312, 0, "surface-opacity-20"],
   ["surface-opacity", "85", 312, 0, "surface-opacity-85"],
 ];

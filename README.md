@@ -69,6 +69,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/macos-dark/history-list.png) |
 | 文本卡片与字号 | ![小字号、长文本和隐私遮挡卡片](docs/comparisons/macos-dark/history-typography.png) |
 | 紧凑卡片与大字号 | ![十八像素字号下的紧凑卡片](docs/comparisons/macos-dark/history-typography-compact.png) |
+| 紧凑卡片与长字符串 | ![不可断开的长字符串在一行内截断](docs/comparisons/macos-dark/history-typography-compact-token.png) |
+| 文字预览状态 | ![加载中、无预览和预览失败的卡片](docs/comparisons/macos-dark/history-preview-status.png) |
+| 紧凑卡片的预览状态与置顶 | ![紧凑预览状态和贴边置顶标记](docs/comparisons/macos-dark/history-preview-status-compact.png) |
 | 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/macos-dark/history-typography-custom.png) |
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/macos-dark/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/macos-dark/history-rich-text-compact.png) |
@@ -183,6 +186,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/history-list.png) |
 | 文本卡片与字号 | ![小字号、长文本和隐私遮挡卡片](docs/comparisons/history-typography.png) |
 | 紧凑卡片与大字号 | ![十八像素字号下的紧凑卡片](docs/comparisons/history-typography-compact.png) |
+| 紧凑卡片与长字符串 | ![不可断开的长字符串在一行内截断](docs/comparisons/history-typography-compact-token.png) |
+| 文字预览状态 | ![加载中、无预览和预览失败的卡片](docs/comparisons/history-preview-status.png) |
+| 紧凑卡片的预览状态与置顶 | ![紧凑预览状态和贴边置顶标记](docs/comparisons/history-preview-status-compact.png) |
 | 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/history-typography-custom.png) |
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/history-rich-text-compact.png) |
@@ -297,6 +303,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/liquid-glass-light/history-list.png) |
 | 文本卡片与字号 | ![小字号、长文本和隐私遮挡卡片](docs/comparisons/liquid-glass-light/history-typography.png) |
 | 紧凑卡片与大字号 | ![十八像素字号下的紧凑卡片](docs/comparisons/liquid-glass-light/history-typography-compact.png) |
+| 紧凑卡片与长字符串 | ![不可断开的长字符串在一行内截断](docs/comparisons/liquid-glass-light/history-typography-compact-token.png) |
+| 文字预览状态 | ![加载中、无预览和预览失败的卡片](docs/comparisons/liquid-glass-light/history-preview-status.png) |
+| 紧凑卡片的预览状态与置顶 | ![紧凑预览状态和贴边置顶标记](docs/comparisons/liquid-glass-light/history-preview-status-compact.png) |
 | 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/liquid-glass-light/history-typography-custom.png) |
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/liquid-glass-light/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/liquid-glass-light/history-rich-text-compact.png) |
@@ -414,6 +423,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 虚拟历史列表 | ![虚拟历史列表 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-list.png) |
 | 文本卡片与字号 | ![小字号、长文本和隐私遮挡卡片](docs/comparisons/liquid-glass-dark/history-typography.png) |
 | 紧凑卡片与大字号 | ![十八像素字号下的紧凑卡片](docs/comparisons/liquid-glass-dark/history-typography-compact.png) |
+| 紧凑卡片与长字符串 | ![不可断开的长字符串在一行内截断](docs/comparisons/liquid-glass-dark/history-typography-compact-token.png) |
+| 文字预览状态 | ![加载中、无预览和预览失败的卡片](docs/comparisons/liquid-glass-dark/history-preview-status.png) |
+| 紧凑卡片的预览状态与置顶 | ![紧凑预览状态和贴边置顶标记](docs/comparisons/liquid-glass-dark/history-preview-status-compact.png) |
 | 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/liquid-glass-dark/history-typography-custom.png) |
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/liquid-glass-dark/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/liquid-glass-dark/history-rich-text-compact.png) |

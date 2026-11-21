@@ -159,6 +159,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 方向键预览从属设置 | ![方向键选择和预览开关](docs/comparisons/macos-dark/settings-keyboard-preview.png) |
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/macos-dark/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/macos-dark/hotkey-binding.png) |
+| 窄窗口长快捷键 | ![长快捷键的标签和键帽在窄窗口中换行](docs/comparisons/macos-dark/hotkey-binding-narrow.png) |
 | 在说明中清除可选快捷键 | ![单快捷键的清除操作](docs/comparisons/macos-dark/hotkey-optional.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/macos-dark/scroll-to-top.png) |
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/macos-dark/character-search.png) |
@@ -269,6 +270,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 方向键预览从属设置 | ![方向键选择和预览开关](docs/comparisons/settings-keyboard-preview.png) |
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/hotkey-binding.png) |
+| 窄窗口长快捷键 | ![长快捷键的标签和键帽在窄窗口中换行](docs/comparisons/hotkey-binding-narrow.png) |
 | 在说明中清除可选快捷键 | ![单快捷键的清除操作](docs/comparisons/hotkey-optional.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/scroll-to-top.png) |
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/character-search.png) |
@@ -382,6 +384,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 方向键预览从属设置 | ![方向键选择和预览开关](docs/comparisons/liquid-glass-light/settings-keyboard-preview.png) |
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/liquid-glass-light/hotkey-binding.png) |
+| 窄窗口长快捷键 | ![长快捷键的标签和键帽在窄窗口中换行](docs/comparisons/liquid-glass-light/hotkey-binding-narrow.png) |
 | 在说明中清除可选快捷键 | ![单快捷键的清除操作](docs/comparisons/liquid-glass-light/hotkey-optional.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/liquid-glass-light/scroll-to-top.png) |
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/liquid-glass-light/character-search.png) |
@@ -495,6 +498,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 方向键预览从属设置 | ![方向键选择和预览开关](docs/comparisons/liquid-glass-dark/settings-keyboard-preview.png) |
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/liquid-glass-dark/hotkey-binding.png) |
+| 窄窗口长快捷键 | ![长快捷键的标签和键帽在窄窗口中换行](docs/comparisons/liquid-glass-dark/hotkey-binding-narrow.png) |
 | 在说明中清除可选快捷键 | ![单快捷键的清除操作](docs/comparisons/liquid-glass-dark/hotkey-optional.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/liquid-glass-dark/scroll-to-top.png) |
 | 表情与符号搜索框 | ![表情与符号搜索框 WebView 与 Native](docs/comparisons/liquid-glass-dark/character-search.png) |

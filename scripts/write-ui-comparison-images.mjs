@@ -112,6 +112,7 @@ const additional = [
   ["settings-toggle", "enabled", 80],
   ["settings-slider", "default", 95],
   ["hotkey-binding", "default", 85],
+  ["hotkey-binding", "narrow", 150, 0, "hotkey-binding-narrow"],
   ["scroll-to-top", "default", 165],
   ["character-search", "default", 82],
   ["emoji-tabs", "symbols", 82],

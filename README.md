@@ -97,6 +97,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 应用排除输入框 | ![输入框获得焦点时的主题效果](docs/comparisons/macos-dark/privacy-source-exclusion-focus.png) |
 | 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与拖动调高后的规则输入框](docs/comparisons/macos-dark/privacy-detection.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/macos-dark/emoji-favorites.png) |
+| 空表情收藏 | ![空收藏提示和居中的添加按钮](docs/comparisons/macos-dark/emoji-favorites-empty.png) |
+| 添加表情悬停 | ![添加按钮悬停后的轮廓和位移](docs/comparisons/macos-dark/emoji-favorites-hover.png) |
+| 拖入表情图片 | ![拖入图片时的收藏区域提示](docs/comparisons/macos-dark/emoji-favorites-drop.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/macos-dark/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/macos-dark/settings-data-hover.png) |
 | 备份入口悬浮 | ![导出按钮的主题悬浮样式](docs/comparisons/macos-dark/settings-data-action-hover.png) |
@@ -204,6 +207,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 应用排除输入框 | ![输入框获得焦点时的主题效果](docs/comparisons/privacy-source-exclusion-focus.png) |
 | 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与拖动调高后的规则输入框](docs/comparisons/privacy-detection.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/emoji-favorites.png) |
+| 空表情收藏 | ![空收藏提示和居中的添加按钮](docs/comparisons/emoji-favorites-empty.png) |
+| 添加表情悬停 | ![添加按钮悬停后的轮廓和位移](docs/comparisons/emoji-favorites-hover.png) |
+| 拖入表情图片 | ![拖入图片时的收藏区域提示](docs/comparisons/emoji-favorites-drop.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/settings-data-hover.png) |
 | 备份入口悬浮 | ![导出按钮的主题悬浮样式](docs/comparisons/settings-data-action-hover.png) |
@@ -311,6 +317,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 应用排除输入框 | ![输入框获得焦点时的主题效果](docs/comparisons/liquid-glass-light/privacy-source-exclusion-focus.png) |
 | 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与拖动调高后的规则输入框](docs/comparisons/liquid-glass-light/privacy-detection.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-light/emoji-favorites.png) |
+| 空表情收藏 | ![空收藏提示和居中的添加按钮](docs/comparisons/liquid-glass-light/emoji-favorites-empty.png) |
+| 添加表情悬停 | ![添加按钮悬停后的轮廓和位移](docs/comparisons/liquid-glass-light/emoji-favorites-hover.png) |
+| 拖入表情图片 | ![拖入图片时的收藏区域提示](docs/comparisons/liquid-glass-light/emoji-favorites-drop.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/liquid-glass-light/settings-data-hover.png) |
 | 备份入口悬浮 | ![导出按钮的主题悬浮样式](docs/comparisons/liquid-glass-light/settings-data-action-hover.png) |
@@ -421,6 +430,9 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 应用排除输入框 | ![输入框获得焦点时的主题效果](docs/comparisons/liquid-glass-dark/privacy-source-exclusion-focus.png) |
 | 隐私检测开关与自定义规则 | ![窄窗下的检测开关换行与拖动调高后的规则输入框](docs/comparisons/liquid-glass-dark/privacy-detection.png) |
 | 表情收藏与添加 | ![表情收藏与添加 WebView 与 Native](docs/comparisons/liquid-glass-dark/emoji-favorites.png) |
+| 空表情收藏 | ![空收藏提示和居中的添加按钮](docs/comparisons/liquid-glass-dark/emoji-favorites-empty.png) |
+| 添加表情悬停 | ![添加按钮悬停后的轮廓和位移](docs/comparisons/liquid-glass-dark/emoji-favorites-hover.png) |
+| 拖入表情图片 | ![拖入图片时的收藏区域提示](docs/comparisons/liquid-glass-dark/emoji-favorites-drop.png) |
 | 数据路径和导入导出 | ![数据路径和导入导出 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-data.png) |
 | 数据目录悬浮 | ![数据路径的主题悬浮样式](docs/comparisons/liquid-glass-dark/settings-data-hover.png) |
 | 备份入口悬浮 | ![导出按钮的主题悬浮样式](docs/comparisons/liquid-glass-dark/settings-data-action-hover.png) |

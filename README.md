@@ -80,6 +80,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/macos-dark/history-ocr-compact.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/macos-dark/history-card-compact-actions.png) |
+| 简洁卡片已选中按钮悬浮 | ![简洁卡片已选中按钮悬浮 WebView 与 Native](docs/comparisons/macos-dark/history-card-compact-active-actions.png) |
+| 普通卡片操作栏 | ![普通卡片已选中按钮悬浮 WebView 与 Native](docs/comparisons/macos-dark/history-card-inline-actions.png) |
 | 剪贴板卡片标签 | ![标签的颜色、文字与圆角](docs/comparisons/macos-dark/history-tags.png) |
 | 简洁卡片标签 | ![覆盖在卡片右下角的标签](docs/comparisons/macos-dark/history-tags-compact.png) |
 | 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/macos-dark/context-menu.png) |
@@ -197,6 +199,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/history-ocr-compact.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/history-card-compact-actions.png) |
+| 简洁卡片已选中按钮悬浮 | ![简洁卡片已选中按钮悬浮 WebView 与 Native](docs/comparisons/history-card-compact-active-actions.png) |
+| 普通卡片操作栏 | ![普通卡片已选中按钮悬浮 WebView 与 Native](docs/comparisons/history-card-inline-actions.png) |
 | 剪贴板卡片标签 | ![标签的颜色、文字与圆角](docs/comparisons/history-tags.png) |
 | 简洁卡片标签 | ![覆盖在卡片右下角的标签](docs/comparisons/history-tags-compact.png) |
 | 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/context-menu.png) |
@@ -314,6 +318,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/liquid-glass-light/history-ocr-compact.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-compact-actions.png) |
+| 简洁卡片已选中按钮悬浮 | ![简洁卡片已选中按钮悬浮 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-compact-active-actions.png) |
+| 普通卡片操作栏 | ![普通卡片已选中按钮悬浮 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card-inline-actions.png) |
 | 剪贴板卡片标签 | ![标签的颜色、文字与圆角](docs/comparisons/liquid-glass-light/history-tags.png) |
 | 简洁卡片标签 | ![覆盖在卡片右下角的标签](docs/comparisons/liquid-glass-light/history-tags-compact.png) |
 | 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-light/context-menu.png) |
@@ -434,6 +440,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/liquid-glass-dark/history-ocr-compact.png) |
 | 历史卡片信息栏 | ![历史卡片信息栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-meta.png) |
 | 简洁卡片悬浮操作栏 | ![简洁卡片悬浮操作栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-compact-actions.png) |
+| 简洁卡片已选中按钮悬浮 | ![简洁卡片已选中按钮悬浮 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-compact-active-actions.png) |
+| 普通卡片操作栏 | ![普通卡片已选中按钮悬浮 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card-inline-actions.png) |
 | 剪贴板卡片标签 | ![标签的颜色、文字与圆角](docs/comparisons/liquid-glass-dark/history-tags.png) |
 | 简洁卡片标签 | ![覆盖在卡片右下角的标签](docs/comparisons/liquid-glass-dark/history-tags-compact.png) |
 | 文字处理侧边子菜单 | ![文字处理侧边子菜单 WebView 与 Native](docs/comparisons/liquid-glass-dark/context-menu.png) |

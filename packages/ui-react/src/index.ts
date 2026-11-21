@@ -25,6 +25,7 @@ export { ContextMenuSurface, ContextMenuItem, type ContextMenuSurfaceProps, type
 export { TextField, NumberField, TextArea } from "./components/TextField.js";
 export { SettingsChoices, type SettingsChoice } from "./components/SettingsChoices.js";
 export { SettingsThemeManager, SettingsBackground } from "./components/SettingsAppearance.js";
+export { CaptureSettingsHeading, CaptureSettingsActions, CaptureEngineStatus, FixedCaptureRenderer, SettingsStatusBadge } from "./components/SettingsCapture.js";
 export { SettingsField } from "./components/SettingsField.js";
 export { SettingsSectionCard, SettingsGroupHeader, settingsPaneColumns } from "./components/SettingsSectionCard.js";
 export { EmojiAddTile, EmojiFavoriteTile } from "./components/EmojiFavoriteTiles.js";

@@ -116,7 +116,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 图片卡片 | ![不同原始尺寸的图片卡片](docs/comparisons/macos-dark/history-image.png) |
 | 紧凑图片卡片 | ![紧凑模式的缩略图尺寸](docs/comparisons/macos-dark/history-image-compact.png) |
 | 图片预览不可用 | ![图片不可用时的卡片状态](docs/comparisons/macos-dark/history-image-unavailable.png) |
-| 预览工具栏 | ![预览工具栏 WebView 与 Native](docs/comparisons/macos-dark/preview-toolbar.png) |
+| 固定预览工具栏 | ![固定预览工具栏 WebView 与 Native](docs/comparisons/macos-dark/preview-toolbar.png) |
+| 悬浮预览工具栏 | ![悬浮预览工具栏 WebView 与 Native](docs/comparisons/macos-dark/preview-toolbar-hover.png) |
 | 图片预览 | ![图片预览 WebView 与 Native](docs/comparisons/macos-dark/preview-image.png) |
 | 预览窗口缩放手柄 | ![缩放手柄 WebView 与 Native](docs/comparisons/macos-dark/preview-resize-handles.png) |
 | 滚轮感应区域 | ![滚轮感应区域 WebView 与 Native](docs/comparisons/macos-dark/wheel-hot-zone.png) |
@@ -190,7 +191,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 图片卡片 | ![不同原始尺寸的图片卡片](docs/comparisons/history-image.png) |
 | 紧凑图片卡片 | ![紧凑模式的缩略图尺寸](docs/comparisons/history-image-compact.png) |
 | 图片预览不可用 | ![图片不可用时的卡片状态](docs/comparisons/history-image-unavailable.png) |
-| 预览工具栏 | ![预览工具栏 WebView 与 Native](docs/comparisons/preview-toolbar.png) |
+| 固定预览工具栏 | ![固定预览工具栏 WebView 与 Native](docs/comparisons/preview-toolbar.png) |
+| 悬浮预览工具栏 | ![悬浮预览工具栏 WebView 与 Native](docs/comparisons/preview-toolbar-hover.png) |
 | 图片预览 | ![图片预览 WebView 与 Native](docs/comparisons/preview-image.png) |
 | 预览窗口缩放手柄 | ![缩放手柄 WebView 与 Native](docs/comparisons/preview-resize-handles.png) |
 | 滚轮感应区域 | ![滚轮感应区域 WebView 与 Native](docs/comparisons/wheel-hot-zone.png) |
@@ -266,7 +268,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 图片卡片 | ![不同原始尺寸的图片卡片](docs/comparisons/liquid-glass-light/history-image.png) |
 | 紧凑图片卡片 | ![紧凑模式的缩略图尺寸](docs/comparisons/liquid-glass-light/history-image-compact.png) |
 | 图片预览不可用 | ![图片不可用时的卡片状态](docs/comparisons/liquid-glass-light/history-image-unavailable.png) |
-| 预览工具栏 | ![预览工具栏 WebView 与 Native](docs/comparisons/liquid-glass-light/preview-toolbar.png) |
+| 固定预览工具栏 | ![固定预览工具栏 WebView 与 Native](docs/comparisons/liquid-glass-light/preview-toolbar.png) |
+| 悬浮预览工具栏 | ![悬浮预览工具栏 WebView 与 Native](docs/comparisons/liquid-glass-light/preview-toolbar-hover.png) |
 | 图片预览 | ![图片预览 WebView 与 Native](docs/comparisons/liquid-glass-light/preview-image.png) |
 | 预览窗口缩放手柄 | ![缩放手柄 WebView 与 Native](docs/comparisons/liquid-glass-light/preview-resize-handles.png) |
 | 滚轮感应区域 | ![滚轮感应区域 WebView 与 Native](docs/comparisons/liquid-glass-light/wheel-hot-zone.png) |
@@ -342,7 +345,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 图片卡片 | ![不同原始尺寸的图片卡片](docs/comparisons/liquid-glass-dark/history-image.png) |
 | 紧凑图片卡片 | ![紧凑模式的缩略图尺寸](docs/comparisons/liquid-glass-dark/history-image-compact.png) |
 | 图片预览不可用 | ![图片不可用时的卡片状态](docs/comparisons/liquid-glass-dark/history-image-unavailable.png) |
-| 预览工具栏 | ![预览工具栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/preview-toolbar.png) |
+| 固定预览工具栏 | ![固定预览工具栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/preview-toolbar.png) |
+| 悬浮预览工具栏 | ![悬浮预览工具栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/preview-toolbar-hover.png) |
 | 图片预览 | ![图片预览 WebView 与 Native](docs/comparisons/liquid-glass-dark/preview-image.png) |
 | 预览窗口缩放手柄 | ![缩放手柄 WebView 与 Native](docs/comparisons/liquid-glass-dark/preview-resize-handles.png) |
 | 滚轮感应区域 | ![滚轮感应区域 WebView 与 Native](docs/comparisons/liquid-glass-dark/wheel-hot-zone.png) |

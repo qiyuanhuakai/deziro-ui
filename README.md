@@ -123,6 +123,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 滚轮感应区域 | ![滚轮感应区域 WebView 与 Native](docs/comparisons/macos-dark/wheel-hot-zone.png) |
 | 设置开关 | ![设置开关 WebView 与 Native](docs/comparisons/macos-dark/settings-toggle.png) |
 | 带说明的设置开关 | ![粘贴后置顶与 Win+V 开关](docs/comparisons/macos-dark/settings-toggle-help.png) |
+| 方向键预览从属设置 | ![方向键选择和预览开关](docs/comparisons/macos-dark/settings-keyboard-preview.png) |
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/macos-dark/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/macos-dark/hotkey-binding.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/macos-dark/scroll-to-top.png) |
@@ -198,6 +199,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 滚轮感应区域 | ![滚轮感应区域 WebView 与 Native](docs/comparisons/wheel-hot-zone.png) |
 | 设置开关 | ![设置开关 WebView 与 Native](docs/comparisons/settings-toggle.png) |
 | 带说明的设置开关 | ![粘贴后置顶与 Win+V 开关](docs/comparisons/settings-toggle-help.png) |
+| 方向键预览从属设置 | ![方向键选择和预览开关](docs/comparisons/settings-keyboard-preview.png) |
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/hotkey-binding.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/scroll-to-top.png) |
@@ -275,6 +277,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 滚轮感应区域 | ![滚轮感应区域 WebView 与 Native](docs/comparisons/liquid-glass-light/wheel-hot-zone.png) |
 | 设置开关 | ![设置开关 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-toggle.png) |
 | 带说明的设置开关 | ![粘贴后置顶与 Win+V 开关](docs/comparisons/liquid-glass-light/settings-toggle-help.png) |
+| 方向键预览从属设置 | ![方向键选择和预览开关](docs/comparisons/liquid-glass-light/settings-keyboard-preview.png) |
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/liquid-glass-light/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/liquid-glass-light/hotkey-binding.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/liquid-glass-light/scroll-to-top.png) |
@@ -352,6 +355,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 滚轮感应区域 | ![滚轮感应区域 WebView 与 Native](docs/comparisons/liquid-glass-dark/wheel-hot-zone.png) |
 | 设置开关 | ![设置开关 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-toggle.png) |
 | 带说明的设置开关 | ![粘贴后置顶与 Win+V 开关](docs/comparisons/liquid-glass-dark/settings-toggle-help.png) |
+| 方向键预览从属设置 | ![方向键选择和预览开关](docs/comparisons/liquid-glass-dark/settings-keyboard-preview.png) |
 | 设置滑块 | ![设置滑块 WebView 与 Native](docs/comparisons/liquid-glass-dark/settings-slider.png) |
 | 快捷键绑定 | ![快捷键绑定 WebView 与 Native](docs/comparisons/liquid-glass-dark/hotkey-binding.png) |
 | 回到顶部 | ![回到顶部 WebView 与 Native](docs/comparisons/liquid-glass-dark/scroll-to-top.png) |

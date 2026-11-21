@@ -63,6 +63,7 @@ const additional = [
   ["hotkey-list", "multiple", 120],
   ["hotkey-list", "win-v", 120, 0, "hotkey-list-win-v"],
   ["hotkey-list", "extended", 120, 0, "hotkey-list-extended"],
+  ["hotkey-optional", "options", 124],
   ["emoji-favorites", "default", 125],
   ["settings-data", "default", 185],
   ["settings-data", "hover-path", 185, 0, "settings-data-hover"],

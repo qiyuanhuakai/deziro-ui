@@ -105,6 +105,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 更新操作 | ![检查、安装和发布页](docs/comparisons/macos-dark/settings-update-actions.png) |
 | 下载中的更新操作 | ![下载时的按钮状态](docs/comparisons/macos-dark/settings-update-actions-busy.png) |
 | 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/macos-dark/tag-toolbar.png) |
+| 标签批量选择栏 | ![清除选择、已选数量和删除](docs/comparisons/macos-dark/tag-batch-toolbar.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/macos-dark/tag-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/macos-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/macos-dark/filters.png) |
@@ -190,6 +191,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 更新操作 | ![检查、安装和发布页](docs/comparisons/settings-update-actions.png) |
 | 下载中的更新操作 | ![下载时的按钮状态](docs/comparisons/settings-update-actions-busy.png) |
 | 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/tag-toolbar.png) |
+| 标签批量选择栏 | ![清除选择、已选数量和删除](docs/comparisons/tag-batch-toolbar.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/tag-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/filters.png) |
@@ -277,6 +279,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 透明度 20% | ![透明度 20% 下的设置卡片、下拉菜单和历史卡片](docs/comparisons/liquid-glass-light/surface-opacity-20.png) |
 | 透明度 85% | ![透明度 85% 下的设置卡片、下拉菜单和历史卡片](docs/comparisons/liquid-glass-light/surface-opacity-85.png) |
 | 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/liquid-glass-light/tag-toolbar.png) |
+| 标签批量选择栏 | ![清除选择、已选数量和删除](docs/comparisons/liquid-glass-light/tag-batch-toolbar.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/liquid-glass-light/tag-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-light/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-light/filters.png) |
@@ -364,6 +367,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 透明度 20% | ![透明度 20% 下的设置卡片、下拉菜单和历史卡片](docs/comparisons/liquid-glass-dark/surface-opacity-20.png) |
 | 透明度 85% | ![透明度 85% 下的设置卡片、下拉菜单和历史卡片](docs/comparisons/liquid-glass-dark/surface-opacity-85.png) |
 | 标签管理操作栏 | ![标签管理操作栏 WebView 与 Native](docs/comparisons/liquid-glass-dark/tag-toolbar.png) |
+| 标签批量选择栏 | ![清除选择、已选数量和删除](docs/comparisons/liquid-glass-dark/tag-batch-toolbar.png) |
 | 标签选择器与搜索框 | ![窄屏标签选择、侧栏搜索与条目搜索](docs/comparisons/liquid-glass-dark/tag-search.png) |
 | 独立搜索历史 | ![独立搜索历史 WebView 与 Native](docs/comparisons/liquid-glass-dark/search-history.png) |
 | 筛选项 | ![筛选项 WebView 与 Native](docs/comparisons/liquid-glass-dark/filters.png) |

@@ -75,6 +75,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/macos-dark/history-typography-custom.png) |
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/macos-dark/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/macos-dark/history-rich-text-compact.png) |
+| 富文本代码块的等宽字体 | ![使用自定义等宽字体的代码块](docs/comparisons/macos-dark/history-rich-code.png) |
+| 紧凑卡片中的代码空行 | ![保留代码块空行并截断在卡片内](docs/comparisons/macos-dark/history-rich-code-compact.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/macos-dark/history-card.png) |
 | 图片卡片的 OCR 状态和识别结果 | ![普通卡片展开 OCR 结果](docs/comparisons/macos-dark/history-ocr.png) |
 | 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/macos-dark/history-ocr-compact.png) |
@@ -198,6 +200,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/history-typography-custom.png) |
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/history-rich-text-compact.png) |
+| 富文本代码块的等宽字体 | ![使用自定义等宽字体的代码块](docs/comparisons/history-rich-code.png) |
+| 紧凑卡片中的代码空行 | ![保留代码块空行并截断在卡片内](docs/comparisons/history-rich-code-compact.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/history-card.png) |
 | 图片卡片的 OCR 状态和识别结果 | ![普通卡片展开 OCR 结果](docs/comparisons/history-ocr.png) |
 | 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/history-ocr-compact.png) |
@@ -321,6 +325,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/liquid-glass-light/history-typography-custom.png) |
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/liquid-glass-light/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/liquid-glass-light/history-rich-text-compact.png) |
+| 富文本代码块的等宽字体 | ![使用自定义等宽字体的代码块](docs/comparisons/liquid-glass-light/history-rich-code.png) |
+| 紧凑卡片中的代码空行 | ![保留代码块空行并截断在卡片内](docs/comparisons/liquid-glass-light/history-rich-code-compact.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-light/history-card.png) |
 | 图片卡片的 OCR 状态和识别结果 | ![普通卡片展开 OCR 结果](docs/comparisons/liquid-glass-light/history-ocr.png) |
 | 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/liquid-glass-light/history-ocr-compact.png) |
@@ -447,6 +453,8 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 卡片自定义字体 | ![界面字体与等宽字体设置的实际效果](docs/comparisons/liquid-glass-dark/history-typography-custom.png) |
 | 普通卡片中的富文本 | ![带粗体、斜体和链接的普通卡片](docs/comparisons/liquid-glass-dark/history-rich-text.png) |
 | 紧凑卡片中的富文本 | ![紧凑模式下的富文本截断](docs/comparisons/liquid-glass-dark/history-rich-text-compact.png) |
+| 富文本代码块的等宽字体 | ![使用自定义等宽字体的代码块](docs/comparisons/liquid-glass-dark/history-rich-code.png) |
+| 紧凑卡片中的代码空行 | ![保留代码块空行并截断在卡片内](docs/comparisons/liquid-glass-dark/history-rich-code-compact.png) |
 | 历史卡片 | ![历史卡片 WebView 与 Native](docs/comparisons/liquid-glass-dark/history-card.png) |
 | 图片卡片的 OCR 状态和识别结果 | ![普通卡片展开 OCR 结果](docs/comparisons/liquid-glass-dark/history-ocr.png) |
 | 简洁卡片的 OCR 结果 | ![简洁卡片展开 OCR 结果](docs/comparisons/liquid-glass-dark/history-ocr-compact.png) |

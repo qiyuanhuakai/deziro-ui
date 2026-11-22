@@ -14,7 +14,7 @@
 ### React WebView
 
 ```sh
-pnpm add https://github.com/qiyuanhuakai/deziro-ui/releases/download/v0.1.1/deziro-ui-react-0.1.1.tgz
+pnpm add https://github.com/qiyuanhuakai/deziro-ui/releases/download/v0.2.0/deziro-ui-react-0.2.0.tgz
 ```
 
 ```tsx
@@ -33,7 +33,7 @@ document.body.classList.add("theme-macos", "light-mode");
 ### MyGo Native
 
 ```sh
-go get github.com/qiyuanhuakai/deziro-ui/packages/ui-native/uikit@v0.1.1
+go get github.com/qiyuanhuakai/deziro-ui/packages/ui-native/uikit@v0.2.0
 ```
 
 ```go
@@ -46,7 +46,7 @@ kit.Apply(c)
 使用自己的主题时，向 `uikit.NewKit` 传入语义颜色和控件样式。应用需要下方完整的 Web 对照主题时，可以额外导入 GPL 预设模块，并通过 `presets.Select("macos", "light").Kit()` 应用。
 
 ```sh
-go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
+go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.2.0
 ```
 
 ## 主题
@@ -55,7 +55,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 
 ## 组件对照
 
-每张图左侧是 React WebView，右侧是 MyGo Native。macOS 与 Liquid Glass 的浅色和深色共 288 张对照图。输入框使用带内容的示例，简洁卡片操作栏和右键菜单展示悬浮后的状态。
+每张图左侧是 React WebView，右侧是 MyGo Native。对照覆盖 macOS 与 Liquid Glass 的浅色和深色。输入框使用带内容的示例，简洁卡片操作栏和右键菜单展示悬浮后的状态。
 
 剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。新增组件的源码与导出位于 `main` 分支。
 

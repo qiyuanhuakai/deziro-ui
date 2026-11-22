@@ -218,7 +218,7 @@ function TagHistoryEntriesFixture() {
       selection={managing ? { label: "Select entry: " + name, checked: selected[index],
         onToggle: () => setSelected(row => row.map((checked, slot) => slot === index ? !checked : checked)) } : undefined}>
       <HistoryCard compact={state === "compact"} selected={managing && selected[index]} disableLayout>
-        <HistoryCardMeta source="Editor" time="12:30" actions={<>
+        <HistoryCardMeta source="Editor" time="12:30" actions={!managing && <>
           <HistoryCardAction title="Pin"><Pin size={12} /></HistoryCardAction>
           <HistoryCardAction title="Tags"><Tag size={12} /></HistoryCardAction>
           <HistoryCardAction title="Delete"><X size={12} /></HistoryCardAction>

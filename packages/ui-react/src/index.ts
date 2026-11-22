@@ -40,6 +40,6 @@ export { CharacterPanel, CharacterSearch, EmojiGrid, EmojiTabs, type EmojiTab } 
 export { SettingsToggle, SettingsToggleField, type SettingsToggleProps } from "./components/SettingsToggle.js";
 export { SettingsSlider, type SettingsSliderProps } from "./components/SettingsSlider.js";
 export { ScrollToTopButton } from "./components/ScrollToTopButton.js";
-export { HotkeyBinding, HotkeyList, HotkeyListLayout, type HotkeyBindingProps, type HotkeyListProps } from "./components/HotkeyBinding.js";
+export { HotkeyBinding, HotkeyError, HotkeyList, HotkeyListLayout, type HotkeyBindingProps, type HotkeyListProps } from "./components/HotkeyBinding.js";
 export { HotkeyRemoveButton, SettingsRemoveButton } from "./components/RemoveButton.js";
 export { PrivacyDetectionOptions, PrivacyPatternsField, PrivacyRuleCard, PrivacyRuleGrid, PrivacyRulesHeading, SourceExclusionField, type PrivacyDetectionOption } from "./components/PrivacySettings.js";

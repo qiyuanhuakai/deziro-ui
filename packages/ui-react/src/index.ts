@@ -7,7 +7,7 @@ export { default as ThemedSelect, type ThemedSelectOption, type ThemedSelectProp
 export { FilterChips, type FilterChipsProps } from "./components/FilterChips.js";
 export { SearchBar, type SearchBarProps, type SearchMode } from "./components/SearchBar.js";
 export { SearchHistory, type SearchHistoryProps } from "./components/SearchHistory.js";
-export { TagDialog, type TagDialogProps } from "./components/TagDialog.js";
+export { TagConfirmation, TagDialog, type TagConfirmationProps, type TagDialogProps } from "./components/TagDialog.js";
 export { default as ToastContainer, type ToastItem } from "./components/ToastContainer.js";
 export { default as AppHeader, type AppHeaderProps, type HeaderTagFilter } from "./components/AppHeader.js";
 export { TagSuggestion, TagSuggestions, TagSuggestionRetry, TagSuggestionStatus } from "./components/TagSuggestions.js";

@@ -151,6 +151,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置帮助 | ![设置帮助 WebView 与 Native](docs/comparisons/macos-dark/help.png) |
 | 确认对话框 | ![确认对话框 WebView 与 Native](docs/comparisons/macos-dark/confirm.png) |
 | 标签对话框 | ![标签对话框 WebView 与 Native](docs/comparisons/macos-dark/tag-dialog.png) |
+| 删除标签内条目的确认框 | ![删除条目确认框 WebView 与 Native](docs/comparisons/macos-dark/tag-entry-delete.png) |
 | 短提示 | ![短提示 WebView 与 Native](docs/comparisons/macos-dark/toast.png) |
 | 进度提示 | ![进度提示 WebView 与 Native](docs/comparisons/macos-dark/progress.png) |
 | 附件预览 | ![附件预览 WebView 与 Native](docs/comparisons/macos-dark/attachment-preview.png) |
@@ -272,6 +273,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置帮助 | ![设置帮助 WebView 与 Native](docs/comparisons/help.png) |
 | 确认对话框 | ![确认对话框 WebView 与 Native](docs/comparisons/confirm.png) |
 | 标签对话框 | ![标签对话框 WebView 与 Native](docs/comparisons/tag-dialog.png) |
+| 删除标签内条目的确认框 | ![删除条目确认框 WebView 与 Native](docs/comparisons/tag-entry-delete.png) |
 | 短提示 | ![短提示 WebView 与 Native](docs/comparisons/toast.png) |
 | 进度提示 | ![进度提示 WebView 与 Native](docs/comparisons/progress.png) |
 | 附件预览 | ![附件预览 WebView 与 Native](docs/comparisons/attachment-preview.png) |
@@ -396,6 +398,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置帮助 | ![设置帮助 WebView 与 Native](docs/comparisons/liquid-glass-light/help.png) |
 | 确认对话框 | ![确认对话框 WebView 与 Native](docs/comparisons/liquid-glass-light/confirm.png) |
 | 标签对话框 | ![标签对话框 WebView 与 Native](docs/comparisons/liquid-glass-light/tag-dialog.png) |
+| 删除标签内条目的确认框 | ![删除条目确认框 WebView 与 Native](docs/comparisons/liquid-glass-light/tag-entry-delete.png) |
 | 短提示 | ![短提示 WebView 与 Native](docs/comparisons/liquid-glass-light/toast.png) |
 | 进度提示 | ![进度提示 WebView 与 Native](docs/comparisons/liquid-glass-light/progress.png) |
 | 附件预览 | ![附件预览 WebView 与 Native](docs/comparisons/liquid-glass-light/attachment-preview.png) |
@@ -520,6 +523,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 设置帮助 | ![设置帮助 WebView 与 Native](docs/comparisons/liquid-glass-dark/help.png) |
 | 确认对话框 | ![确认对话框 WebView 与 Native](docs/comparisons/liquid-glass-dark/confirm.png) |
 | 标签对话框 | ![标签对话框 WebView 与 Native](docs/comparisons/liquid-glass-dark/tag-dialog.png) |
+| 删除标签内条目的确认框 | ![删除条目确认框 WebView 与 Native](docs/comparisons/liquid-glass-dark/tag-entry-delete.png) |
 | 短提示 | ![短提示 WebView 与 Native](docs/comparisons/liquid-glass-dark/toast.png) |
 | 进度提示 | ![进度提示 WebView 与 Native](docs/comparisons/liquid-glass-dark/progress.png) |
 | 附件预览 | ![附件预览 WebView 与 Native](docs/comparisons/liquid-glass-dark/attachment-preview.png) |

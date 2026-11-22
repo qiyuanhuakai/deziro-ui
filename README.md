@@ -95,6 +95,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/macos-dark/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/macos-dark/search-select-empty.png) |
 | 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/macos-dark/search-select-typo.png) |
+| 默认应用名称重音匹配 | ![用不带重音的名称查找应用](docs/comparisons/macos-dark/search-select-accented-app.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/macos-dark/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/macos-dark/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/macos-dark/hotkey-list-extended.png) |
@@ -135,6 +136,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/macos-dark/tag-suggestions-empty.png) |
 | 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/macos-dark/settings-rail-long-label.png) |
 | 字体选择 | ![下拉选项使用各自的字体](docs/comparisons/macos-dark/font-select.png) |
+| 键盘打开字体长列表 | ![从键盘打开下拉列表后显示当前字体](docs/comparisons/macos-dark/font-select-keyboard.png) |
 | 文本预览字号 | ![十八像素字号下的双行文本预览](docs/comparisons/macos-dark/preview-text.png) |
 | 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/macos-dark/search-select-long-options.png) |
 | 代码沿用文本程序 | ![代码选择器显示沿用的文本程序](docs/comparisons/macos-dark/search-select-app-inherited.png) |
@@ -214,6 +216,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/search-select-empty.png) |
 | 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/search-select-typo.png) |
+| 默认应用名称重音匹配 | ![用不带重音的名称查找应用](docs/comparisons/search-select-accented-app.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/hotkey-list-extended.png) |
@@ -254,6 +257,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/tag-suggestions-empty.png) |
 | 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/settings-rail-long-label.png) |
 | 字体选择 | ![下拉选项使用各自的字体](docs/comparisons/font-select.png) |
+| 键盘打开字体长列表 | ![从键盘打开下拉列表后显示当前字体](docs/comparisons/font-select-keyboard.png) |
 | 文本预览字号 | ![十八像素字号下的双行文本预览](docs/comparisons/preview-text.png) |
 | 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/search-select-long-options.png) |
 | 代码沿用文本程序 | ![代码选择器显示沿用的文本程序](docs/comparisons/search-select-app-inherited.png) |
@@ -333,6 +337,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-light/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/liquid-glass-light/search-select-empty.png) |
 | 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/liquid-glass-light/search-select-typo.png) |
+| 默认应用名称重音匹配 | ![用不带重音的名称查找应用](docs/comparisons/liquid-glass-light/search-select-accented-app.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/liquid-glass-light/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/liquid-glass-light/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/liquid-glass-light/hotkey-list-extended.png) |
@@ -376,6 +381,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/liquid-glass-light/tag-suggestions-empty.png) |
 | 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/liquid-glass-light/settings-rail-long-label.png) |
 | 字体选择 | ![下拉选项使用各自的字体](docs/comparisons/liquid-glass-light/font-select.png) |
+| 键盘打开字体长列表 | ![从键盘打开下拉列表后显示当前字体](docs/comparisons/liquid-glass-light/font-select-keyboard.png) |
 | 文本预览字号 | ![十八像素字号下的双行文本预览](docs/comparisons/liquid-glass-light/preview-text.png) |
 | 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/liquid-glass-light/search-select-long-options.png) |
 | 代码沿用文本程序 | ![代码选择器显示沿用的文本程序](docs/comparisons/liquid-glass-light/search-select-app-inherited.png) |
@@ -455,6 +461,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 字体与默认应用选择器 | ![字体选中值和应用搜索结果](docs/comparisons/liquid-glass-dark/search-select.png) |
 | 默认应用搜索无匹配项 | ![应用选择器的无匹配项提示](docs/comparisons/liquid-glass-dark/search-select-empty.png) |
 | 默认应用搜索容错 | ![程序名称拼写错误时仍返回正确选项](docs/comparisons/liquid-glass-dark/search-select-typo.png) |
+| 默认应用名称重音匹配 | ![用不带重音的名称查找应用](docs/comparisons/liquid-glass-dark/search-select-accented-app.png) |
 | 多快捷键与移除按钮 | ![多快捷键与移除按钮 WebView 与 Native](docs/comparisons/liquid-glass-dark/hotkey-list.png) |
 | Windows 接管 Win+V 时的快捷键列表 | ![Win+V 键帽和独立的快捷键移除按钮](docs/comparisons/liquid-glass-dark/hotkey-list-win-v.png) |
 | 数字小键盘与标点快捷键 | ![主键区 1、小键盘 1 与分号的独立键帽](docs/comparisons/liquid-glass-dark/hotkey-list-extended.png) |
@@ -498,6 +505,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.1.1
 | 标签建议空状态 | ![标签建议为空时的提示与重试](docs/comparisons/liquid-glass-dark/tag-suggestions-empty.png) |
 | 设置栏长标题 | ![设置侧栏的长标题换行](docs/comparisons/liquid-glass-dark/settings-rail-long-label.png) |
 | 字体选择 | ![下拉选项使用各自的字体](docs/comparisons/liquid-glass-dark/font-select.png) |
+| 键盘打开字体长列表 | ![从键盘打开下拉列表后显示当前字体](docs/comparisons/liquid-glass-dark/font-select-keyboard.png) |
 | 文本预览字号 | ![十八像素字号下的双行文本预览](docs/comparisons/liquid-glass-dark/preview-text.png) |
 | 默认应用长名称 | ![默认应用菜单内的长名称换行](docs/comparisons/liquid-glass-dark/search-select-long-options.png) |
 | 代码沿用文本程序 | ![代码选择器显示沿用的文本程序](docs/comparisons/liquid-glass-dark/search-select-app-inherited.png) |

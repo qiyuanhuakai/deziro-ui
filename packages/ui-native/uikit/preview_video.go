@@ -70,7 +70,7 @@ func (k Kit) VideoCover(c *ui.Context, label string, loading bool, poster func(*
 		if poster != nil {
 			ui.Box(c).Absolute().Top(0).Left(0).Fill().Children(func() { poster(c) })
 		}
-		clicked = videoButton(c, "play", label, false, loading, 50).Clicked()
+		clicked = videoButton(c, "play", label, false, loading, 50).ZIndex(1).Clicked()
 	})
 	return clicked
 }

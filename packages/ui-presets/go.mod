@@ -4,7 +4,7 @@ go 1.27.3
 
 require (
 	github.com/egoist/mygo v0.10.0
-	github.com/qiyuanhuakai/deziro-ui/packages/ui-native v0.3.1
+	github.com/qiyuanhuakai/deziro-ui/packages/ui-native v0.3.2
 	github.com/tdewolff/parse/v2 v2.25.0
 )
 

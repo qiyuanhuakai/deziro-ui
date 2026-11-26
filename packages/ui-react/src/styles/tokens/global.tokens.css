@@ -259,7 +259,7 @@
 :root.theme-liquid-glass {
   --floating-panel-top: 233 247 255;
   --floating-panel-bottom: 217 232 255;
-  --floating-panel-bottom-opacity: .6;
+  --floating-panel-bottom-opacity: .72;
   --floating-panel-radius: 23px;
   --floating-panel-edge: #ffffffe8;
   --floating-panel-frame: inset 0 0 0 1px var(--floating-panel-edge), inset 0 3px 8px #ffffff87, inset 0 -4px 10px #8caaf34d;

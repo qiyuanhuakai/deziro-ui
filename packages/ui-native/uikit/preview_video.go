@@ -63,10 +63,13 @@ func (k Kit) PinnedVideo(c *ui.Context, player *ui.VideoPlayer, labels VideoLabe
 }
 
 // VideoCover shows the player before opening the underlying file.
-func (k Kit) VideoCover(c *ui.Context, label string, loading bool) bool {
+func (k Kit) VideoCover(c *ui.Context, label string, loading bool, poster func(*ui.Context)) bool {
 	clicked := false
 	ui.Box(c).FillWidth().Grow(1).MinHeight(96).Radius(14).Center().
-		Gradient(ui.Hex("#303f58"), ui.Hex("#080b10"), 180).Children(func() {
+		Clip().Gradient(ui.Hex("#303f58"), ui.Hex("#080b10"), 180).Children(func() {
+		if poster != nil {
+			ui.Box(c).Absolute().Top(0).Left(0).Fill().Children(func() { poster(c) })
+		}
 		clicked = videoButton(c, "play", label, false, loading, 50).Clicked()
 	})
 	return clicked

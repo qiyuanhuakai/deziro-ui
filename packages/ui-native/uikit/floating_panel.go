@@ -32,7 +32,7 @@ func (k Kit) FloatingPanel(c *ui.Context, shade ui.Color, padding, gap float32) 
 			top, border = "#222224", ui.Hex("#74747c").Alpha(.63)
 		}
 	case "liquid-glass":
-		radius, top, bottom, lowerOpacity = 23, "#e9f7ff", "#d9e8ff", .60
+		radius, top, bottom, lowerOpacity = 23, "#e9f7ff", "#d9e8ff", .72
 		border, rim = ui.Hex("#ffffff").Alpha(.91), ui.Hex("#ffffff").Alpha(.55)
 		if dark {
 			top, bottom = "#2b3f57", "#0d1b2f"
@@ -62,9 +62,16 @@ func (k Kit) FloatingPanel(c *ui.Context, shade ui.Color, padding, gap float32) 
 	if rim.A != 0 {
 		panel.Draw(func(p *ui.Painter, box ui.Rect) {
 			box = ui.Rect{X: box.X + 1, Y: box.Y + 1, W: max(0, box.W-2), H: max(0, box.H-2)}
+			height := float32(24)
+			if k.floatingTheme == "mica" {
+				height = 4
+			}
 			clear := rim
 			clear.A = 0
-			p.FillGradient(box, ui.LinearGradient{From: rim, To: clear, Angle: 180}, radius-1)
+			p.Clip(box, radius-1, func() {
+				box.H = min(box.H, height)
+				p.FillGradient(box, ui.LinearGradient{From: rim, To: clear, Angle: 180}, 0)
+			})
 		})
 	}
 	return panel

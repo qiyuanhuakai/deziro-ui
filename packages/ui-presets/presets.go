@@ -56,7 +56,7 @@ func Select(name, mode string) Preset {
 
 // Kit applies this catalog to the independent native components.
 func (p Preset) Kit() uikit.Kit {
-	return uikit.NewKit(p.mode, p.colors.Tokens, p.widgets).WithFloatingTheme(p.name)
+	return uikit.NewKit(p.mode, p.colors.Tokens, p.widgets).WithFloatingTheme(p.name).WithBackdropTintPower(p.colors.SystemBackdropTintPower)
 }
 
 // Tokens returns the semantic palette for associated native windows.

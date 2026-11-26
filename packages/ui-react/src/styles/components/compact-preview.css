@@ -1,3 +1,5 @@
+@import "./floating-shell.css";
+
 body.compact-preview {
     margin: 0;
     background: transparent;
@@ -250,16 +252,10 @@ body.compact-preview .compact-preview-root .rich-text-preview img {
 .preview-resize-southwest { bottom: 0; left: 0; width: 10px; height: 10px; cursor: sw-resize; }
 
 body.compact-preview #root .compact-preview-root > .compact-popover-portal.compact-preview-window {
-    background: rgb(var(--surface-shell-rgb) / var(--preview-surface-opacity, var(--surface-opacity))) !important;
-}
-
-body.compact-preview:is(.theme-mica, .theme-acrylic, .theme-macos, .theme-liquid-glass, .theme-retro) #root .compact-preview-root > .compact-popover-portal.compact-preview-window {
-    --floating-panel-opacity: var(--preview-surface-opacity, var(--surface-opacity));
-    background: var(--floating-panel-sheen), linear-gradient(var(--floating-panel-angle), rgb(var(--floating-panel-top) / var(--floating-panel-opacity)),
-        rgb(var(--floating-panel-bottom) / calc(var(--floating-panel-opacity) * var(--floating-panel-bottom-opacity)))) !important;
-    border: 0;
-    border-radius: var(--floating-panel-radius);
-    box-shadow: var(--floating-panel-frame) !important;
+    --floating-opacity: var(--preview-surface-opacity, var(--surface-opacity));
+    background: var(--floating-texture), var(--floating-fill) !important;
+    border-radius: var(--floating-radius);
+    box-shadow: var(--floating-frame) !important;
 }
 body:not(.pinned-preview) .preview-toolbar-drag { cursor: default; }
 body.pinned-preview #root { width: 100vw !important; height: 100vh !important; display: flex !important; }

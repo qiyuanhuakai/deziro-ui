@@ -21,6 +21,7 @@ export { default as SettingsFooter, type SettingsFooterProps } from "./component
 export { AttachmentPreview } from "./components/AttachmentPreview";
 export { PreviewImage, type PreviewImageProps } from "./components/PreviewImage";
 export { VideoPlayer, type VideoPlayerLabels } from "./components/VideoPlayer";
+export { QuickPasteRings, type QuickPasteDock } from "./components/QuickPasteRings";
 export { VirtualClipboardList, type VirtualClipboardListHandle, type VirtualClipboardListProps } from "./components/VirtualClipboardList";
 export { HistoryCard, HistoryCardContent, HistoryPreviewPlaceholder, HistoryImagePreview, HistoryRichTextPreview, HistoryCardMeta, HistoryCardActions, HistoryCardAction, HistoryCardTags, HistoryCardTag, type HistoryCardProps, type HistoryCardMetaProps, type HistoryCardActionProps } from "./components/HistoryCard";
 export { HistoryOCRBadge, HistoryOCRResult, type HistoryOCRStatus, type HistoryOCRResultProps } from "./components/HistoryOCR";

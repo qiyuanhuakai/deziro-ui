@@ -18,6 +18,7 @@ type Kit struct {
 	monospaceFont  string
 	hotkeyPlatform string
 	floatingTheme  string
+	backdropPower  float64
 }
 
 // NewKit sets a palette and a catalog of widget styles supplied by the caller.
@@ -30,6 +31,12 @@ func NewKit(mode string, tokens theme.Tokens, widgets map[string]theme.WidgetSty
 // WithFloatingTheme sets the built-in material used by independent overlays.
 func (k Kit) WithFloatingTheme(name string) Kit {
 	k.floatingTheme = name
+	return k
+}
+
+// WithBackdropTintPower controls the tint opacity over a system backdrop.
+func (k Kit) WithBackdropTintPower(power float64) Kit {
+	k.backdropPower = power
 	return k
 }
 

@@ -362,7 +362,12 @@ body.light-mode.theme-scifi {
 
 :root.theme-macos,
 body.theme-macos {
-  --macos-root-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(245, 247, 250, 0.82) 100%);
+  --macos-shell-top: 255 255 255;
+  --macos-shell-bottom: 245 247 250;
+  --macos-shell-top-alpha: .88;
+  --macos-shell-bottom-alpha: .82;
+  --macos-root-bg: linear-gradient(180deg, rgb(var(--macos-shell-top) / var(--macos-shell-top-alpha)),
+    rgb(var(--macos-shell-bottom) / var(--macos-shell-bottom-alpha)));
   --macos-root-border: var(--border-dark);
   --macos-root-shadow: 0 8px 24px rgba(15, 18, 26, 0.18), 0 1px 0 rgba(255, 255, 255, 0.72) inset;
   --macos-root-borderless-shadow: 0 8px 24px rgba(15, 18, 26, 0.18);
@@ -493,7 +498,12 @@ body.dark-mode.theme-macos {
   --text-secondary: #a8abb4;
   --border-dark: rgba(255, 255, 255, 0.14);
   --shadow-color: rgba(0, 0, 0, 0.5);
-  --macos-root-bg: linear-gradient(180deg, rgba(40, 42, 49, 0.76) 0%, rgba(29, 31, 36, 0.78) 100%);
+  --macos-shell-top: 40 42 49;
+  --macos-shell-bottom: 29 31 36;
+  --macos-shell-top-alpha: .76;
+  --macos-shell-bottom-alpha: .78;
+  --macos-root-bg: linear-gradient(180deg, rgb(var(--macos-shell-top) / var(--macos-shell-top-alpha)),
+    rgb(var(--macos-shell-bottom) / var(--macos-shell-bottom-alpha)));
   --macos-root-border: rgba(255, 255, 255, 0.12);
   --macos-root-shadow: 0 12px 30px rgba(0, 0, 0, 0.38), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
   --macos-root-borderless-shadow: 0 12px 30px rgba(0, 0, 0, 0.38);

@@ -3,7 +3,7 @@ import "../src/styles/components/privacy.css";
 import { Pin, Tag, X } from "lucide-react";
 import { createRoot } from "react-dom/client";
 import { AppHeader, CharacterPanel, CharacterSearch, ClipboardSearch, ConfirmDialog, EmojiGrid, EmojiTabs, FilterChips, HistoryCard, HistoryCardAction, HistoryCardContent, HistoryCardMeta, HistoryCardTag, HistoryCardTags, HistoryPreviewPlaceholder, HotkeyBinding, MatchHighlight,
-  PreviewText, ProgressToast, QuickPastePanel, QuickPasteRow, QuickPasteSearch, ScrollToTopButton, SearchBar, SearchHistory, SettingHelp, SettingsDisclosure, SettingsFooter, SettingsRail, SettingsSectionCard,
+  PreviewText, ProgressToast, QuickPastePanel, QuickPasteRings, QuickPasteRow, QuickPasteSearch, ScrollToTopButton, SearchBar, SearchHistory, SettingHelp, SettingsDisclosure, SettingsFooter, SettingsRail, SettingsSectionCard,
   SettingsSlider, SettingsToggle, SettingsToggleField, TagConfirmation, TagDialog, TagHistoryEntry, ThemedSelect, ToastContainer, VirtualClipboardList, type EmojiTab, type SearchMode } from "../src";
 import { isBuiltinTheme, loadBuiltinTheme } from "../src/themes";
 import { nativeUiPalette } from "../src/native-appearance";
@@ -441,14 +441,28 @@ function CharacterPanelFixture() {
 }
 
 function QuickPasteFixture() {
-  return <main data-fixture="quick-paste-panel">
+  const [category, setCategory] = useState("All");
+  const [entry, setEntry] = useState("Release notes");
+  const ring = fixture === "quick-paste-rings";
+  const dock = state === "left" || state === "right" ? state : "";
+  const ringEntries = [
+    ["Release notes", "Editor"], ["Design notes", "Browser"], ["Report.pdf", "Explorer"],
+    ["Run tests", "Terminal"], ["Update guide", "Editor"], ["Colors.png", "Paint"],
+  ];
+  return <main data-fixture={fixture}>
     <QuickPastePanel>
       <QuickPasteSearch aria-label="Search clipboard" placeholder="Search clipboard…" />
-      <div className="quick-paste-window__list">
+      {ring && <QuickPasteRings dock={dock} categoryLabel="Clipboard types" entryLabel="Clipboard entries"
+        categories={["All", "Text", "Image", "File", "Link", "Code", "Video", "Rich text"]
+          .map(label => ({ id: label, label, compactLabel: ({ Image: "Img", Video: "Vid", "Rich text": "Rich" } as Record<string, string>)[label],
+            active: label === category, onSelect: () => setCategory(label) }))}
+        entries={ringEntries.map(([label, detail]) => ({ id: label, label, detail, active: label === entry,
+          onSelect: () => setEntry(label) }))} />}
+      {!ring && <div className="quick-paste-window__list">
         <QuickPasteRow preview="Release checklist" source="Editor" active />
         <QuickPasteRow preview="Design notes" source="Browser" />
         <QuickPasteRow preview="Preview package ready for testing" source="Terminal" />
-      </div>
+      </div>}
     </QuickPastePanel>
   </main>;
 }
@@ -456,15 +470,16 @@ function QuickPasteFixture() {
 async function start() {
   for (const element of [document.documentElement, document.body]) element.classList.add("theme-" + theme, mode + "-mode");
   await loadBuiltinTheme(theme);
-  if (fixture === "surface-opacity" || fixture === "quick-paste-panel") {
+  const quickPaste = fixture === "quick-paste-panel" || fixture === "quick-paste-rings";
+  if (fixture === "surface-opacity" || quickPaste) {
     document.documentElement.classList.add("showcase-opacity-background");
-    document.documentElement.style.setProperty("--surface-opacity", String(Math.min(100, Math.max(0, Number(state))) / 100));
+    document.documentElement.style.setProperty("--surface-opacity", fixture === "quick-paste-rings" ? "0.65" : String(Math.min(100, Math.max(0, Number(state))) / 100));
   }
-  if (fixture === "quick-paste-panel") document.body.classList.add("quick-paste");
+  if (quickPaste) document.body.classList.add("quick-paste");
   document.body.dataset.appearance = JSON.stringify({ Mode: mode, Tokens: nativeUiPalette() });
   createRoot(document.getElementById("root")!).render(fixture === "surface-opacity" ? <SurfaceOpacityFixture />
     : fixture === "character-panel" ? <CharacterPanelFixture />
-    : fixture === "quick-paste-panel" ? <QuickPasteFixture /> : <Showcase />);
+    : quickPaste ? <QuickPasteFixture /> : <Showcase />);
 }
 
 void start();

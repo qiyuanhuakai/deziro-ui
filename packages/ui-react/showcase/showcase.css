@@ -16,7 +16,7 @@
   display: block;
   padding: 0;
 }
-[data-fixture="quick-paste-panel"] {
+:is([data-fixture="quick-paste-panel"], [data-fixture="quick-paste-rings"]) {
   height: 100vh;
   font-family: var(--dc-font-ui);
 }

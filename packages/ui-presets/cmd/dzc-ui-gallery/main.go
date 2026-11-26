@@ -49,7 +49,7 @@ type gallery struct {
 
 func (g *gallery) view(c *ui.Context) {
 	preset := presets.Select(g.theme, g.mode)
-	if g.fixture == "quick-paste-panel" {
+	if g.fixture == "quick-paste-panel" || g.fixture == "quick-paste-rings" {
 		g.quickPasteFixture(c, preset)
 		return
 	}
@@ -708,7 +708,13 @@ func run() error {
 		g.query = "Work"
 		g.focusTagName = true
 	}
-	const width, height = 560, 420
+	width, height := 560, 420
+	if g.fixture == "quick-paste-rings" {
+		height = 480
+		if g.state != "full" {
+			width = 260
+		}
+	}
 	if *output != "" {
 		tester := ui.NewTester(g.view, width, height)
 		tester.SetDark(g.mode == "dark")

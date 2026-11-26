@@ -543,6 +543,13 @@ body.has-custom-bg.theme-liquid-glass::before {
 /* ============================================================
    3. #root shell — the main glass surface with texture overlay
    ============================================================ */
+:root.theme-liquid-glass {
+  --surface-shell-texture-image:
+    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(255, 255, 255, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 90%, rgba(255, 255, 255, 0.06) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 40%, rgba(255, 255, 255, 0.04) 100%);
+}
+
 .theme-liquid-glass #root {
   position: relative;
   overflow: hidden;
@@ -578,10 +585,7 @@ body.has-custom-bg.opaque-background-image.theme-liquid-glass #root {
   pointer-events: none;
   z-index: 0;
   border-radius: inherit;
-  background:
-    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(255, 255, 255, 0.12) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 80% 90%, rgba(255, 255, 255, 0.06) 0%, transparent 70%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 40%, rgba(255, 255, 255, 0.04) 100%);
+  background: var(--surface-shell-texture-image);
 }
 
 /* All direct children of #root sit above the texture layer */

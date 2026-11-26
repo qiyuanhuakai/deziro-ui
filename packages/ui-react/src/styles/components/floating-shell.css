@@ -1,0 +1,33 @@
+.quick-paste-window,
+.compact-preview-window {
+    --floating-fill: rgb(var(--surface-shell-rgb) / var(--floating-opacity));
+    --floating-texture: var(--surface-shell-texture-image, linear-gradient(transparent, transparent));
+    --floating-radius: var(--radius-window, var(--dc-radius));
+    --floating-frame: inset 0 0 0 1px var(--border-dark);
+}
+
+.theme-macos :is(.quick-paste-window, .compact-preview-window) {
+    --floating-fill: linear-gradient(180deg,
+        rgb(var(--macos-shell-top) / var(--floating-opacity)),
+        rgb(var(--macos-shell-bottom) / var(--floating-opacity)));
+}
+
+@supports (opacity: pow(.5, 2)) {
+    :root.windows-11 :is(.theme-mica, .theme-acrylic) :is(.quick-paste-window, .compact-preview-window) {
+        --floating-fill: rgb(var(--surface-shell-rgb) / pow(var(--floating-opacity), var(--system-backdrop-tint-power)));
+    }
+}
+
+.theme-liquid-glass :is(.quick-paste-window, .compact-preview-window) {
+    --floating-frame: inset 0 0 0 1px var(--glass-edge-top),
+        inset 0 -1px var(--glass-edge-bottom);
+}
+
+:is(.theme-retro, .theme-scifi, .theme-custom) :is(.quick-paste-window, .compact-preview-window) {
+    --floating-fill: color-mix(in srgb, var(--bg-window) calc(var(--floating-opacity) * 100%), transparent);
+}
+
+.theme-retro :is(.quick-paste-window, .compact-preview-window) {
+    --floating-radius: 0px;
+    --floating-frame: inset 0 0 0 2px var(--border-dark), inset -4px -4px var(--border-dark);
+}

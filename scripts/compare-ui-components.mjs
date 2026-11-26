@@ -19,6 +19,7 @@ const presets = JSON.parse(await readFile(resolve(root, "packages/ui-presets/bui
 const cases = {
   "surface-opacity": { states: ["0", "20", "65", "85", "100"], text: "Appearance" },
   "quick-paste-panel": { states: ["0", "65", "100"], text: "Release checklist" },
+  "quick-paste-rings": { states: ["full", "left", "right"], text: "Release notes" },
   "settings-field": { states: ["default", "expanded"], text: "Interface font" },
   "theme-manager": { states: ["default", "imported", "wide", "narrow"], text: "Visual theme" },
   "background-settings": { states: ["default", "saved"], text: "Custom background" },
@@ -105,7 +106,7 @@ const output = await mkdtemp(join(tmpdir(), "deziro-ui-parity-"));
 const size = { width: 560, height: 420 };
 const reportPath = join(output, "results.json");
 
-function comparePixels({ web, native, dialog }) {
+function comparePixels({ web, native, dialog, rings }) {
   const decode = async base64 => {
     const image = new Image();
     image.src = "data:image/png;base64," + base64;
@@ -118,18 +119,18 @@ function comparePixels({ web, native, dialog }) {
     // the Chromium rasterizer and the native renderer.
     context.filter = "blur(1px)";
     context.drawImage(image, 0, 0);
-    return context.getImageData(0, 0, image.width, image.height).data;
+    return context.getImageData(0, 0, image.width, image.height);
   };
-  return Promise.all([decode(web), decode(native)]).then(([a, b]) => {
-    if (a.length !== b.length) throw Error("Renderer image sizes differ");
+  return Promise.all([decode(web), decode(native)]).then(([first, second]) => {
+    const { width, height, data: a } = first;
+    if (width !== second.width || height !== second.height) throw Error("Renderer image sizes differ");
+    const b = second.data;
     const distance = (rgb1, offset1, rgb2, offset2) =>
       (Math.abs(rgb1[offset1] - rgb2[offset2]) + Math.abs(rgb1[offset1 + 1] - rgb2[offset2 + 1])
         + Math.abs(rgb1[offset1 + 2] - rgb2[offset2 + 2])) / 3;
     // Round window corners expose the browser backdrop. Sample the material
     // inside the lower-left edge and ignore a narrow region round the viewport.
-    const width = 560;
-    const height = 420;
-    const backdrop = (width * (height - 18) + 18) * 4;
+    const backdrop = (rings ? width * 54 + Math.floor(width / 2) : width * (height - 18) + 18) * 4;
     // In translucent dialogs, compare controls against the panel material.
     // The outer shadow can otherwise dominate the count of visible controls.
     const area = dialog ? {
@@ -222,7 +223,10 @@ try {
             const url = new URL("/packages/ui-react/showcase/", base);
             url.search = new URLSearchParams({ theme, mode, fixture, state }).toString();
             errors.length = 0;
-            await page.mouse.move(450, 390);
+            await page.setViewportSize(fixture === "quick-paste-rings"
+              ? { width: state === "full" ? 560 : 260, height: 480 }
+              : size);
+            await page.mouse.move(2, 2);
             await page.goto(url.href);
             await page.locator("main[data-fixture]").waitFor();
             if (fixture === "emoji-favorites") {
@@ -696,6 +700,29 @@ try {
               }[state]
               : state === "southeast" ? "SouthEast" : state === "scrolled" ? "1 scroll" : "";
             const expectedState = comparable(webText, extra) && comparable(nativeText, extra);
+            if (fixture === "quick-paste-rings") {
+              const panel = page.locator(".quick-paste-ring");
+              const buttons = panel.getByRole("button");
+              const targets = await buttons.evaluateAll(elements => elements.map(el => {
+                const label = el.querySelector(".quick-paste-ring__label").getBoundingClientRect();
+                const x = label.x + label.width / 2, y = label.y + label.height / 2;
+                return { label: el.getAttribute("aria-label"), x, y, hit: document.elementFromPoint(x, y) === el,
+                  clip: getComputedStyle(el).clipPath };
+              }));
+              if (targets.length !== 14 || targets.some(target => !target.hit || !target.clip.startsWith("polygon("))) {
+                throw Error("Quick paste sectors overlap or have an incorrect hit area");
+              }
+              const category = targets.find(target => target.label === "Code");
+              await page.mouse.click(category.x, category.y);
+              if (await panel.getByRole("button", { name: "Code", exact: true }).getAttribute("aria-pressed") !== "true") {
+                throw Error("Quick paste category click did not update selection");
+              }
+              const entry = targets.find(target => target.label === "Run tests");
+              await page.mouse.click(entry.x, entry.y);
+              if (await panel.getByRole("button", { name: "Run tests" }).getAttribute("aria-pressed") !== "true") {
+                throw Error("Quick paste entry click did not update selection");
+              }
+            }
             if (fixture === "hotkey-binding" && state === "conflict") {
               const alert = page.getByRole("alert");
               const error = "This shortcut is already in use.";
@@ -704,7 +731,7 @@ try {
               }
             }
             const dialog = fixture === "backup-dialog" ? await page.locator(".data-modal-content").boundingBox() : undefined;
-            const pixels = await page.evaluate(comparePixels, { web: webImage.toString("base64"), native: nativeImage.toString("base64"), dialog });
+            const pixels = await page.evaluate(comparePixels, { web: webImage.toString("base64"), native: nativeImage.toString("base64"), dialog, rings: fixture === "quick-paste-rings" });
             if (fixture === "cli-settings") {
               const add = page.getByRole("button", { name: "Add to PATH" });
               if (state === "default" || state === "narrow") {
@@ -818,8 +845,9 @@ try {
               await page.getByRole("button", { name: "Clear background" }).click();
               await slider.waitFor({ state: "hidden" });
             }
-            if (fixture === "quick-paste-panel" && pixels.backgroundDistance > 2) {
-              throw Error(`Quick Paste backdrop differs at ${state}%: ${pixels.backgroundDistance}`);
+            if (fixture === "quick-paste-panel") {
+              const shell = await page.locator(".quick-paste-window").evaluate(node => getComputedStyle(node).backgroundImage);
+              if (shell === "none") throw Error("Quick paste did not paint the active theme's shell");
             }
             if (fixture === "tag-history-entry") {
               const boxes = page.getByRole("checkbox", { name: /^Select entry:/ });

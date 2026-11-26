@@ -102,8 +102,9 @@ const additional = [
   ["tag-history-entry", "compact", 100, 0, "tag-history-selection-compact"],
   ["tag-batch-toolbar", "selected", 85],
   ["quick-paste-panel", "65", 242],
-  ["quick-paste-rings", "full", 480, 0, "quick-paste-rings"],
-  ["quick-paste-rings", "left", 480, 0, "quick-paste-rings-docked", 260],
+  ["quick-paste-rings", "full", 440, 0, "quick-paste-rings", 440],
+  ["quick-paste-rings", "left", 440, 0, "quick-paste-rings-docked", 224],
+  ["quick-paste-rings", "top", 224, 0, "quick-paste-rings-top", 440],
   ["theme-manager", "imported", 310],
   ["theme-manager", "narrow", 420, 0, "theme-manager-narrow"],
   ["background-settings", "saved", 165],
@@ -173,7 +174,7 @@ try {
       figure { margin: 0; overflow: hidden; border-radius: 8px; background: #fff }
       figcaption { padding: 10px 14px; border-bottom: 1px solid #d8dfea }
       .view { height: ${height}px; overflow: hidden }
-      img { display: block; width: ${component === "quick-paste-rings" ? width : 560}px; height: ${component === "quick-paste-rings" ? 480 : 420}px; margin-top: -${offset}px }
+      img { display: block; width: ${component === "quick-paste-rings" ? width : 560}px; height: ${component === "quick-paste-rings" ? height : 420}px; margin-top: -${offset}px }
     </style><main>
       <figure><figcaption>React WebView</figcaption><div class="view"><img src="${web}" alt=""></div></figure>
       <figure><figcaption>MyGo Native</figcaption><div class="view"><img src="${native}" alt=""></div></figure>

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import "../styles/components/quick-paste-rings.css";
 
-export type QuickPasteDock = "left" | "right" | "";
+export type QuickPasteDock = "left" | "right" | "top" | "";
 
 interface RingItem {
     id: string | number;
@@ -19,18 +19,19 @@ interface QuickPasteRingsProps {
     entries: RingItem[];
     categoryLabel: string;
     entryLabel: string;
-    emptyLabel?: string;
+    entrySlots: number;
 }
 
 function ringSector(index: number, count: number, outer: boolean, dock: QuickPasteDock, width: number, height: number) {
-    const radius = Math.max(0, Math.min(height / 2 - 4, dock ? width - 8 : width / 2 - 4));
+    const horizontal = dock === "left" || dock === "right";
+    const radius = Math.max(0, Math.min(dock === "top" ? height - 4 : height / 2 - 4, horizontal ? width - 4 : width / 2 - 4));
     const cx = dock === "left" ? 0 : dock === "right" ? width : width / 2;
-    const cy = height / 2;
-    const direction = dock === "right" ? -1 : 1;
+    const cy = dock === "top" ? 0 : height / 2;
+    const direction = dock === "right" || dock === "top" ? -1 : 1;
     const inner = radius * (outer ? .69 : .28);
     const edge = radius * (outer ? 1 : .66);
     const step = (dock ? Math.PI : 2 * Math.PI) / count;
-    const middle = -Math.PI / 2 + step * (index + (dock ? .5 : 0));
+    const middle = (dock === "top" ? 0 : -Math.PI / 2) + step * (index + (dock ? .5 : 0));
     const halfAngle = step / 2 - .018;
     const point = (r: number, angle: number) => ({
         x: cx + direction * r * Math.cos(angle),
@@ -67,7 +68,7 @@ function ringSector(index: number, count: number, outer: boolean, dock: QuickPas
     };
 }
 
-export function QuickPasteRings({ dock, categories, entries, categoryLabel, entryLabel, emptyLabel }: QuickPasteRingsProps) {
+export function QuickPasteRings({ dock, categories, entries, categoryLabel, entryLabel, entrySlots }: QuickPasteRingsProps) {
     const view = useRef<HTMLDivElement>(null);
     const [size, setSize] = useState({ width: 0, height: 0 });
     useLayoutEffect(() => {
@@ -100,8 +101,7 @@ export function QuickPasteRings({ dock, categories, entries, categoryLabel, entr
     return <div ref={view} className={"quick-paste-ring" + (dock ? " quick-paste-ring--" + dock : "")}>
         {size.width > 0 && size.height > 0 && <>
             <div role="group" aria-label={categoryLabel}>{renderRing(categories, categories.length, false)}</div>
-            <div role="group" aria-label={entryLabel}>{renderRing(entries, 6, true)}</div>
+            <div role="group" aria-label={entryLabel}>{renderRing(entries, entrySlots, true)}</div>
         </>}
-        {entries.length === 0 && emptyLabel && <span className="quick-paste-ring__empty">{emptyLabel}</span>}
     </div>;
 }

@@ -22,7 +22,7 @@ type quickPasteSector struct {
 
 // QuickPasteRings draws an inner category ring and six outer entry sectors.
 // At either edge, the same controls occupy an inward-facing half circle.
-func (k Kit) QuickPasteRings(c *ui.Context, dock string, categories, entries []QuickPasteRingItem) {
+func (k Kit) QuickPasteRings(c *ui.Context, dock string, slots int, tint ui.Color, categories, entries []QuickPasteRingItem) {
 	ring := ui.Box(c).FillWidth().Grow(1).MinHeight(0).Clip()
 	size := ring.Bounds()
 	ring.Draw(func(_ *ui.Painter, bounds ui.Rect) {
@@ -34,12 +34,12 @@ func (k Kit) QuickPasteRings(c *ui.Context, dock string, categories, entries []Q
 		return
 	}
 	ring.Children(func() {
-		k.quickPasteRing(c, dock, size, categories, len(categories), false)
-		k.quickPasteRing(c, dock, size, entries, 6, true)
+		k.quickPasteRing(c, dock, size, tint, categories, len(categories), false)
+		k.quickPasteRing(c, dock, size, tint, entries, slots, true)
 	})
 }
 
-func (k Kit) quickPasteRing(c *ui.Context, dock string, size ui.Rect, items []QuickPasteRingItem, count int, outer bool) {
+func (k Kit) quickPasteRing(c *ui.Context, dock string, size ui.Rect, tint ui.Color, items []QuickPasteRingItem, count int, outer bool) {
 	palette := c.Theme()
 	for index := range count {
 		sector := makeQuickPasteSector(index, count, outer, dock, size.W, size.H)
@@ -47,7 +47,7 @@ func (k Kit) quickPasteRing(c *ui.Context, dock string, size ui.Rect, items []Qu
 		if index >= len(items) {
 			ui.Box(c.Key(index)).Absolute().Left(bounds.X).Top(bounds.Y).Size(bounds.W, bounds.H).
 				PassThrough().Draw(func(p *ui.Painter, rect ui.Rect) {
-				drawQuickPasteSector(p, rect, sector, palette.Surface.Alpha(.45))
+				drawQuickPasteSector(p, rect, sector, tint.Alpha(float32(tint.A)*.42/255))
 			})
 			continue
 		}
@@ -62,7 +62,7 @@ func (k Kit) quickPasteRing(c *ui.Context, dock string, size ui.Rect, items []Qu
 			HitTest(func(x, y float32, rect ui.Rect) bool {
 				return sector.path.Contains(x-rect.X, y-rect.Y)
 			})
-		fill, text := palette.Surface, palette.Text
+		fill, text := tint, palette.Text
 		if item.Active {
 			fill, text = palette.Accent, palette.AccentText
 		} else if button.Hovered() || button.Focused() {
@@ -108,8 +108,12 @@ func drawQuickPasteSector(p *ui.Painter, rect ui.Rect, sector quickPasteSector, 
 func makeQuickPasteSector(index, count int, outer bool, dock string, width, height float32) quickPasteSector {
 	radius := max(0, min(float64(height)/2-4, float64(width)/2-4))
 	cx, cy := float64(width)/2, float64(height)/2
-	direction, span, offset := 1.0, 2*math.Pi, 0.0
-	if dock != "" {
+	direction, span, offset, start := 1.0, 2*math.Pi, 0.0, -math.Pi/2
+	switch dock {
+	case "top":
+		radius = max(0, min(float64(height)-4, float64(width)/2-4))
+		cy, direction, span, offset, start = 0, -1, math.Pi, .5, 0
+	case "left", "right":
 		radius = max(0, min(float64(height)/2-4, float64(width)-8))
 		cx, span, offset = 0, math.Pi, .5
 		if dock == "right" {
@@ -123,7 +127,7 @@ func makeQuickPasteSector(index, count int, outer bool, dock string, width, heig
 		halfWidth, halfHeight = 54, 12
 	}
 	step := span / float64(count)
-	middle := -math.Pi/2 + step*(float64(index)+offset)
+	middle := start + step*(float64(index)+offset)
 	halfAngle := step/2 - .018
 	point := func(r, angle float64) ui.Point {
 		return ui.Point{X: float32(cx + direction*r*math.Cos(angle)), Y: float32(cy + r*math.Sin(angle))}

@@ -18,12 +18,12 @@ func (g *gallery) quickPasteFixture(c *ui.Context, preset presets.Preset) {
 	palette := *c.Theme()
 	palette.Background = ui.Hex("#6c6c6c")
 	c.SetTheme(&palette)
+	if g.fixture == "quick-paste-rings" {
+		g.quickPasteRingFixture(c, kit, preset.WindowBackground(94))
+		return
+	}
 	kit.QuickPastePanel(c, preset.WindowBackground(100).Alpha(float32(opacity)/100)).Children(func() {
 		kit.QuickPasteSearch(c, &g.query, "Search clipboard…")
-		if g.fixture == "quick-paste-rings" {
-			g.quickPasteRingFixture(c, kit)
-			return
-		}
 		ui.Column(c).FillWidth().Children(func() {
 			kit.QuickPasteRow(c, "Release checklist", "Editor", true)
 			kit.QuickPasteRow(c, "Design notes", "Browser", false)
@@ -32,14 +32,13 @@ func (g *gallery) quickPasteFixture(c *ui.Context, preset presets.Preset) {
 	})
 }
 
-func (g *gallery) quickPasteRingFixture(c *ui.Context, kit uikit.Kit) {
+func (g *gallery) quickPasteRingFixture(c *ui.Context, kit uikit.Kit, tint ui.Color) {
 	dock := g.state
 	if dock == "full" {
 		dock = ""
 	}
 	categories := []uikit.QuickPasteRingItem{
-		{Key: "all", Label: "All", Active: true},
-		{Key: "text", Label: "Text"},
+		{Key: "text", Label: "Text", Active: true},
 		{Key: "image", Label: "Image", CompactLabel: "Img"},
 		{Key: "file", Label: "File"},
 		{Key: "link", Label: "Link"},
@@ -55,5 +54,9 @@ func (g *gallery) quickPasteRingFixture(c *ui.Context, kit uikit.Kit) {
 		{Key: "update", Label: "Update guide", Detail: "Editor"},
 		{Key: "colors", Label: "Colors.png", Detail: "Paint"},
 	}
-	kit.QuickPasteRings(c, dock, categories, entries)
+	slots := 8
+	if dock != "" {
+		slots = 5
+	}
+	kit.QuickPasteRings(c, dock, slots, tint, categories, entries)
 }

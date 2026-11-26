@@ -14,7 +14,7 @@
 ### React WebView
 
 ```sh
-pnpm add https://github.com/qiyuanhuakai/deziro-ui/releases/download/v0.4.0/deziro-ui-react-0.4.0.tgz
+pnpm add https://github.com/qiyuanhuakai/deziro-ui/releases/download/v0.4.1/deziro-ui-react-0.4.1.tgz
 ```
 
 ```tsx
@@ -33,7 +33,7 @@ document.body.classList.add("theme-macos", "light-mode");
 ### MyGo Native
 
 ```sh
-go get github.com/qiyuanhuakai/deziro-ui/packages/ui-native/uikit@v0.4.0
+go get github.com/qiyuanhuakai/deziro-ui/packages/ui-native/uikit@v0.4.1
 ```
 
 ```go
@@ -46,7 +46,7 @@ kit.Apply(c)
 使用自己的主题时，向 `uikit.NewKit` 传入语义颜色和控件样式。应用需要下方完整的 Web 对照主题时，可以额外导入 GPL 预设模块，并通过 `presets.Select("macos", "light").Kit()` 应用。
 
 ```sh
-go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.4.0
+go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.4.1
 ```
 
 ## 主题
@@ -57,7 +57,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.4.0
 
 每张图左侧是 React WebView，右侧是 MyGo Native。对照覆盖平白（FlatWhite）与 Liquid Glass 的浅色和深色。输入框使用带内容的示例，简洁卡片操作栏和右键菜单展示悬浮后的状态。
 
-剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。双环快贴的内环是内容类型，外环是待粘贴的条目。边缘贴靠使用朝屏幕内侧的半环。
+剪贴板搜索与类型筛选图使用 DezirClip 主界面的同一组件。一个完整的输入框，下方是七种内容类型。可以单独复用 React 的 ClipboardSearch 或 Go 的 Kit.ClipboardSearch。高级搜索栏和搜索历史也提供独立示例。双环快贴的内环是内容类型，外环是待粘贴的条目。双环直接显示在桌面上。适配左、右和顶部贴靠，展开的半环朝向屏幕内侧。
 
 <details open>
 <summary>平白（FlatWhite）深色</summary>
@@ -128,6 +128,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.4.0
 | 快速粘贴面板 | ![65% 透明度设置下的面板、搜索框与选中结果](docs/comparisons/macos-dark/quick-paste-panel.png) |
 | 快速粘贴双环 | ![完整双环 WebView 与 Native](docs/comparisons/macos-dark/quick-paste-rings.png) |
 | 快速粘贴贴边半环 | ![贴左侧的半环 WebView 与 Native](docs/comparisons/macos-dark/quick-paste-rings-docked.png) |
+| 快速粘贴顶部半环 | ![贴顶部的半环 WebView 与 Native](docs/comparisons/macos-dark/quick-paste-rings-top.png) |
 | 主题管理 | ![内置主题、已导入主题及导出和移除操作](docs/comparisons/macos-dark/theme-manager.png) |
 | 窄栏主题管理 | ![单列主题卡片与较长的导入主题名称](docs/comparisons/macos-dark/theme-manager-narrow.png) |
 | 自定义背景 | ![更换和清除背景、文件名与透明度](docs/comparisons/macos-dark/background-settings.png) |
@@ -256,6 +257,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.4.0
 | 快速粘贴面板 | ![65% 透明度设置下的面板、搜索框与选中结果](docs/comparisons/quick-paste-panel.png) |
 | 快速粘贴双环 | ![完整双环 WebView 与 Native](docs/comparisons/quick-paste-rings.png) |
 | 快速粘贴贴边半环 | ![贴左侧的半环 WebView 与 Native](docs/comparisons/quick-paste-rings-docked.png) |
+| 快速粘贴顶部半环 | ![贴顶部的半环 WebView 与 Native](docs/comparisons/quick-paste-rings-top.png) |
 | 主题管理 | ![内置主题、已导入主题及导出和移除操作](docs/comparisons/theme-manager.png) |
 | 窄栏主题管理 | ![单列主题卡片与较长的导入主题名称](docs/comparisons/theme-manager-narrow.png) |
 | 自定义背景 | ![更换和清除背景、文件名与透明度](docs/comparisons/background-settings.png) |
@@ -387,6 +389,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.4.0
 | 快速粘贴面板 | ![65% 透明度设置下的面板、搜索框与选中结果](docs/comparisons/liquid-glass-light/quick-paste-panel.png) |
 | 快速粘贴双环 | ![完整双环 WebView 与 Native](docs/comparisons/liquid-glass-light/quick-paste-rings.png) |
 | 快速粘贴贴边半环 | ![贴左侧的半环 WebView 与 Native](docs/comparisons/liquid-glass-light/quick-paste-rings-docked.png) |
+| 快速粘贴顶部半环 | ![贴顶部的半环 WebView 与 Native](docs/comparisons/liquid-glass-light/quick-paste-rings-top.png) |
 | 主题管理 | ![内置主题、已导入主题及导出和移除操作](docs/comparisons/liquid-glass-light/theme-manager.png) |
 | 窄栏主题管理 | ![单列主题卡片与较长的导入主题名称](docs/comparisons/liquid-glass-light/theme-manager-narrow.png) |
 | 自定义背景 | ![更换和清除背景、文件名与透明度](docs/comparisons/liquid-glass-light/background-settings.png) |
@@ -518,6 +521,7 @@ go get github.com/qiyuanhuakai/deziro-ui/packages/ui-presets@v0.4.0
 | 快速粘贴面板 | ![65% 透明度设置下的面板、搜索框与选中结果](docs/comparisons/liquid-glass-dark/quick-paste-panel.png) |
 | 快速粘贴双环 | ![完整双环 WebView 与 Native](docs/comparisons/liquid-glass-dark/quick-paste-rings.png) |
 | 快速粘贴贴边半环 | ![贴左侧的半环 WebView 与 Native](docs/comparisons/liquid-glass-dark/quick-paste-rings-docked.png) |
+| 快速粘贴顶部半环 | ![贴顶部的半环 WebView 与 Native](docs/comparisons/liquid-glass-dark/quick-paste-rings-top.png) |
 | 主题管理 | ![内置主题、已导入主题及导出和移除操作](docs/comparisons/liquid-glass-dark/theme-manager.png) |
 | 窄栏主题管理 | ![单列主题卡片与较长的导入主题名称](docs/comparisons/liquid-glass-dark/theme-manager-narrow.png) |
 | 自定义背景 | ![更换和清除背景、文件名与透明度](docs/comparisons/liquid-glass-dark/background-settings.png) |

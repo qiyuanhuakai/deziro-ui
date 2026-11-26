@@ -19,7 +19,7 @@ const presets = JSON.parse(await readFile(resolve(root, "packages/ui-presets/bui
 const cases = {
   "surface-opacity": { states: ["0", "20", "65", "85", "100"], text: "Appearance" },
   "quick-paste-panel": { states: ["0", "65", "100"], text: "Release checklist" },
-  "quick-paste-rings": { states: ["full", "left", "right"], text: "Release notes" },
+  "quick-paste-rings": { states: ["full", "left", "right", "top"], text: "Release notes" },
   "settings-field": { states: ["default", "expanded"], text: "Interface font" },
   "theme-manager": { states: ["default", "imported", "wide", "narrow"], text: "Visual theme" },
   "background-settings": { states: ["default", "saved"], text: "Custom background" },
@@ -130,7 +130,7 @@ function comparePixels({ web, native, dialog, rings }) {
         + Math.abs(rgb1[offset1 + 2] - rgb2[offset2 + 2])) / 3;
     // Round window corners expose the browser backdrop. Sample the material
     // inside the lower-left edge and ignore a narrow region round the viewport.
-    const backdrop = (rings ? width * 54 + Math.floor(width / 2) : width * (height - 18) + 18) * 4;
+    const backdrop = (rings ? width * (height - 3) + Math.floor(width / 2) : width * (height - 18) + 18) * 4;
     // In translucent dialogs, compare controls against the panel material.
     // The outer shadow can otherwise dominate the count of visible controls.
     const area = dialog ? {
@@ -224,7 +224,7 @@ try {
             url.search = new URLSearchParams({ theme, mode, fixture, state }).toString();
             errors.length = 0;
             await page.setViewportSize(fixture === "quick-paste-rings"
-              ? { width: state === "full" ? 560 : 260, height: 480 }
+              ? { width: state === "full" || state === "top" ? 440 : 224, height: state === "top" ? 224 : 440 }
               : size);
             await page.mouse.move(2, 2);
             await page.goto(url.href);
@@ -709,7 +709,13 @@ try {
                 return { label: el.getAttribute("aria-label"), x, y, hit: document.elementFromPoint(x, y) === el,
                   clip: getComputedStyle(el).clipPath };
               }));
-              if (targets.length !== 14 || targets.some(target => !target.hit || !target.clip.startsWith("polygon("))) {
+              const entryGroup = panel.getByRole("group", { name: "Clipboard entries" });
+              const slots = state === "full" ? 8 : 5;
+              const expected = 7 + Math.min(6, slots);
+              const surroundingPaint = await page.locator(".quick-paste-window").evaluate(el => getComputedStyle(el).backgroundColor);
+              if (targets.length !== expected || await entryGroup.locator(":scope > *").count() !== slots ||
+                  surroundingPaint !== "rgba(0, 0, 0, 0)" || await page.getByRole("textbox").count() !== 0 ||
+                  targets.some(target => !target.hit || !target.clip.startsWith("polygon("))) {
                 throw Error("Quick paste sectors overlap or have an incorrect hit area");
               }
               const category = targets.find(target => target.label === "Code");
@@ -1075,8 +1081,11 @@ try {
               }
             }
             const ratio = pixels.inkNative / pixels.inkWeb;
-            const passed = !errors.length && sameText && expectedState && Number.isFinite(ratio) &&
-              ratio >= 0.4 && ratio <= 2.5 && pixels.backgroundDistance <= 18 && pixels.foregroundDistance <= 36;
+            // Translucent sectors are composited separately over the visible backdrop.
+            const imagery = fixture === "quick-paste-rings"
+              ? pixels.inkWeb > 0 && pixels.inkNative > 0
+              : ratio >= 0.4 && ratio <= 2.5 && pixels.backgroundDistance <= 18;
+            const passed = !errors.length && sameText && expectedState && Number.isFinite(ratio) && imagery && pixels.foregroundDistance <= 36;
             results.push({ id, passed, sameText, expectedState, ...pixels, errors: [...errors] });
           } catch (error) {
             results.push({ id, passed: false, error: error.message });

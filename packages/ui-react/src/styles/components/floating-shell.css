@@ -13,7 +13,7 @@
 }
 
 @supports (opacity: pow(.5, 2)) {
-    :root.windows-11 :is(.theme-mica, .theme-acrylic) :is(.quick-paste-window, .compact-preview-window) {
+    :root.windows-11 :is(.theme-mica, .theme-acrylic) :is(.quick-paste-window:not(.quick-paste-window--rings), .compact-preview-window) {
         --floating-fill: rgb(var(--surface-shell-rgb) / pow(var(--floating-opacity), var(--system-backdrop-tint-power)));
     }
 }

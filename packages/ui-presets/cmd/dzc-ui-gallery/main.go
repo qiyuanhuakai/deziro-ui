@@ -710,9 +710,11 @@ func run() error {
 	}
 	width, height := 560, 420
 	if g.fixture == "quick-paste-rings" {
-		height = 480
-		if g.state != "full" {
-			width = 260
+		width, height = 440, 440
+		if g.state == "top" {
+			height = 224
+		} else if g.state != "full" {
+			width = 224
 		}
 	}
 	if *output != "" {

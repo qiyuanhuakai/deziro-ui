@@ -47,6 +47,14 @@ html body.quick-paste #root:has(.quick-paste-window)::before {
   box-sizing: border-box;
 }
 
+.quick-paste-window--rings {
+  --quick-paste-panel-radius: 0px;
+  padding: 0;
+  gap: 0;
+  background: none;
+  box-shadow: none;
+}
+
 /* ── Search ─────────────────────────────────────────────────── */
 
 .quick-paste-window__search-input {

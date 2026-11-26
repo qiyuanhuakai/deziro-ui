@@ -441,19 +441,19 @@ function CharacterPanelFixture() {
 }
 
 function QuickPasteFixture() {
-  const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState("Text");
   const [entry, setEntry] = useState("Release notes");
   const ring = fixture === "quick-paste-rings";
-  const dock = state === "left" || state === "right" ? state : "";
+  const dock = state === "left" || state === "right" || state === "top" ? state : "";
   const ringEntries = [
     ["Release notes", "Editor"], ["Design notes", "Browser"], ["Report.pdf", "Explorer"],
     ["Run tests", "Terminal"], ["Update guide", "Editor"], ["Colors.png", "Paint"],
   ];
   return <main data-fixture={fixture}>
-    <QuickPastePanel>
-      <QuickPasteSearch aria-label="Search clipboard" placeholder="Search clipboard…" />
-      {ring && <QuickPasteRings dock={dock} categoryLabel="Clipboard types" entryLabel="Clipboard entries"
-        categories={["All", "Text", "Image", "File", "Link", "Code", "Video", "Rich text"]
+    <QuickPastePanel className={ring ? "quick-paste-window--rings" : undefined}>
+      {!ring && <QuickPasteSearch aria-label="Search clipboard" placeholder="Search clipboard…" />}
+      {ring && <QuickPasteRings dock={dock} entrySlots={dock ? 5 : 8} categoryLabel="Clipboard types" entryLabel="Clipboard entries"
+        categories={["Text", "Image", "File", "Link", "Code", "Video", "Rich text"]
           .map(label => ({ id: label, label, compactLabel: ({ Image: "Img", Video: "Vid", "Rich text": "Rich" } as Record<string, string>)[label],
             active: label === category, onSelect: () => setCategory(label) }))}
         entries={ringEntries.map(([label, detail]) => ({ id: label, label, detail, active: label === entry,

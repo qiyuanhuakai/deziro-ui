@@ -2,6 +2,7 @@ package uikit
 
 import (
 	"strings"
+	"time"
 
 	"github.com/egoist/mygo/ui"
 	"github.com/go-text/typesetting/segmenter"
@@ -33,6 +34,7 @@ type HistoryCardOptions struct {
 	// Media draws using the width remaining after the card's margins, frame and leading controls.
 	Media    func(contentWidth float32)
 	Width    float32
+	Leading  func()
 	Activate func()
 	Reorder  *HistoryReorder
 
@@ -73,7 +75,7 @@ func (k Kit) HistoryCard(c *ui.Context, options HistoryCardOptions) ui.Element {
 	if options.ReadOnly {
 		card = ui.Column(c)
 	} else {
-		card = ui.ButtonBase(c)
+		card = ui.ButtonBase(c).Cursor(ui.CursorPointer)
 	}
 	label := options.Summary
 	if label == "" && !options.Concealed {
@@ -82,9 +84,11 @@ func (k Kit) HistoryCard(c *ui.Context, options HistoryCardOptions) ui.Element {
 	card.Role(ui.RoleGroup).Label(label)
 	style := k.style("historyCard")
 	hoverStyle := "historyCardHover"
+	pressedStyle := "historyCardPressed"
 	if options.Compact {
 		style = k.style("historyCardCompact")
 		hoverStyle = "historyCardCompactHover"
+		pressedStyle = "historyCardCompactPressed"
 		if options.Selected {
 			if _, ok := k.widgets["historyCardCompactSelected"]; ok {
 				style = k.style("historyCardCompactSelected")
@@ -97,10 +101,16 @@ func (k Kit) HistoryCard(c *ui.Context, options HistoryCardOptions) ui.Element {
 		style = k.style("historyCardSelected")
 	}
 	_, themedHover := k.widgets[hoverStyle]
-	if !options.ReadOnly && !options.Selected && card.Hovered() && themedHover {
-		style = k.style(hoverStyle)
+	_, themedPress := k.widgets[pressedStyle]
+	if !options.ReadOnly && !options.Selected {
+		if card.Pressed() && themedPress {
+			style = k.style(pressedStyle)
+		} else if card.Hovered() && themedHover {
+			style = k.style(hoverStyle)
+		}
 	}
-	if !options.ReadOnly && (card.Pressed() || !options.Selected && card.Hovered() && !themedHover) {
+	if !options.ReadOnly && (card.Pressed() && (!themedPress || options.Selected) ||
+		!options.Selected && card.Hovered() && !themedHover) {
 		style = k.interactive(c, card, style, false)
 	} else {
 		style = k.animatePaint(card, style)
@@ -108,7 +118,10 @@ func (k Kit) HistoryCard(c *ui.Context, options HistoryCardOptions) ui.Element {
 	if options.FlushHorizontal {
 		style.Margin[1], style.Margin[3] = 0, 0
 	}
-	paint(card, style).Margin(style.Margin[:]...)
+	k.paintTranslated(card, style).Margin(style.Margin[:]...)
+	if duration := time.Duration(k.palette().TransitionMs) * time.Millisecond; duration > 0 {
+		card.Transition(ui.ElementTransition{Size: true, Duration: duration})
+	}
 	if len(options.Tags) > 0 {
 		names := make([]string, 0, len(options.Tags))
 		for _, tag := range options.Tags {
@@ -139,7 +152,10 @@ func (k Kit) HistoryCard(c *ui.Context, options HistoryCardOptions) ui.Element {
 				}
 				width -= style.Margin[1] + style.Margin[3] + style.Padding[1] + style.Padding[3]
 				width -= horizontalBorders(style)
-				if options.Compact && options.Reorder != nil {
+				switch {
+				case options.Leading != nil:
+					width -= 28
+				case options.Compact && options.Reorder != nil:
 					width -= 20
 				}
 				if options.Media != nil {
@@ -157,9 +173,13 @@ func (k Kit) HistoryCard(c *ui.Context, options HistoryCardOptions) ui.Element {
 				k.HistoryCardTags(c, options.Tags, options.TagSize, false, 0)
 			}
 		}
-		if options.Compact && options.Reorder != nil {
+		if options.Leading != nil || options.Compact && options.Reorder != nil {
 			ui.Row(c).Grow(1).Gap(4).AlignItems(ui.Center).Children(func() {
-				k.historyReorderGrip(c, options.Reorder, k.style("historySource"), 22)
+				if options.Leading != nil {
+					options.Leading()
+				} else {
+					k.historyReorderGrip(c, options.Reorder, k.style("historySource"), 22)
+				}
 				ui.Column(c).Grow(1).MinWidth(0).Children(contentColumn)
 			})
 		} else {

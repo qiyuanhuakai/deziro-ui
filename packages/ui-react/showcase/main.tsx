@@ -102,7 +102,7 @@ function HeaderFixture() {
   const [settings, setSettings] = useState(state === "settings");
   const [tags, setTags] = useState(false);
   const [emoji, setEmoji] = useState(false);
-  const [pinned, setPinned] = useState(state === "pinned");
+  const [pinned, setPinned] = useState(state.startsWith("pinned"));
   const [search, setSearch] = useState("");
   const [isComposing, setIsComposing] = useState(false);
   const [tagFilter, setTagFilter] = useState(false);
@@ -218,7 +218,7 @@ function TagHistoryEntriesFixture() {
       selection={managing ? { label: "Select entry: " + name, checked: selected[index],
         onToggle: () => setSelected(row => row.map((checked, slot) => slot === index ? !checked : checked)) } : undefined}>
       <HistoryCard compact={state === "compact"} selected={managing && selected[index]} disableLayout>
-        <HistoryCardMeta source="Editor" time="12:30" actions={!managing && <>
+        <HistoryCardMeta source="Editor" time="12:30" actions={<>
           <HistoryCardAction title="Pin"><Pin size={12} /></HistoryCardAction>
           <HistoryCardAction title="Tags"><Tag size={12} /></HistoryCardAction>
           <HistoryCardAction title="Delete"><X size={12} /></HistoryCardAction>
@@ -256,13 +256,14 @@ function Showcase() {
   const [toastVisible, setToastVisible] = useState(true);
   const [enabled, setEnabled] = useState(state === "enabled" || fixture === "settings-toggle-help");
   const [opacity, setOpacity] = useState(72);
-  const [tab, setTab] = useState<EmojiTab>(state === "favorites" || state === "symbols" ? state : "emoji");
+  const [tab, setTab] = useState<EmojiTab>(state === "favorites" ? "favorites" : "emoji");
 
   const examples = {
     "text-fields": <TextFieldsFixture />,
     "settings-field": <SettingsFieldsFixture />,
     "context-menu": <ContextMenuFixture state={state} />,
-    "settings-section-card": state === "wide" ? <SettingsSectionGridFixture /> : <SettingsSectionFixture open={state === "expanded"} />,
+    "settings-section-card": state === "wide" ? <SettingsSectionGridFixture />
+      : <SettingsSectionFixture open={state === "expanded"} stack={state.startsWith("stack")} />,
     "settings-choices": <SettingsChoicesFixture state={state} />,
     "hotkey-list": <HotkeyListFixture multiple={state === "multiple" || state === "win-v"} extended={state === "extended"} winV={state === "win-v"} />,
     "emoji-favorites": <EmojiFavoritesFixture state={state} />,
@@ -330,7 +331,7 @@ function Showcase() {
     "hotkey-optional": <OptionalShortcutFixture />,
     "scroll-to-top": <div className="showcase-scroll-top">Clipboard history<ScrollToTopButton label="Scroll to top" onClick={() => undefined} /></div>,
     "character-search": <CharacterSearch label="Search symbols" value={query} onChange={setQuery} />,
-    "emoji-tabs": <EmojiTabs active={tab} labels={{ emoji: "Emoji", symbols: "Symbols", favorites: "Favorites" }} onChange={setTab} />,
+    "emoji-tabs": <EmojiTabs active={tab} labels={{ emoji: "Emoji", favorites: "Favorites" }} onChange={setTab} />,
     "emoji-grid": <EmojiGrid groups={[{ name: "Frequently used", emojis: ["😀", "😄", "😂", "🤣", "😊", "😍", "😘", "😎", "🤔", "🔥", "✨", "👌"] }]}
       empty="No emoji" onSelect={() => undefined} />,
     "history-tags": <HistoryCard compact={state.startsWith("compact")} disableLayout

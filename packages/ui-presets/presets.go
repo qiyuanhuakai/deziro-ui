@@ -5,6 +5,8 @@ import (
 	_ "embed"
 	"encoding/json"
 	"fmt"
+	"math"
+	"slices"
 
 	"github.com/egoist/mygo/ui"
 	"github.com/qiyuanhuakai/deziro-ui/packages/ui-native/theme"
@@ -19,7 +21,8 @@ var widgetJSON []byte
 
 type palette struct {
 	theme.Tokens
-	SurfaceTint string
+	SurfaceTint             string
+	SystemBackdropTintPower float64
 }
 
 var palettes = decode[palette](paletteJSON)
@@ -34,6 +37,7 @@ func decode[T any](data []byte) map[string]map[string]T {
 }
 
 type Preset struct {
+	name    string
 	mode    string
 	colors  palette
 	widgets map[string]theme.WidgetStyle
@@ -47,12 +51,19 @@ func Select(name, mode string) Preset {
 	if palettes[name] == nil {
 		name = "mica"
 	}
-	return Preset{mode: mode, colors: palettes[name][mode], widgets: widgets[name][mode]}
+	return Preset{name: name, mode: mode, colors: palettes[name][mode], widgets: widgets[name][mode]}
 }
 
 // Kit applies this catalog to the independent native components.
 func (p Preset) Kit() uikit.Kit {
-	return uikit.NewKit(p.mode, p.colors.Tokens, p.widgets)
+	return uikit.NewKit(p.mode, p.colors.Tokens, p.widgets).WithFloatingTheme(p.name)
+}
+
+// Tokens returns the semantic palette for associated native windows.
+func (p Preset) Tokens() theme.Tokens {
+	tokens := p.colors.Tokens
+	tokens.FontFamilies = slices.Clone(tokens.FontFamilies)
+	return tokens
 }
 
 // SurfaceTint returns the outer window color for presets with adjustable shell opacity.
@@ -60,8 +71,21 @@ func (p Preset) SurfaceTint() string { return p.colors.SurfaceTint }
 
 // WindowBackground resolves the shell tint at the given setting. Solid themes keep their background.
 func (p Preset) WindowBackground(percent int) ui.Color {
+	return p.windowBackground(percent, false)
+}
+
+// SystemBackdropBackground paints the app tint above a Windows 11 material.
+func (p Preset) SystemBackdropBackground(percent int) ui.Color {
+	return p.windowBackground(percent, true)
+}
+
+func (p Preset) windowBackground(percent int, systemBackdrop bool) ui.Color {
 	if tint := p.SurfaceTint(); tint != "" {
-		return ui.Hex(tint).Alpha(float32(min(100, max(0, percent))) / 100)
+		alpha := float64(min(100, max(0, percent))) / 100
+		if systemBackdrop && p.colors.SystemBackdropTintPower > 0 {
+			alpha = math.Pow(alpha, p.colors.SystemBackdropTintPower)
+		}
+		return ui.Hex(tint).Alpha(float32(alpha))
 	}
 	return ui.Hex(p.colors.Background)
 }

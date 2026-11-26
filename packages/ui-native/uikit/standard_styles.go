@@ -11,9 +11,8 @@ func rgba(color ui.Color) [4]uint8 {
 	return [4]uint8{color.R, color.G, color.B, color.A}
 }
 
-// These defaults are native control dimensions and use the supplied semantic
-// palette. Complete Web lookalike catalogs can be passed separately to NewKit.
-func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle {
+// DefaultWidgetStyle returns the native geometry and paint for a palette.
+func DefaultWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle {
 	panel := rgba(ui.Hex(palette.Panel))
 	border := rgba(ui.Hex(palette.Border))
 	accent := rgba(ui.Hex(palette.Accent))
@@ -88,7 +87,7 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 	case "backupPathRow":
 		style.ColumnGap = 8
 	case "backupBrowse", "backupBrowseHover":
-		style = standardWidgetStyle("settingsDataAction", palette)
+		style = DefaultWidgetStyle("settingsDataAction", palette)
 		style.Size, style.Uppercase = 10, true
 	case "backupError":
 		style.Text = rgba(ui.LightTheme().Danger)
@@ -140,7 +139,7 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		surface()
 		style.Width, style.Height = 24, 24
 	case "tagSearchInput", "tagRailSearchInput", "tagPickerSearchInput":
-		style = standardWidgetStyle("characterInput", palette)
+		style = DefaultWidgetStyle("characterInput", palette)
 		style.Size, style.Height, style.Padding = 12, 30, [4]float32{5, 7, 5, 28}
 		if widget == "tagRailSearchInput" {
 			style.Size, style.Padding = 11, [4]float32{6, 4, 6, 25}
@@ -149,9 +148,9 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 			style.Height, style.Padding = 32, [4]float32{6, 27, 6, 29}
 		}
 	case "tagSearchInputPlaceholder", "tagRailSearchInputPlaceholder", "tagPickerSearchInputPlaceholder":
-		style = standardWidgetStyle("characterInputPlaceholder", palette)
+		style = DefaultWidgetStyle("characterInputPlaceholder", palette)
 	case "tagSearchInputIcon", "tagRailSearchInputIcon", "tagPickerSearchInputIcon":
-		style = standardWidgetStyle("characterInputIcon", palette)
+		style = DefaultWidgetStyle("characterInputIcon", palette)
 		style.Width, style.Height, style.Left = 13, 13, 9
 		if widget == "tagRailSearchInputIcon" {
 			style.Left = 8
@@ -162,7 +161,7 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 	case "tagSearchClearIcon":
 		style.Width, style.Height = 8, 13
 	case "tagSearchClear":
-		style = standardWidgetStyle("tagToolbarButton", palette)
+		style = DefaultWidgetStyle("tagToolbarButton", palette)
 		style.Width, style.Height = 23, 23
 	case "privacyRulesHeading":
 		style.Padding[0], style.Padding[2] = 8, 8
@@ -171,7 +170,7 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		style.Border = border
 		style.BorderWidths = &[4]float32{1, 0, 0, 0}
 	case "privacyRuleAction", "privacyRuleCancel":
-		style = standardWidgetStyle("settingsDataAction", palette)
+		style = DefaultWidgetStyle("settingsDataAction", palette)
 		style.Height, style.Padding = 32, [4]float32{6, 12, 6, 12}
 	case "privacyRuleTitle", "privacyRulesHeadingLabel":
 		style.Weight = palette.EmphasisWeight
@@ -190,7 +189,7 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		if widget == "privacyPatternsFieldFocus" {
 			base = "textFieldFocus"
 		}
-		style = standardWidgetStyle(base, palette)
+		style = DefaultWidgetStyle(base, palette)
 		style.Height, style.MinHeight, style.Radius = 80, 80, 0
 		style.Padding = [4]float32{8, 8, 8, 8}
 	case "privacySourceExclusion", "privacySourceExclusionFocus":
@@ -198,7 +197,7 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 		if widget == "privacySourceExclusionFocus" {
 			base = "textFieldFocus"
 		}
-		style = standardWidgetStyle(base, palette)
+		style = DefaultWidgetStyle(base, palette)
 		style.Height, style.Padding = 88, [4]float32{8, 8, 8, 8}
 	case "tagToolbar":
 		style.Height, style.ColumnGap = 30, 2
@@ -228,10 +227,10 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 	case "tagToolbarTitleIcon":
 		style.Width, style.Height = 14, 14
 	case "tagPickerTrigger":
-		style = standardWidgetStyle("headerButton", palette)
+		style = DefaultWidgetStyle("headerButton", palette)
 		style.Size, style.Padding = 12, [4]float32{3, 6, 3, 6}
 	case "tagToolbarButton", "tagToolbarButtonActive":
-		style = standardWidgetStyle("headerButton", palette)
+		style = DefaultWidgetStyle("headerButton", palette)
 		style.Width, style.Height = 27, 27
 		style.Padding = [4]float32{}
 		if widget == "tagToolbarButtonActive" {
@@ -630,20 +629,20 @@ func standardWidgetStyle(widget string, palette theme.Tokens) theme.WidgetStyle 
 			style.MinWidth, style.MaxHeight = 44, 44
 		}
 	case "attachmentImagePending", "attachmentImageCompactPending":
-		style = standardWidgetStyle(strings.TrimSuffix(widget, "Pending"), palette)
+		style = DefaultWidgetStyle(strings.TrimSuffix(widget, "Pending"), palette)
 		style.Width, style.Height = 178, 100
 		if widget == "attachmentImageCompactPending" {
 			style.Width, style.Height = 78, 44
 		}
 	case "attachmentImageUnavailable", "attachmentImageCompactUnavailable":
-		style = standardWidgetStyle(strings.TrimSuffix(widget, "Unavailable"), palette)
+		style = DefaultWidgetStyle(strings.TrimSuffix(widget, "Unavailable"), palette)
 		style.MinHeight, style.Size, style.ColumnGap = 64, 11, 6
 		style.Text, style.Padding = muted, [4]float32{6, 6, 6, 6}
 		if widget == "attachmentImageCompactUnavailable" {
 			style.MinHeight = 44
 		}
 	case "attachmentImageMissing", "attachmentImageCompactMissing":
-		style = standardWidgetStyle(strings.TrimSuffix(widget, "Missing"), palette)
+		style = DefaultWidgetStyle(strings.TrimSuffix(widget, "Missing"), palette)
 		style.Height, style.Size, style.RowGap, style.Fill, style.Text = style.MaxHeight, 12, 8, panel, muted
 	case "previewToolbar":
 		style.Padding, style.Border = [4]float32{4, 8, 4, 8}, border

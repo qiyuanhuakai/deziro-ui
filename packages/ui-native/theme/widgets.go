@@ -32,8 +32,8 @@ type ColorStop struct {
 
 type WidgetStyle struct {
 	BackdropBlur  float32
-	Left          float32 `json:"left,omitempty"`
 	BorderWidths  *[4]float32
+	CornerRadii   *[4]float32
 	Outline       *Outline
 	Gradient      *Gradient
 	LetterSpacing float32
@@ -46,6 +46,7 @@ type WidgetStyle struct {
 	ColumnGap     float32
 	RowGap        float32
 	Top           float32
+	Left          float32
 	Right         float32
 	TranslateX    float32
 	TranslateY    float32
@@ -77,4 +78,14 @@ type WidgetStyle struct {
 
 	// A nil opacity preserves the full blur used by older theme data.
 	BackdropBlurOpacity *float32
+	Enter               *WidgetEntrance
+}
+
+// WidgetEntrance is the opening frame and timing of the WebView component.
+type WidgetEntrance struct {
+	DurationMs int
+	Y          float32
+	ScaleY     float32
+	Opacity    float32
+	Ease       *[4]float32
 }

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { SettingsChoices, type SettingsChoice } from "./SettingsChoices.js";
-import { SettingsRemoveButton } from "./RemoveButton.js";
+import { SettingsChoices, type SettingsChoice } from "./SettingsChoices";
+import { SettingsRemoveButton } from "./RemoveButton";
 import "../styles/components/theme-manager.css";
 
 export function SettingsThemeManager({ label, builtinLabel, importedLabel, value, builtins, imported, disabled,

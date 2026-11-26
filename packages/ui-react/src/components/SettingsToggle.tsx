@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
-import { SettingHelp } from "./SettingHelp.js";
-import { SettingsField } from "./SettingsField.js";
+import { SettingHelp } from "./SettingHelp";
+import { SettingsField } from "./SettingsField";
 
 export type SettingsToggleProps = Omit<ComponentProps<"input">, "className" | "type">;
 

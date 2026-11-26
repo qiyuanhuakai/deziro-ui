@@ -1,7 +1,7 @@
 import { startTransition, useEffect, useRef } from "react";
-import { ClipboardSearch, type ClipboardSearchProps } from "./ClipboardSearch.js";
+import { ClipboardSearch, type ClipboardSearchProps } from "./ClipboardSearch";
 
-export type { HeaderTagFilter, TagFilterHandle } from "./ClipboardSearch.js";
+export type { HeaderTagFilter, TagFilterHandle } from "./ClipboardSearch";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ChevronLeft,

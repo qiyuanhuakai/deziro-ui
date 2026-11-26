@@ -1,6 +1,6 @@
 import { File, FileText, FileArchive, FileCode, FileSpreadsheet, FileChartColumn, Image as ImageIcon, Video, Music } from "lucide-react";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
-import { attachmentKind, attachmentLayout, attachmentTiles } from "../attachment-layout.js";
+import { attachmentKind, attachmentLayout, attachmentTiles } from "../attachment-layout";
 import "../styles/components/attachment-preview.css";
 
 function FileIcon({ name }: { name: string }) {

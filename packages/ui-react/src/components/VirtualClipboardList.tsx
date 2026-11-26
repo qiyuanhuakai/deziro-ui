@@ -2,7 +2,7 @@ import React, { useRef, useImperativeHandle, useCallback, useMemo } from 'react'
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 import type { ListProps, ListRange } from 'react-virtuoso';
 import { Reorder } from "framer-motion";
-import { createScrollCoalescer } from "../scroll-coalesce.js";
+import { createScrollCoalescer } from "../scroll-coalesce";
 export interface VirtualClipboardListProps<Row extends { id: number }> {
     pinnedIds: number[];
     onReorder: (ids: number[]) => void;

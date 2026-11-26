@@ -2,12 +2,14 @@ import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { Blend, ChevronDown, ChevronLeft, ChevronRight, CircleHelp, Clock, File, FileArchive, FileChartColumn,
+import { Pause, Play, Repeat, Volume2, VolumeX,
+  Blend, ChevronDown, ChevronLeft, ChevronRight, CircleHelp, Clock, File, FileArchive, FileChartColumn,
   FileCode, FileSpreadsheet, FileText, Github, GripHorizontal, Image, MessageSquare, Minus, Music,
   Pin, PinOff, Plus, RotateCcw, Scan, Search, Settings, Smile, Tag, Trash2, Video, X } from "lucide-react";
 
 const directory = new URL("../packages/ui-native/uikit/icons/", import.meta.url);
-const symbols = { Blend, ChevronDown, ChevronLeft, ChevronRight, CircleHelp, Clock, File, FileArchive, FileChartColumn,
+const symbols = { Pause, Play, Repeat, Volume2, VolumeX,
+  Blend, ChevronDown, ChevronLeft, ChevronRight, CircleHelp, Clock, File, FileArchive, FileChartColumn,
   FileCode, FileSpreadsheet, FileText, Github, GripHorizontal, Image, MessageSquare, Minus, Music,
   Pin, PinOff, Plus, RotateCcw, Scan, Search, Settings, Smile, Tag, Trash2, Video, X };
 for (const [name, symbol] of Object.entries(symbols)) {

@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode } from "react";
-import { HotkeyRemoveButton } from "./RemoveButton.js";
-import { SettingHelp } from "./SettingHelp.js";
-import { SettingsDataAction } from "./SettingsData.js";
+import { HotkeyRemoveButton } from "./RemoveButton";
+import { SettingHelp } from "./SettingHelp";
+import { SettingsDataAction } from "./SettingsData";
 
 function hotkeyKeys(value: string, platform = globalThis.navigator?.platform ?? ""): string[] {
   const modifier = /^win/i.test(platform) ? "Win" : /^linux/i.test(platform) ? "Super" : undefined;

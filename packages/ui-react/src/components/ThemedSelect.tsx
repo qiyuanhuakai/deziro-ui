@@ -1,7 +1,7 @@
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import Select from "react-select";
 import type { FilterOptionOption, SelectInstance, SingleValue } from "react-select";
-import { FuzzyIndex } from "../fuzzy.js";
+import { FuzzyIndex } from "../fuzzy";
 
 export interface ThemedSelectOption {
   value: string;

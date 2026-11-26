@@ -1,14 +1,26 @@
 package uikit
 
-import "github.com/egoist/mygo/ui"
+import (
+	"slices"
+
+	"github.com/egoist/mygo/ui"
+)
 
 type CharacterTab struct {
 	ID, Label string
 }
 
 type CharacterChoice struct {
-	Value string `json:"value"`
-	Name  string `json:"name"`
+	Value   string            `json:"value"`
+	Name    string            `json:"name"`
+	Preview *CharacterPreview `json:"-"`
+}
+
+// CharacterPreview changes the tile artwork while Value remains its text action.
+type CharacterPreview struct {
+	Bitmap func() *ui.Bitmap
+	Font   string
+	Code   string
 }
 
 // CharacterPanel reserves the same outer padding and section gaps as the Web picker.
@@ -48,8 +60,9 @@ func (k Kit) emojiTab(c *ui.Context, label string, selected, disabled bool) ui.E
 	if selected {
 		style = k.style("emojiTabActive")
 	}
-	button := ui.ButtonBase(c).Label(label).Height(style.Height).Grow(1).Center().FocusRing(true).Disabled(disabled)
-	style = k.interactive(c, button, style, selected)
+	button := ui.ButtonBase(c).Label(label).Height(style.Height).Grow(1).Center().FocusRing(true).
+		Cursor(actionCursor(disabled)).Selected(selected).Disabled(disabled)
+	style = k.animatePaint(button, style)
 	paint(button, style).Children(func() { text(c, label, style).PassThrough() })
 	return button
 }
@@ -75,7 +88,7 @@ func (k Kit) CharacterContent(c *ui.Context, width float32, draw func(float32)) 
 func (k Kit) CharacterGrid(c *ui.Context, label string, entries []CharacterChoice, width float32, disabled bool, onSelect func(string)) {
 	title, group, grid := k.style("emojiGroupTitle"), k.style("emojiGroup"), k.style("emojiGrid")
 	gap := grid.ColumnGap
-	columns := characterColumnCount(width, gap)
+	columns := characterChoiceColumns(width, gap, entries)
 	ui.Column(c).FillWidth().Gap(group.RowGap).Children(func() {
 		paint(text(c, label, title).FillWidth(), title)
 		tileRows(c, len(entries), columns, width, gap, func(index int, cellWidth float32) {
@@ -88,14 +101,51 @@ func characterColumnCount(width, gap float32) int {
 	return max(1, int((width+gap)/(34+gap)))
 }
 
+func characterChoiceColumns(width, gap float32, entries []CharacterChoice) int {
+	if slices.ContainsFunc(entries, func(entry CharacterChoice) bool {
+		return entry.Preview != nil && entry.Preview.Code != ""
+	}) {
+		return max(1, int((width+gap)/(88+gap)))
+	}
+	return characterColumnCount(width, gap)
+}
+
 func (k Kit) characterTile(c *ui.Context, entry CharacterChoice, width float32, disabled bool, onSelect func(string)) {
 	tile := k.style("emojiTile")
-	button := ui.ButtonBase(c).Label(entry.Value).Size(width, tile.Height).Center().FocusRing(true).Disabled(disabled)
-	if entry.Name != "" {
-		button.Description(entry.Name).Tooltip(entry.Name)
+	button := ui.ButtonBase(c).Label(entry.Value).Size(width, tile.Height).Center().FocusRing(true).
+		Cursor(actionCursor(disabled)).Disabled(disabled)
+	description := entry.Name
+	preview := entry.Preview
+	if preview != nil && preview.Code != "" {
+		description += " · " + preview.Code
 	}
-	style := k.interactive(c, button, tile, false)
-	paint(button, style).Children(func() { text(c, entry.Value, style).SingleLine().PassThrough() })
+	if description != "" {
+		button.Description(description).Tooltip(description)
+	}
+	style := k.buttonInteraction(button, "emojiTile", tile)
+	k.paintTranslated(button, style).Children(func() {
+		if preview != nil {
+			if preview.Bitmap != nil {
+				if bitmap := preview.Bitmap(); bitmap != nil {
+					ui.Image(c, bitmap).Size(24, 24).PassThrough()
+					return
+				}
+			}
+			if preview.Code != "" {
+				style.Size = 9
+				ui.Column(c).FillWidth().Padding(0, 2).Gap(1).Center().PassThrough().Children(func() {
+					text(c, preview.Code, style).FillWidth().SingleLine().TextAlign(ui.Center).PassThrough()
+					text(c, entry.Name, style).FillWidth().SingleLine().TextAlign(ui.Center).PassThrough()
+				})
+				return
+			}
+			if preview.Font != "" {
+				style.Font = preview.Font
+				style.Weight = 400
+			}
+		}
+		text(c, entry.Value, style).SingleLine().PassThrough()
+	})
 	if button.Clicked() && onSelect != nil {
 		onSelect(entry.Value)
 	}
@@ -127,7 +177,7 @@ func (k Kit) TileButton(c *ui.Context, label string, width, height float32, disa
 	style.Padding, style.Shadows = [4]float32{}, nil
 	style.Fill, style.Border = [4]uint8{}, [4]uint8{}
 	style.BorderWidth, style.BorderWidths, style.Outline = 0, nil, nil
-	tile := ui.ButtonBase(c).Label(label).Size(width, height).FocusRing(true).Disabled(disabled)
+	tile := ui.ButtonBase(c).Label(label).Size(width, height).FocusRing(true).Disabled(disabled).Cursor(actionCursor(disabled))
 	return paint(tile, k.interactive(c, tile, style, false))
 }
 
@@ -135,7 +185,7 @@ func (k Kit) EmojiAddTile(c *ui.Context, label string, width float32, disabled b
 	var button ui.Element
 	k.emojiFavoriteFrame(c, width, func(_ ui.Element, cell float32) {
 		style := k.style("emojiAddTile")
-		button = ui.ButtonBase(c).Label(label).Tooltip(label).Size(cell, cell).Disabled(disabled).Center()
+		button = ui.ButtonBase(c).Label(label).Tooltip(label).Size(cell, cell).Disabled(disabled).Center().Cursor(actionCursor(disabled))
 		if !disabled && (button.Hovered() || button.FocusVisible()) {
 			style = k.style("emojiAddTileHover")
 		}
@@ -162,7 +212,8 @@ func (k Kit) EmojiFavoriteTile(c *ui.Context, options EmojiFavoriteOptions) {
 	k.emojiFavoriteFrame(c, options.Width, func(tile ui.Element, cell float32) {
 		removeVisible := ui.Local(tile, "favorite-tile-remove", func() bool { return false })
 		style := k.style("emojiFavoriteTile")
-		image := ui.ButtonBase(c).Size(cell, cell).Center().Label(options.Name).Tooltip(options.Name).Disabled(options.Disabled)
+		image := ui.ButtonBase(c).Size(cell, cell).Center().Label(options.Name).Tooltip(options.Name).
+			Disabled(options.Disabled).Cursor(actionCursor(options.Disabled))
 		paint(image, style).Children(options.Preview)
 		if image.Clicked() && options.OnChoose != nil {
 			options.OnChoose()
@@ -176,7 +227,7 @@ func (k Kit) EmojiFavoriteTile(c *ui.Context, options EmojiFavoriteOptions) {
 		}
 		remove := k.style("emojiFavoriteRemove")
 		button := ui.ButtonBase(c).Absolute().Right(-6).Top(-6).Size(20, 20).Center().
-			Label(options.RemoveLabel).Tooltip(options.RemoveLabel).Disabled(options.Disabled)
+			Label(options.RemoveLabel).Tooltip(options.RemoveLabel).Disabled(options.Disabled).Cursor(actionCursor(options.Disabled))
 		paint(button, k.interactive(c, button, remove, false)).Children(func() {
 			ui.Icon(c, closeIcon).Size(12, 12).TextColor(ui.RGB(255, 255, 255)).PassThrough()
 		})

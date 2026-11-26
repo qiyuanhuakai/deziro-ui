@@ -33,13 +33,10 @@
   --clipboard-tag-font-size: 10px;
 
   /* Shell opacity control.
-     `--surface-opacity` is the ABSOLUTE alpha of the outermost window surface
-     (0 = fully see-through, 1 = fully opaque) and is written from the
-     `app.surface_opacity` setting. It is deliberately not a multiplier on a
-     per-theme base: with a base multiplier the same slider value produced a
-     different-looking shell in every theme and in each colour mode, and the top
-     of the range was never opaque. Themes only supply the tint below, so one
-     number means one thing everywhere.
+     `--surface-opacity` is written from `app.surface_opacity`. The ordinary
+     shell and custom backgrounds use it as the tint alpha (0 = clear tint,
+     1 = opaque tint). Windows 11 system materials use a lighter intermediate
+     tint so the OS backdrop remains visible.
      `--surface-shell-rgb` is the per-theme / per-mode tint, overridden by the
      `theme-*` blocks. */
   --surface-opacity: 0.65;
@@ -164,6 +161,14 @@
   --utility-segment-active-text: #ffffff;
   --utility-toast-border: var(--border-dark);
   --compact-popover-bg: var(--bg-element);
+  --floating-panel-top: var(--surface-shell-rgb);
+  --floating-panel-bottom: var(--floating-panel-top);
+  --floating-panel-bottom-opacity: 1;
+  --floating-panel-angle: 180deg;
+  --floating-panel-sheen: linear-gradient(transparent, transparent);
+  --floating-panel-radius: 12px;
+  --floating-panel-edge: var(--dc-border-strong);
+  --floating-panel-frame: inset 0 0 0 1px var(--floating-panel-edge);
   --compact-popover-border: var(--border-dark);
   --compact-popover-color: var(--text-primary);
   --compact-popover-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -207,4 +212,76 @@
   --chip-active-border: var(--accent-color);
   --chip-hover-bg: var(--bg-element);
   --chip-hover-border: var(--border-dark);
+}
+
+:root.theme-mica {
+  --floating-panel-top: 233 240 250;
+  --floating-panel-bottom: 194 211 234;
+  --floating-panel-angle: 145deg;
+  --floating-panel-radius: 7px;
+  --floating-panel-edge: #8396b688;
+  --floating-panel-frame: inset 0 0 0 1px var(--floating-panel-edge), inset 0 3px #6f8db450;
+}
+
+:root.theme-mica.dark-mode {
+  --floating-panel-top: 48 65 90;
+  --floating-panel-bottom: 21 27 41;
+  --floating-panel-edge: #748dae99;
+}
+
+:root.theme-acrylic {
+  --floating-panel-top: 244 237 247;
+  --floating-panel-bottom: 214 221 236;
+  --floating-panel-bottom-opacity: .82;
+  --floating-panel-angle: 224deg;
+  --floating-panel-radius: 10px;
+  --floating-panel-edge: #aaa3bfaa;
+  --floating-panel-sheen: repeating-linear-gradient(132deg, #ffffff10 0 1px, transparent 1px 4px);
+}
+
+:root.theme-acrylic.dark-mode {
+  --floating-panel-top: 59 49 68;
+  --floating-panel-bottom: 37 48 64;
+  --floating-panel-edge: #aaa3bf80;
+}
+
+:root.theme-macos {
+  --floating-panel-top: 253 253 253;
+  --floating-panel-radius: 15px;
+  --floating-panel-edge: #babac0a0;
+}
+
+:root.theme-macos.dark-mode {
+  --floating-panel-top: 34 34 36;
+  --floating-panel-edge: #74747ca0;
+}
+
+:root.theme-liquid-glass {
+  --floating-panel-top: 233 247 255;
+  --floating-panel-bottom: 217 232 255;
+  --floating-panel-bottom-opacity: .6;
+  --floating-panel-radius: 23px;
+  --floating-panel-edge: #ffffffe8;
+  --floating-panel-frame: inset 0 0 0 1px var(--floating-panel-edge), inset 0 3px 8px #ffffff87, inset 0 -4px 10px #8caaf34d;
+  --floating-panel-sheen: radial-gradient(ellipse at 15% 0, #ffffff85, transparent 59%);
+}
+
+:root.theme-liquid-glass.dark-mode {
+  --floating-panel-top: 43 63 87;
+  --floating-panel-bottom: 13 27 47;
+  --floating-panel-edge: #c8ebffd0;
+  --floating-panel-frame: inset 0 0 0 1px var(--floating-panel-edge), inset 0 3px 8px #b1e2ff60, inset 0 -4px 10px #847afa56;
+  --floating-panel-sheen: radial-gradient(ellipse at 15% 0, #a8cfff56, transparent 59%);
+}
+
+:root.theme-retro {
+  --floating-panel-top: 238 236 228;
+  --floating-panel-radius: 0px;
+  --floating-panel-edge: #393733;
+  --floating-panel-frame: inset 0 0 0 2px var(--floating-panel-edge), inset -4px -4px 0 var(--floating-panel-edge);
+}
+
+:root.theme-retro.dark-mode {
+  --floating-panel-top: 37 37 36;
+  --floating-panel-edge: #92918b;
 }

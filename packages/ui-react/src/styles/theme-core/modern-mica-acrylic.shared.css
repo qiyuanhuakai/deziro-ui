@@ -1,3 +1,12 @@
+/* Windows already supplies the wallpaper tint or the frosted backdrop. A
+   lighter app tint lets that material show through. The image slider and
+   endpoints continue to use their ordinary opacity. */
+@supports (opacity: pow(0.5, 2)) {
+  :root.windows-11 body:not(.has-custom-bg):is(.theme-mica, .theme-acrylic) #root {
+    --surface-shell-root-bg: rgb(var(--surface-shell-rgb) / pow(var(--surface-opacity), var(--system-backdrop-tint-power)));
+  }
+}
+
 :is(.theme-mica, .theme-acrylic) .key-cap {
   background-color: var(--surface-key-cap-bg) !important;
   border: 1px solid var(--surface-key-cap-border) !important;
@@ -291,8 +300,8 @@
 }
 
 :is(.theme-mica, .theme-acrylic) .segment-btn.active {
-  background: var(--control-segment-active-bg) !important;
-  color: var(--control-segment-active-text) !important;
+  background: var(--dc-accent-soft) !important;
+  color: var(--dc-text-primary) !important;
   box-shadow: var(--surface-segment-active-shadow) !important;
 }
 
@@ -303,7 +312,8 @@
 }
 
 :is(.theme-mica, .theme-acrylic) .history-item.selected {
-  background: var(--surface-history-selected-bg) !important;
+  background: var(--dc-accent-soft) !important;
+  border-color: color-mix(in srgb, var(--dc-accent) 42%, transparent) !important;
 }
 
 /* Search readability belongs to the shared shell, independently of tag UI. */

@@ -1,7 +1,7 @@
 import { FolderOpen } from "lucide-react";
-import { SettingHelp } from "./SettingHelp.js";
-import { SettingsField } from "./SettingsField.js";
-import { SettingsStatusBadge } from "./SettingsCapture.js";
+import { SettingHelp } from "./SettingHelp";
+import { SettingsField } from "./SettingsField";
+import { SettingsStatusBadge } from "./SettingsCapture";
 
 interface CLIField {
   label: string;

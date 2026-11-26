@@ -1,8 +1,8 @@
 import "../styles/components/privacy.css";
 import { useId, type ComponentPropsWithRef, type ReactNode } from "react";
-import { TextArea } from "./TextField.js";
-import { SettingsRemoveButton } from "./RemoveButton.js";
-import { SettingsToggle } from "./SettingsToggle.js";
+import { TextArea } from "./TextField";
+import { SettingsRemoveButton } from "./RemoveButton";
+import { SettingsToggle } from "./SettingsToggle";
 
 export function PrivacyRulesHeading({ label, count, id }: { label: string; count?: number; id?: string }) {
   return <div className="setting-item settings-section-title">

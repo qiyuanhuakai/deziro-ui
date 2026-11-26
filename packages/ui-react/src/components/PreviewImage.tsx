@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { boundedPreviewZoom, fitPreviewZoom, fittedAxisPan, zoomPreviewScroll } from "../preview-image-geometry.js";
+import { boundedPreviewZoom, fitPreviewZoom, fittedAxisPan, zoomPreviewScroll } from "../preview-image-geometry";
 
 export interface PreviewImageProps {
     src: string;

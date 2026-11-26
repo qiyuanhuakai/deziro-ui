@@ -1,5 +1,5 @@
 import { Camera } from "lucide-react";
-import { SettingsField } from "./SettingsField.js";
+import { SettingsField } from "./SettingsField";
 import "../styles/components/capture-settings.css";
 
 export function CaptureSettingsHeading({ label }: { label: string }) {
